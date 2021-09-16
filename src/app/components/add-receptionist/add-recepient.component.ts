@@ -26,7 +26,11 @@ export class AddRecepientComponent implements OnInit {
     this.ReceptionistForm = this.formBuilder.group({
       receptionistName : ['', [Validators.required, Validators.minLength(5)]],
       receptionistPhoneNumber : ['', [Validators.required,Validators.minLength(10)]],
-      receptionistEmail : ['', [Validators.required]]
+      receptionistEmail : ['', [Validators.required]],
+      receptionistAge : ['', [Validators.required]],
+      address  : ['', [Validators.required]],
+      experience : ['', [Validators.required]],
+      salary : ['', [Validators.required]]
     });
     this.password= this.password;
   }

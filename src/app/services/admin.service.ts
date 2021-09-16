@@ -29,22 +29,6 @@ export class AdminService {
       )
   }
 
-  updateReceptionist(receptionist: Receptionist): Observable<Receptionist> {
-    return this.httpClient.post<Receptionist>(`${adminUrl}/updateReceptionist`, receptionist, this.httpOptions)
-      .pipe(
-        retry(0),
-        catchError(this.errorHandler)
-      )
-  }
-
-  getReceptionistById(receptionistId:any) : Observable<Receptionist>{
-    return this.httpClient.get<Receptionist>(`${adminUrl}/${receptionistId}`)
-    .pipe(
-      retry(1),
-      catchError(this.errorHandler)
-    )
- }
-
   adminLogin(admin: Admin): Observable<Admin> {
     return this.httpClient.post<Admin>(`${adminUrl}/adminLogin`, admin, this.httpOptions)
       .pipe(
