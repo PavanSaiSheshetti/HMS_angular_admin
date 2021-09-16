@@ -5,7 +5,7 @@ import { Receptionist } from '../models/receptionist';
 import { retry, catchError } from 'rxjs/operators';
 import { Admin } from '../models/admin';
 
-const adminUrl = "http://localhost:9090/admin"
+const adminUrl = "http://localhost:9090/adminController"
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +29,8 @@ export class AdminService {
       )
   }
 
-  adminLogin(admin: Admin): Observable<Admin> {
-    return this.httpClient.post<Admin>(`${adminUrl}/adminLogin`, admin, this.httpOptions)
+  adminLogin(adminId : String,adminpassword : String): Observable<Admin> {
+    return this.httpClient.get<Admin>(`${adminUrl}/searchByAdminIdAndAdminPassword/${adminId}/${adminpassword}`)
       .pipe(
         retry(0),
         catchError(this.errorHandler)

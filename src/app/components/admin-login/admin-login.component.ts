@@ -14,8 +14,8 @@ export class AdminLoginComponent implements OnInit {
   successMessage?: string;
   adminForm : FormGroup;
 
-  id?:String = "Admin";
-  password?:String ="Admin@123";
+  id?:String = "";
+  password?:String ="";
 
   constructor(public formBuilder:FormBuilder,public router: Router,public activatedRoute: ActivatedRoute, public adminService : AdminService) { }
 
@@ -29,7 +29,8 @@ export class AdminLoginComponent implements OnInit {
 
 
   adminLogin(){
-      this.adminService.addReceptionist(this.adminForm.value)
+    console.log(this.adminForm.value)
+      this.adminService.adminLogin( this.adminForm.get('adminId').value,this.adminForm.get('adminpassword').value)
           .subscribe(
             response => {
               console.log(response);
