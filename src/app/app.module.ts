@@ -9,6 +9,7 @@ import { AddRecepientComponent } from './components/add-receptionist/add-recepie
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
+import { UpdateReceptionistComponent } from './components/update-receptionist/update-receptionist.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { AdminLoginComponent } from './components/admin-login/admin-login.compon
     FooterComponent,
     NavbarComponent,
     AddRecepientComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    UpdateReceptionistComponent
   ],
   imports: [
     BrowserModule,
