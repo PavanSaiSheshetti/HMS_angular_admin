@@ -29,20 +29,26 @@ export class AdminLoginComponent implements OnInit {
 
 
   adminLogin(){
-    console.log(this.adminForm.value)
+    /* console.log(this.adminForm.value)
       this.adminService.adminLogin( this.adminForm.get('adminId').value,this.adminForm.get('adminpassword').value)
-          .subscribe(
-            response => {
+          .subscribe((response) => {
+              this.successMessage = "Login Successful";
               console.log(response);
-              this.successMessage = "Login Successfully";
-              console.log("Admin Login Successfully");
-            },
-            error => {
-              this.errorMessage = "AdminId / Password is incorrect";
-              console.log("AdminId / Password is incorrect : " + error);
-            });
+            }, err => this.errorMessage = err) */
+    if(this.adminForm.get('adminId').value == "Admin" && this.adminForm.get('adminpassword').value=="Admin@123")
+    {
+      this.successMessage = "Login Successful";
+      console.log("Login Successful");
+      this.router.navigate([""]);
+    }
+    else
+    {
+      this.successMessage = "AdminId/password is incorrect";
+      console.log("AdminId/password is incorrect");
+      this.router.navigate([""]);
+    }
+    
   }
-
   back()
   {  
     this.router.navigate([""])

@@ -29,14 +29,6 @@ export class AdminService {
       )
   }
 
-  adminLogin(adminId : String,adminpassword : String): Observable<Admin> {
-    return this.httpClient.get<Admin>(`${adminUrl}/searchByAdminIdAndAdminPassword/${adminId}/${adminpassword}`)
-      .pipe(
-        retry(0),
-        catchError(this.errorHandler)
-      )
-  }
-
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';
     if (error.error instanceof ErrorEvent) {
