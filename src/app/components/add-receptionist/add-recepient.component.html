@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+    <h3>Adding Receptionist</h3>
+</div>
+<font color=green size = 5px>{{ successMessage }}</font>
+<font color=red size = 5px>{{ errorMessage }}</font>
+<div class="container">
+    <form novalidate [formGroup]="ReceptionistForm" (ngSubmit)="addReceptionist()">
+      <fieldset>
+        <br><br>
+        <div class="form-group">
+            <label><b>Receptionist Name :</b></label>
+            <input type="text" class="form-control" formControlName="receptionistName" id="receptionistName" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistName').hasError('required') && ReceptionistForm.get('receptionistName').dirty">
+            Receptionist Name is Required
+            </div>
+                <div class="alert alert-danger"
+                    *ngIf="ReceptionistForm.get('receptionistName').hasError('minlength') && ReceptionistForm.get('receptionistName').dirty">
+                    Receptionist name must be of 5 characters
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Receptionist Phone Number :</b></label>
+            <input type="number" class="form-control" formControlName="receptionistPhoneNumber" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistPhoneNumber').hasError('required') && 
+              ReceptionistForm.get('receptionistPhoneNumber').dirty">
+              Receptionist  Phone is Required
+            </div>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistPhoneNumber').hasError('minlength') &&
+            ReceptionistForm.get('receptionistPhoneNumber').dirty">
+              Enter atleast 10 Numbers
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Receptionist Email :</b></label>
+            <input type="email" class="form-control" formControlName="receptionistEmail" required>
+            <div class="alert alert-danger" *ngIf="ReceptionistForm.get('receptionistEmail').hasError('required') &&
+            ReceptionistForm.get('receptionistEmail').dirty">
+            Receptionist Email is Required
+            </div>
+        </div>
+      </fieldset>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button> &nbsp; &nbsp;
+      <button class="btn btn-dark" (click)="back()">Back</button>
+    </form>
+</div>
+<br>
+<app-footer></app-footer>

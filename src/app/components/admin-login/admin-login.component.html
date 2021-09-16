@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+
+<div class="bradcam_area breadcam_bg_1">
+    <h3>Admin Login</h3>
+</div>
+<font color=green size = 5px>{{ successMessage }}</font>
+<font color=red size = 5px>{{ errorMessage }}</font>
+<div class="container">
+    <form novalidate [formGroup]="adminForm" (ngSubmit)="adminLogin()">
+      <fieldset>
+        <br><br>
+        <div class="form-group">
+            <label><b>Admin ID :</b></label>
+            <input type="text" class="form-control" formControlName="adminId" id="adminId" required>
+            <div class="alert alert-danger" 
+                *ngIf="adminForm.get('adminId').hasError('required') && adminForm.get('adminId').dirty">
+                Admin Id is Required
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label><b>Password :</b></label>
+            <input type="password" class="form-control" formControlName="adminpassword" required>
+            <div class="alert alert-danger" 
+                *ngIf="adminForm.get('adminpassword').hasError('required') && adminForm.get('adminpassword').dirty">
+                Password is Required
+            </div>
+        </div>
+
+      </fieldset>
+      <br>
+      <button type="submit" class="btn btn-primary">Submit</button> &nbsp; &nbsp;
+      <button class="btn btn-dark" (click)="back()">Back</button>
+    </form>
+</div>
+<br>
+<app-footer></app-footer>
+
