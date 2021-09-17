@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Offer } from 'src/app/model/offer';
-import { OfferService } from 'src/app/service/offer.service';
+import { Offer } from 'src/app/models/offer';
+import { OfferService } from 'src/app/services/offer.service';
 
 @Component({
   selector: 'app-viewoffers',

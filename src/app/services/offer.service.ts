@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Offer } from '../models/offer';
 
-import { Offer } from '../model/offer';
 const offerUrl="http://localhost:9090/hoteloffer"
 @Injectable({
   providedIn: 'root'

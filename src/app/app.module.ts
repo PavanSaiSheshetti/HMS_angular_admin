@@ -19,6 +19,13 @@ import { AddroomComponent } from './components/addroom/addroom.component';
 import { EditRoomComponent } from './components/edit-room/edit-room.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
+import { AddoffersComponent } from './components/addoffers/addoffers.component';
+import { OfferNavbarComponent } from './components/offernavbar/offernavbar.component';
+import { OfferoperationsComponent } from './components/offeroperations/offeroperations.component';
+import { Offer } from './models/offer';
+import { OffersComponent } from './components/offers/offers.component';
+import { SearchofferComponent } from './components/searchoffer/searchoffer.component';
+import { ViewoffersComponent } from './components/viewoffers/viewoffers.component';
 
 
 
@@ -32,7 +39,9 @@ import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.compo
     UpdateReceptionistComponent,
     AdmindashboardComponent,
     AdminnavbarComponent,AddroomComponent,AdminfunctionsComponent,
-    EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent
+    EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent,
+    AddoffersComponent,OfferNavbarComponent,OfferoperationsComponent,
+    OffersComponent,SearchofferComponent,ViewoffersComponent
   ],
   imports: [
     BrowserModule,
