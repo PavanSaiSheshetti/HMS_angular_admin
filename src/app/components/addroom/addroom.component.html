@@ -38,7 +38,7 @@
                     Room Id cannot be a negative value.
                 </div>
             </div>
-
+            <br>
             <div class="form-group">
                 <label>*Floor Number:</label>
                 <input type="text" class="form-control" formControlName="floorNumber">
@@ -54,7 +54,7 @@
 
          
           
-      
+      <br>
          
             <div class="form-group">
                 <tr>
@@ -79,11 +79,12 @@
                     *ngIf="addRoomForm.get('roomSize').hasError('required') && addRoomForm.get('roomSize').dirty">
                     Room Size is required
                 </div>
-                </div>
+                </div><br>
+               
                 <div class="form-group">
                 <div class="col-md-13">
 
-                    <label for="roomType">*Room Type</label><br><br>
+                    <label for="roomType">*Room Type</label><br>
                     <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
                         <option selected="selected">--Select</option>
                         <option>AC</option>
@@ -96,8 +97,8 @@
           Room Type is required
       </div>
               </div>
-              </div>
-              <br><br>
+              </div><br>
+              
               <div class="form-group">
                 <label>*Room Price Per Day:</label>
                 <input type="text" class="form-control" formControlName="roomPrice">
@@ -109,11 +110,11 @@
                     *ngIf="addRoomForm.get('roomPrice').hasError('min') && addRoomForm.get('roomPrice').dirty">
                    Room Price should be appropriate value.
                 </div>
-            </div>  
+            </div>  <br>
             <div class="form-group">
             <div class="col-md-13" >
 
-                <label for="roomView">*Room View</label><br><br>
+                <label for="roomView">*Room View</label><br>
                 <select class="form-control form-control-lg"   name="roomView" formControlName="roomView" ngModel required>
                     <option selected="selected">--Select</option>
                     <option>Balcony View</option>
