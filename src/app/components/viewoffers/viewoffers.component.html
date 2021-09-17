@@ -1,0 +1,59 @@
+<app-offernavbar></app-offernavbar>
+<div class="bradcam_area breadcam_bg">
+    <h3>Offers</h3>
+</div>
+<body>
+  <style>
+    body{
+        background-image: url("https://img.freepik.com/free-vector/green-sand-paper_53876-86281.jpg?size=626&ext=jpg");
+        background-position: center;
+        background-size: cover;
+    }
+    
+    label{
+    color:brown;
+    font-size: large;
+    font-weight: 600;
+}
+</style>
+  <br><br>
+<div>
+  <h4><font color=green>{{successMessage }}</font></h4><br>
+  <h4><font color=red>{{errorMessage}}</font></h4>
+   <div class="reglist">
+    <a href="searchofferbyid"><button class="btn-success">Search Offer</button> </a>
+            <table class="table table-striped">
+            <thead>
+            <tr>
+            <th>Offer Id</th>
+            <th>Room Type</th>
+            <th>Room Size</th>
+            <th>Offer Name</th>
+            <th>Offer From Date</th>
+            <th>Offer To Date</th>
+            <th>Offer</th>
+            <th>Discount Percentage</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let o of offer; let i = index">
+            <td>{{o.offerId}}</td>
+            <td>{{o.roomType}}</td>
+            <td>{{o.roomSize}}</td>
+            <td>{{o.offerName}}</td>
+            <td>{{o.offerFromDate}}</td>
+            <td>{{o.offerToDate}}</td>
+            <td>{{o.offerDetails}}</td>
+            <td>{{o.discountPercentage}}</td>
+      
+            <td><button type="button" class="btn btn-info" (click)="editOffer(o.offerId)">Edit</button></td>
+            <td><button type="button" class="btn btn-danger" (click)="deleteOffer(o.offerId)">Delete</button></td>
+            </tr>
+            </tbody>
+            </table>
+      </div>
+</div><br><br><br><br>
+</body>
+<app-footer></app-footer>
