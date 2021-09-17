@@ -2,7 +2,7 @@ import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Room } from 'src/app/model/room';
+import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
 
 @Component({
@@ -88,7 +88,7 @@ deleteRoom(roomId:number){
 
 
 return(){
-  this.router.navigate([''])
+  this.router.navigate(['rooms'])
 }
 
 }

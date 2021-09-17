@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Room } from 'src/app/model/room';
+import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
 
 @Component({
@@ -48,7 +48,7 @@ export class ViewroomsComponent implements OnInit {
   
   
   return(){
-    this.router.navigate([''])
+    this.router.navigate(['rooms'])
   }
   searchRoom(){
     this.router.navigate(['searchroom'])

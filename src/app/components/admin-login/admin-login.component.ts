@@ -40,14 +40,14 @@ export class AdminLoginComponent implements OnInit {
       //this.successMessage = "Login Successful";
       console.log("Login Successful");
       window.alert("success!")
-      this.router.navigate(['adminFunc']);
+      this.router.navigate(['admindashboard']);
     }
     else
     {
       this.successMessage = "AdminId/password is incorrect";
       console.log("AdminId/password is incorrect");
       
-      this.router.navigate(["admin"]);
+      
     }
     
   }

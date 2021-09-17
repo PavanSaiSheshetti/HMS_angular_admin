@@ -10,8 +10,16 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UpdateReceptionistComponent } from './components/update-receptionist/update-receptionist.component';
+import { ViewroomsComponent } from './components/viewrooms/viewrooms.component';
+import { SearchroomComponent } from './components/searchroom/searchroom.component';
+import { AdminfunctionsComponent } from './components/adminfunctions/adminfunctions.component';
+import { RoomNavbarComponent } from './components/roomnavbar/roomnavbar.component';
+import { AddroomComponent } from './components/addroom/addroom.component';
+
+import { EditRoomComponent } from './components/edit-room/edit-room.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
+
 
 
 @NgModule({
@@ -23,7 +31,8 @@ import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.compo
     AdminLoginComponent,
     UpdateReceptionistComponent,
     AdmindashboardComponent,
-    AdminnavbarComponent
+    AdminnavbarComponent,AddroomComponent,AdminfunctionsComponent,
+    EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent
   ],
   imports: [
     BrowserModule,

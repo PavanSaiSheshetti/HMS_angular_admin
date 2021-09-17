@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Room } from 'src/app/model/room';
+import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
 
 @Component({
