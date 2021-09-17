@@ -12,6 +12,8 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SearchofferComponent } from './components/searchoffer/searchoffer.component';
 
 import { SearchroomComponent } from './components/searchroom/searchroom.component';
+import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
+
 import { ViewoffersComponent } from './components/viewoffers/viewoffers.component';
 import { ViewroomsComponent } from './components/viewrooms/viewrooms.component';
 
@@ -31,7 +33,8 @@ const routes: Routes = [
   {path:'searchoffer',component:OfferoperationsComponent},
   {path:'offer',component:OffersComponent},
   {path:'offeroperations',component:OfferoperationsComponent},
-  {path:'searchofferbyid',component:SearchofferComponent}
+  {path:'searchofferbyid',component:SearchofferComponent},
+  {path:'updateAOffer/:offerId',component:UpdateOfferComponent}
 ];
 
 @NgModule({

@@ -40,6 +40,16 @@ export class AddoffersComponent implements OnInit {
 
   addOffer()
   {
+    this.offer=this.addOfferForm?.value;
+    if(this.offer.offerFromDate==this.offer.offerToDate  )
+    {
+      this.errorMessage="***From and To Date are same!"
+    }
+    else if(this.offer.offerFromDate>=this.offer.offerToDate )
+    {
+      this.errorMessage="***Not a valid from and to date"
+    }
+    else{
     this.offerSerivce.addOffer(this.addOfferForm?.value)
     .subscribe(
       res=>{
@@ -54,6 +64,7 @@ export class AddoffersComponent implements OnInit {
      }
     )
   }
+}
 
  
 }

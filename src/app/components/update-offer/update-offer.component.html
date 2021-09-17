@@ -16,11 +16,15 @@
         font-weight: 600;
     }
     </style>
-<br><br><br>
-
+    <br><br><br>
 <div class="reglist">
-    <form novalidate [formGroup]="addOfferForm" style="margin-left: 650px;width: 420px;" (ngSubmit)="addOffer()">
+    <form novalidate [formGroup]="addOfferForm" style="margin-left: 650px;width: 420px;" (ngSubmit)="updateOffer()">
   <fieldset>
+    <div class="form-group">
+        <label>*Offer Id:</label>
+        <input type="number" class="form-control" formControlName="offerId" readonly>
+    </div><br>
+
     <div class="form-group">
         <div class="col-md-13">
             <label for="roomType">*Room Type</label>
@@ -69,7 +73,6 @@
             Offer Name is required
         </div>
     </div><br>
-    
     <div class="form-group">
         <label>*From Date:</label>
         <input type="date" class="form-control" formControlName="offerFromDate">
@@ -78,7 +81,7 @@
             Offer From Date is required
         </div>
     </div><br>
-    
+   
    <div class="form-group">
         <label>*To Date:</label>
         <input type="date" class="form-control" formControlName="offerToDate">
@@ -126,11 +129,12 @@
               Terms And Conditions is required
             </div>
       </div><br><br>
+      
       <div>
-        <h4><font color=red style="font-size: large;">{{errorMessage }}</font></h4><br>
+        <h4><font color=red style="font-size: x-large;">{{errorMessage }}</font></h4><br>
     </div>
     <td>
-        <button type="submit" class="btn btn-primary" [disabled] ="addOfferForm.invalid">Add Offer</button>&nbsp;&nbsp;<button class="btn btn-success" type="reset">Reset</button>
+        <button type="submit" class="btn btn-primary" [disabled] ="addOfferForm.invalid">Update Offer</button>&nbsp;&nbsp;<button class="btn btn-success" type="reset">Reset</button>
     </td>
     <br><br>
     </fieldset>

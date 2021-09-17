@@ -49,6 +49,6 @@ export class ViewoffersComponent implements OnInit {
 
   editOffer(offerId:number)
   {
-    this.router.navigate(['updateoffers',offerId])
+    this.router.navigate(['updateAOffer',offerId])
   }
 }

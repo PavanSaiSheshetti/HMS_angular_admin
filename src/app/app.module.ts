@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,6 +26,7 @@ import { Offer } from './models/offer';
 import { OffersComponent } from './components/offers/offers.component';
 import { SearchofferComponent } from './components/searchoffer/searchoffer.component';
 import { ViewoffersComponent } from './components/viewoffers/viewoffers.component';
+import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
 
 
 
@@ -41,14 +42,14 @@ import { ViewoffersComponent } from './components/viewoffers/viewoffers.componen
     AdminnavbarComponent,AddroomComponent,AdminfunctionsComponent,
     EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent,
     AddoffersComponent,OfferNavbarComponent,OfferoperationsComponent,
-    OffersComponent,SearchofferComponent,ViewoffersComponent
+    OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
-    HttpClientModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
