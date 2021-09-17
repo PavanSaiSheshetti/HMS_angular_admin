@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { UpdateReceptionistComponent } from './components/update-receptionist/update-receptionist.component';
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { AdminnavbarComponent } from './components/adminnavbar/adminnavbar.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { UpdateReceptionistComponent } from './components/update-receptionist/up
     NavbarComponent,
     AddRecepientComponent,
     AdminLoginComponent,
-    UpdateReceptionistComponent
+    UpdateReceptionistComponent,
+    AdmindashboardComponent,
+    AdminnavbarComponent
   ],
   imports: [
     BrowserModule,

@@ -37,15 +37,17 @@ export class AdminLoginComponent implements OnInit {
             }, err => this.errorMessage = err) */
     if(this.adminForm.get('adminId').value == "Admin" && this.adminForm.get('adminpassword').value=="Admin@123")
     {
-      this.successMessage = "Login Successful";
+      //this.successMessage = "Login Successful";
       console.log("Login Successful");
-      this.router.navigate([""]);
+      window.alert("success!")
+      this.router.navigate(['adminFunc']);
     }
     else
     {
       this.successMessage = "AdminId/password is incorrect";
       console.log("AdminId/password is incorrect");
-      this.router.navigate([""]);
+      
+      this.router.navigate(["admin"]);
     }
     
   }

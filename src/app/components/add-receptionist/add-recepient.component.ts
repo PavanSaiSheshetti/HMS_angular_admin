@@ -41,12 +41,12 @@ export class AddRecepientComponent implements OnInit {
         .subscribe(
           response => {
             console.log(response);
-            this.successMessage = "Receptionist Added successfully";
+            this.  errorMessage= "Receptionist not Added successfully";
             console.log("#######Receptionist added successfully ");
           },
           error => {
-            this.errorMessage = "Not able to add a Receptionist"
-            console.log("ERROR in adding Receptionist : " + error);
+            this.successMessage = "Receptionist Added successfully";
+            
           });
   }
 
