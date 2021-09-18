@@ -2,8 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
-import { Admin } from '../admin';
-import { Receptionist } from '../receptionist';
+import { Admin } from '../models/admin';
+import { Receptionist } from '../models/receptionist';
+
 
 
 const adminUrl = "http://localhost:9090/adminController"

@@ -5,11 +5,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddRecepientComponent } from './components/add-receptionist/add-recepient.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
-import { UpdateReceptionistComponent } from './components/update-receptionist/update-receptionist.component';
 import { ViewroomsComponent } from './components/viewrooms/viewrooms.component';
 import { SearchroomComponent } from './components/searchroom/searchroom.component';
 import { AdminfunctionsComponent } from './components/adminfunctions/adminfunctions.component';
@@ -27,6 +25,12 @@ import { OffersComponent } from './components/offers/offers.component';
 import { SearchofferComponent } from './components/searchoffer/searchoffer.component';
 import { ViewoffersComponent } from './components/viewoffers/viewoffers.component';
 import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
+import { AddreceptionistComponent } from './components/addreceptionist/addreceptionist.component';
+import { ReceptionistComponent } from './components/receptionist/receptionist.component';
+import { UpdatereceptionistComponent } from './components/updatereceptionist/updatereceptionist.component';
+import { ViewallreceptionistComponent } from './components/viewallreceptionist/viewallreceptionist.component';
+import { ViewrecbyIdComponent } from './components/viewrecby-id/viewrecby-id.component';
+import { ReceptionistNavbarComponent } from './components/receptionist-navbar/receptionist-navbar.component';
 
 
 
@@ -35,14 +39,13 @@ import { UpdateOfferComponent } from './components/update-offer/update-offer.com
     AppComponent,
     FooterComponent,
     NavbarComponent,
-    AddRecepientComponent,
+    AddreceptionistComponent,
     AdminLoginComponent,
-    UpdateReceptionistComponent,
-    AdmindashboardComponent,
+    AdmindashboardComponent,ReceptionistNavbarComponent,
     AdminnavbarComponent,AddroomComponent,AdminfunctionsComponent,
     EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent,
     AddoffersComponent,OfferNavbarComponent,OfferoperationsComponent,
-    OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent
+    OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent,ReceptionistComponent,UpdatereceptionistComponent,ViewallreceptionistComponent,ViewrecbyIdComponent
   ],
   imports: [
     BrowserModule,

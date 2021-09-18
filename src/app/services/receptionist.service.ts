@@ -1,9 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { Receptionist } from '../receptionist';
 
 import { retry, catchError } from 'rxjs/operators';
+import { Receptionist } from '../models/receptionist';
 
 const URL = "http://localhost:9090/adminController"
 @Injectable({

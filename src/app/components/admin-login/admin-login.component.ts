@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AdminService } from 'src/app/services/admin.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -18,7 +17,7 @@ export class AdminLoginComponent implements OnInit {
   id?:String = "";
   password?:String ="";
 
-  constructor(public formBuilder:FormBuilder,public router: Router,public activatedRoute: ActivatedRoute, public adminService : AdminService) { }
+  constructor(public formBuilder:FormBuilder,public router: Router,public activatedRoute: ActivatedRoute, ) { }
 
   ngOnInit(): void 
   {

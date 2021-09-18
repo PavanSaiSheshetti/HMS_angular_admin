@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UpdateReceptionistComponent } from './update-receptionist.component';
+import { UpdatereceptionistComponent } from './updatereceptionist.component';
 
-describe('UpdateReceptionistComponent', () => {
-  let component: UpdateReceptionistComponent;
-  let fixture: ComponentFixture<UpdateReceptionistComponent>;
+describe('UpdatereceptionistComponent', () => {
+  let component: UpdatereceptionistComponent;
+  let fixture: ComponentFixture<UpdatereceptionistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UpdateReceptionistComponent ]
+      declarations: [ UpdatereceptionistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UpdateReceptionistComponent);
+    fixture = TestBed.createComponent(UpdatereceptionistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
