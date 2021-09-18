@@ -61,7 +61,7 @@
                
                 <td>
                    
-                    <button class="btn btn-primary" (click)="deleteRoom(r.roomId)">Delete</button>
+                    <button class="btn btn-primary" (click)="alertConfirmation(r.roomId)">Delete</button>
                 </td> 
                 <td>
                   
@@ -134,12 +134,10 @@
                               <td>{{room.roomView}}</td>
                              
                               <td>
-                             
-          
                           </tr>
                       </tbody>
                   </table>
-                  <button class="btn btn-primary" (click)="deleteRoom(room.roomId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <button class="btn btn-primary" (click)="alertConfirmation(room.roomId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;
                   <button class="btn btn-info" (click)="editRoom(room.roomId)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;
                       <button  class="btn btn-danger" (click)="return()">Back</button>
               </div>

@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-room',
@@ -44,7 +45,7 @@ export class EditRoomComponent implements OnInit {
         response => {
           console.log(response);
           console.log("#######updated successfully ");
-          window.alert("Room Details are updated successfully!")
+          this.successNotification()
           this.router.navigate(['adminFunc'])
           
         });
@@ -54,6 +55,8 @@ return(){
 }
 
 
-
+successNotification(){
+  Swal.fire('Success', 'Offer Updates Successfully!', 'success')
+}
 
 }

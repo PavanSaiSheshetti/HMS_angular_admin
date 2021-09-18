@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-viewrooms',
@@ -28,10 +29,7 @@ export class ViewroomsComponent implements OnInit {
   deleteRoom(roomId:number){
     this.addRoomService.deleteRoom(roomId).subscribe(
       (res:any)=>{
-        
-        window.alert("You have deleted the room with Id:"+roomId)
           this.viewRooms()
-         
         });
   }
   viewRooms() {
@@ -48,12 +46,36 @@ export class ViewroomsComponent implements OnInit {
   
   
   return(){
-    this.router.navigate(['rooms'])
+    this.router.navigate(['adminFunc'])
   }
   searchRoom(){
     this.router.navigate(['searchroom'])
   }
-
+  alertConfirmation(roomId:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think'
+    }).then((result) => {
+      if (result.value) {
+        this.deleteRoom(roomId)
+        Swal.fire(
+          'Removed!',
+          'Offer removed successfully!',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Offer Not Deleted!!',
+          'error'
+        )
+      }
+    })
+  }  
 }
 
 

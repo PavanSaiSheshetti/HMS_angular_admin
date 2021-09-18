@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AddroomService } from 'src/app/services/addroom.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-addroom',
@@ -30,7 +31,7 @@ export class AddroomComponent implements OnInit {
     .subscribe(
       response => {
         console.log(response);
-        window.alert("You have added room details successfully!")
+        this.successNotification();
         this.router.navigate(['adminFunc'])
       }
      );
@@ -39,6 +40,8 @@ export class AddroomComponent implements OnInit {
 return(){
   this.router.navigate(['adminFunc'])
 }
-
+successNotification(){
+  Swal.fire('Success', 'Offer Added Successfully!', 'success')
+}
   }
 

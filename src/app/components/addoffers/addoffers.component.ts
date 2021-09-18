@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { OfferService } from 'src/app/services/offer.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -47,7 +48,7 @@ export class AddoffersComponent implements OnInit {
     }
     else if(this.offer.offerFromDate>=this.offer.offerToDate )
     {
-      this.errorMessage="***Not a valid from and to date"
+      this.errorMessage="***Not a valid From and To Date"
     }
     else{
     this.offerSerivce.addOffer(this.addOfferForm?.value)
@@ -58,7 +59,7 @@ export class AddoffersComponent implements OnInit {
       },
       error=>
      {
-       window.alert("You have added offer details successfully!")
+       this.successNotification();
        this.router.navigate(['offeroperations'])
        console.log("Error in save: "+error)
      }
@@ -66,5 +67,8 @@ export class AddoffersComponent implements OnInit {
   }
 }
 
+successNotification(){
+  Swal.fire('Success', 'Offer Added Successfully!', 'success')
+}
  
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { AdminService } from 'src/app/services/admin.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-admin-login',
@@ -39,21 +40,17 @@ export class AdminLoginComponent implements OnInit {
     {
       //this.successMessage = "Login Successful";
       console.log("Login Successful");
-      window.alert("success!")
       this.router.navigate(['admindashboard']);
     }
     else
     {
-      this.successMessage = "AdminId/password is incorrect";
+      this.WrongLoginNotification()
       console.log("AdminId/password is incorrect");
-      
-      
     }
-    
   }
-  back()
-  {  
-    this.router.navigate([""])
+  WrongLoginNotification(){
+    Swal.fire('WRONG', 'Check UserName and Password', 'error')
   }
-  
+
+ 
 }

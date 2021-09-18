@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-searchroom',
@@ -65,8 +66,6 @@ editRoom(roomId:number){
 deleteRoom(roomId:number){
 this.addRoomService.deleteRoom(roomId).subscribe(
   (res:any)=>{
-    
-    window.alert("You have deleted the room with Id:"+roomId)
       this.viewRooms()
      
     });
@@ -87,5 +86,31 @@ viewRooms(){
 
 return(){
   this.router.navigate(['adminFunc'])
+}
+
+alertConfirmation(roomId:number){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: 'This process is irreversible.',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonText: 'Yes, go ahead.',
+    cancelButtonText: 'No, let me think'
+  }).then((result) => {
+    if (result.value) {
+      this.deleteRoom(roomId)
+      Swal.fire(
+        'Removed!',
+        'Offer removed successfully!',
+        'success'
+      )
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      Swal.fire(
+        'Cancelled',
+        'Offer Not Deleted!!',
+        'error'
+      )
+    }
+  })
 }
 }

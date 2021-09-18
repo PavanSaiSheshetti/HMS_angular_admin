@@ -84,7 +84,7 @@
             <td>{{offer.offerDetails}}</td>
             <td>{{offer.discountPercentage}}</td>
             <td><button type="button" class="btn btn-success" (click)="editOffer(offer.offerId)">Edit</button>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            <td><button type="button" class="btn btn-danger" (click)="deleteOffer(offer.offerId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;  </td>    
+            <td><button type="button" class="btn btn-danger" (click)="alertConfirmation(offer.offerId)">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;  </td>    
             </tr>
             </tbody>
             </table>

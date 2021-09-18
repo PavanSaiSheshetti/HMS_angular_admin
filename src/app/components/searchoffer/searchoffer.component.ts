@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { OfferService } from 'src/app/services/offer.service';
+import Swal from 'sweetalert2';
 
 
 @Component({
@@ -58,18 +59,42 @@ deleteOffer(offerId:any)
             console.log("#######deleted successfully ");
           },
           error => {
-
             this.router.navigate(['offeroperations'])
-            window.alert("offer Id: "+offerId+"Deleted Successfully!!")
             this.show=false
             this.viewOffer=false
             console.log(error);
           });
-          this.successMessage = "Offer Id: "+offerId +" :   successfully deleted"
+          
   }
 
   editOffer(offerId:number)
   {
     this.router.navigate(['updateAOffer',offerId])
   }
+
+  alertConfirmation(offerId:number){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'This process is irreversible.',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, go ahead.',
+      cancelButtonText: 'No, let me think'
+    }).then((result) => {
+      if (result.value) {
+        this.deleteOffer(offerId)
+        Swal.fire(
+          'Removed!',
+          'Offer removed successfully!',
+          'success'
+        )
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Offer Not Deleted!!',
+          'error'
+        )
+      }
+    })
+  }  
 }

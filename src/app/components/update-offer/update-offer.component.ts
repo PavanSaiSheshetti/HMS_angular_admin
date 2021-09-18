@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Offer } from 'src/app/models/offer';
 import { OfferService } from 'src/app/services/offer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-offer',
@@ -63,11 +64,15 @@ export class UpdateOfferComponent implements OnInit {
         console.log("#######updated successfully ");
       },
       error => {
-        window.alert("Your Details are updated successfully!")
+        this.successNotification();
         this.router.navigate(['showoffers'])
         console.log("ERROR in save : " + error);
       });
   
 }
-  }
+}
+
+successNotification(){
+  Swal.fire('Success', 'Offer Updated Successfully!', 'success')
+}
 }
