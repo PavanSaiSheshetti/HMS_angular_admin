@@ -1,6 +1,5 @@
-export class Receptionist 
-{
-    receptionistId? : number;
+export class Receptionist {
+	receptionistId? : number;
 	receptionistName? : String;
 	receptionistPhoneNumber? : String;
 	receptionistAge? : number;
@@ -9,4 +8,5 @@ export class Receptionist
 	address? : String;
 	experience? : String;
 	salary? : number;
+  json: any;
 }
