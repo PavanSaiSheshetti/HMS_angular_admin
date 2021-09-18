@@ -64,13 +64,13 @@ export class ViewroomsComponent implements OnInit {
         this.deleteRoom(roomId)
         Swal.fire(
           'Removed!',
-          'Offer removed successfully!',
+          'Room removed successfully!',
           'success'
         )
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',
-          'Offer Not Deleted!!',
+          'Room Not Deleted!!',
           'error'
         )
       }

@@ -41,7 +41,7 @@ return(){
   this.router.navigate(['adminFunc'])
 }
 successNotification(){
-  Swal.fire('Success', 'Offer Added Successfully!', 'success')
+  Swal.fire('Success', 'Room Added Successfully!', 'success')
 }
   }
 

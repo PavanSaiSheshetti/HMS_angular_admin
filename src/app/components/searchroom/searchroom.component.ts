@@ -43,7 +43,7 @@ export class SearchroomComponent implements OnInit {
         this.show=false
         this.viewRoom=true */
         if(res==null){
-          window.alert("Room is not available for given RoomId! check it and try again...")
+          this.WrongRoomNotification()
           this.showTextBox=false
           this.show=false
           this.viewRoom=false
@@ -101,16 +101,21 @@ alertConfirmation(roomId:number){
       this.deleteRoom(roomId)
       Swal.fire(
         'Removed!',
-        'Offer removed successfully!',
+        'Room removed successfully!',
         'success'
       )
     } else if (result.dismiss === Swal.DismissReason.cancel) {
       Swal.fire(
         'Cancelled',
-        'Offer Not Deleted!!',
+        'Room Not Deleted!!',
         'error'
       )
     }
   })
 }
+
+WrongRoomNotification(){
+  Swal.fire('WRONG', 'Id Not Found', 'error')
+}
+
 }

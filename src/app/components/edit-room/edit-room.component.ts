@@ -56,7 +56,7 @@ return(){
 
 
 successNotification(){
-  Swal.fire('Success', 'Offer Updates Successfully!', 'success')
+  Swal.fire('Success', 'Room Updated Successfully!', 'success')
 }
 
 }
