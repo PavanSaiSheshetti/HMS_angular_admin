@@ -31,6 +31,8 @@ import { UpdatereceptionistComponent } from './components/updatereceptionist/upd
 import { ViewallreceptionistComponent } from './components/viewallreceptionist/viewallreceptionist.component';
 import { ViewrecbyIdComponent } from './components/viewrecby-id/viewrecby-id.component';
 import { ReceptionistNavbarComponent } from './components/receptionist-navbar/receptionist-navbar.component';
+import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
 
 
 
@@ -45,7 +47,8 @@ import { ReceptionistNavbarComponent } from './components/receptionist-navbar/re
     AdminnavbarComponent,AddroomComponent,AdminfunctionsComponent,
     EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent,
     AddoffersComponent,OfferNavbarComponent,OfferoperationsComponent,
-    OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent,ReceptionistComponent,UpdatereceptionistComponent,ViewallreceptionistComponent,ViewrecbyIdComponent
+    OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent,ReceptionistComponent,UpdatereceptionistComponent,ViewallreceptionistComponent,ViewrecbyIdComponent,
+    BookingHistoryComponent,ViewDetailsComponent
   ],
   imports: [
     BrowserModule,

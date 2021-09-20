@@ -26,7 +26,16 @@
 
 <div *ngIf="show">
     <h2 align="center"> Receptionist Details</h2>
- 
+    <button style="margin-left: 1400px" class="btn btn-primary" (click)="searchReceptionistId=true">Search Receptionist</button>
+    
+    <div *ngIf="searchReceptionistId==true">
+        <form novalidate [formGroup]="receptionistForm">
+            <input type="number" style="margin-left: 1400px" placeholder="Enter Receptionist Id" formControlName="receptionistId" [(ngModel)]="txtValue" (keyup)="searchReceptionist()">
+            <input [(ngModel)]="receptionistId"  [ngModelOptions]="{standalone: true} " [hidden]="true">
+    
+        </form>
+    </div>
+    <br/><br/>
         <div class="reglist">
             <div>
                 <table class="table table-striped" >
@@ -48,7 +57,6 @@
                   </tr>
                   </thead>
                   <tbody>
-                  
                     <tr *ngFor="let r of receptionists">
                         <td>
                            {{r.receptionistId}}
@@ -75,22 +83,22 @@
                         <td>
                             {{r.salary}}
                         </td>
-                        <td>
+                        <td *ngIf="receptionists!=null">
                
                             <button  class="btn btn-success" (click)="edit(r.receptionistId)">Edit</button>
                         </td>
-                         <td>
+                         <td *ngIf="receptionists!=null">
                
                             <button class ="btn btn-danger" (click)="alertConfirmation(r.receptionistId)">Delete</button>
                         </td>
                        </tr>
+                       
                   </tbody>
-                
-             
-              <br>
+
             
             <!-- </div> -->
         </table>
+        <h3 style="margin-left:500px"><font color="red"> &nbsp;&nbsp;&nbsp;{{errorMessage}}</font></h3>
         <td>
             <button  class="btn btn-primary" (click)="back()">Back</button>
           </td>

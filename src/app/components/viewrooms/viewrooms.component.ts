@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Room } from 'src/app/models/room';
 import { AddroomService } from 'src/app/services/addroom.service';
@@ -12,12 +13,20 @@ import Swal from 'sweetalert2';
 export class ViewroomsComponent implements OnInit {
 
   rooms: Room[] = [] ;
+  searchRoomId:Boolean = false;
+  roomId?:number;
   show?:boolean;
-  constructor(public router:Router,public addRoomService:AddroomService) { }
+  searchRoomForm?:FormGroup;
+  txtValue:any = null;
+  errorMessage?:String;
+  constructor(public router:Router,public addRoomService:AddroomService,public formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
     
       this.viewRooms();
+      this.searchRoomForm = this.formBuilder.group({
+        roomId: ['', Validators.required]
+      })
   }
  
   
@@ -49,7 +58,24 @@ export class ViewroomsComponent implements OnInit {
     this.router.navigate(['adminFunc'])
   }
   searchRoom(){
-    this.router.navigate(['searchroom'])
+    console.log(this.searchRoomId)
+    console.log(this.searchRoomForm.get('roomId')?.value)
+    if(this.txtValue==null){
+      this.viewRooms()
+    }
+    else{
+      this.addRoomService.getRoomById(this.searchRoomForm.get('roomId')?.value).subscribe(res =>{
+        this.rooms = [];
+        this.rooms[0] = res;
+        console.log(this.rooms[0])
+        if(this.rooms[0] == null){
+          this.errorMessage = "No records found"
+        }
+        else{
+          this.errorMessage = ""
+        }
+      })
+    }
   }
   alertConfirmation(roomId:number){
     Swal.fire({

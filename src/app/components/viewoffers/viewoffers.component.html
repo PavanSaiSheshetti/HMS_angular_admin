@@ -17,11 +17,28 @@
 }
 </style>
   <br><br>
+<div *ngIf="showTextBox">
+    <br><br><br>
+    <form novalidate [formGroup]="searchOfferForm" (ngSubmit)='searchOfferById()'style="margin-left: 650px;width: 420px;" >
+    
+  <div class="form-group">
+    <div class="col-md-13">
+        <label for="roomType">*Room Type</label>
+        <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" [(ngModel)]="roomType" (change)="searchOfferById()">
+            <option>AC</option>
+            <option>Normal</option>
+            <option>Deluxe</option>
+           
+        </select>
+  </div>
+  </div><br>
+  </form>
+  <br><br>
+  </div>
+
 <div>
-  <h4><font color=red>{{errorMessage}}</font></h4>
    <div class="reglist">
-    <a href="searchofferbyid"><button class="btn-success">Search Offer</button> </a>
-            <table class="table table-striped">
+       <table class="table table-striped">
             <thead>
             <tr>
             <th>Offer Id</th>
@@ -52,7 +69,9 @@
             </tr>
             </tbody>
             </table>
+            <h3 style="margin-left:500px"><font color="red"> &nbsp;&nbsp;&nbsp;{{errorMessage}}</font></h3>
       </div>
-</div><br><br><br><br>
+</div>
+<button type="button" class="btn btn-danger" (click)="refreshOffer()">View All</button>
+<br><br><br><br>
 </body>
-<app-footer></app-footer>

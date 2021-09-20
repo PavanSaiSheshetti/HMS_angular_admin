@@ -17,6 +17,9 @@ export class ViewallreceptionistComponent implements OnInit {
   showrec?:boolean;
   show?:boolean;
   showid?:boolean;
+  searchReceptionistId:Boolean=false;
+  receptionistId?:number;
+  txtValue:any = null;
   receptionistForm = new FormGroup({});
 
  
@@ -45,6 +48,28 @@ export class ViewallreceptionistComponent implements OnInit {
         console.log(res);
       }
     )}
+
+    searchReceptionist(){
+    console.log(this.receptionistId)
+    console.log(this.receptionistForm.get('receptionistId')?.value)
+    if(this.txtValue==null){
+      this.refresh()
+    }
+    else{
+      this.receptionistService.getReceptionistById(this.receptionistForm.get('receptionistId')?.value).subscribe(res =>{
+        this.receptionists = [];
+        this.receptionists[0]=res;
+        console.log(this.receptionists)
+        if(this.receptionists[0] == null){
+          this.errorMessage = "No records found"
+        }
+        else{
+          this.errorMessage = ""
+        }
+        console.log("data kdjfk "+this.errorMessage)
+      })
+    }
+    }
     edit(receptionistId:number){
       this.router.navigate(['editrec',receptionistId])
     }

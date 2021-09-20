@@ -6,6 +6,7 @@ import { AddroomComponent } from './components/addroom/addroom.component';
 import { AdminLoginComponent } from './components/admin-login/admin-login.component';
 import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
 import { AdminfunctionsComponent } from './components/adminfunctions/adminfunctions.component';
+import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { EditRoomComponent } from './components/edit-room/edit-room.component';
 import { OfferoperationsComponent } from './components/offeroperations/offeroperations.component';
 import { OffersComponent } from './components/offers/offers.component';
@@ -15,6 +16,7 @@ import { SearchofferComponent } from './components/searchoffer/searchoffer.compo
 import { SearchroomComponent } from './components/searchroom/searchroom.component';
 import { UpdateOfferComponent } from './components/update-offer/update-offer.component';
 import { UpdatereceptionistComponent } from './components/updatereceptionist/updatereceptionist.component';
+import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { ViewallreceptionistComponent } from './components/viewallreceptionist/viewallreceptionist.component';
 
 import { ViewoffersComponent } from './components/viewoffers/viewoffers.component';
@@ -44,6 +46,8 @@ const routes: Routes = [
   {path:'editrec/:receptionistId' , component:UpdatereceptionistComponent },
   {path:'viewall' , component:ViewallreceptionistComponent },
   {path:'viewid' , component:ViewrecbyIdComponent },
+  {path:'bookingDetails', component:BookingHistoryComponent},
+  {path:'viewDetails/:bookingId', component:ViewDetailsComponent}
 ];
 
 @NgModule({
