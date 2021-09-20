@@ -8,6 +8,8 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { AdminfunctionsComponent } from './components/adminfunctions/adminfunctions.component';
 import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { EditRoomComponent } from './components/edit-room/edit-room.component';
+import { FeedbackDetailsComponent } from './components/feedback-details/feedback-details.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { OfferoperationsComponent } from './components/offeroperations/offeroperations.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { ReceptionistComponent } from './components/receptionist/receptionist.component';
@@ -47,7 +49,9 @@ const routes: Routes = [
   {path:'viewall' , component:ViewallreceptionistComponent },
   {path:'viewid' , component:ViewrecbyIdComponent },
   {path:'bookingDetails', component:BookingHistoryComponent},
-  {path:'viewDetails/:bookingId', component:ViewDetailsComponent}
+  {path:'viewDetails/:bookingId', component:ViewDetailsComponent},
+  { path: 'view', component: FeedbackDetailsComponent},
+  { path: 'form', component: FeedbackFormComponent}
 ];
 
 @NgModule({

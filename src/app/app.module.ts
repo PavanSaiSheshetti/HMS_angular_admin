@@ -33,6 +33,8 @@ import { ViewrecbyIdComponent } from './components/viewrecby-id/viewrecby-id.com
 import { ReceptionistNavbarComponent } from './components/receptionist-navbar/receptionist-navbar.component';
 import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
+import { FeedbackDetailsComponent } from './components/feedback-details/feedback-details.component';
+import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 
 
 
@@ -48,7 +50,9 @@ import { ViewDetailsComponent } from './components/view-details/view-details.com
     EditRoomComponent,RoomNavbarComponent,SearchroomComponent,ViewroomsComponent,
     AddoffersComponent,OfferNavbarComponent,OfferoperationsComponent,
     OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent,ReceptionistComponent,UpdatereceptionistComponent,ViewallreceptionistComponent,ViewrecbyIdComponent,
-    BookingHistoryComponent,ViewDetailsComponent
+    BookingHistoryComponent,ViewDetailsComponent,
+    FeedbackDetailsComponent,
+    FeedbackFormComponent
   ],
   imports: [
     BrowserModule,
