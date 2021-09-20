@@ -6,4 +6,5 @@ export class Room {
 	roomType?:string;
 	roomPrice?:number;
 	roomView?:number;
+	roomStatus?:boolean;
 }

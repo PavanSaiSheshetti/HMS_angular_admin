@@ -1,0 +1,23 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th {
+    background-color:rgb(68, 6, 126);
+    border: 1px solid white;
+    color: aliceblue;
+  }
+  td {
+    border: 1px solid #dddddd;
+  }
+  td, th {
+    text-align: left;
+    padding: 8px;
+  }
+  button
+  {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+ 

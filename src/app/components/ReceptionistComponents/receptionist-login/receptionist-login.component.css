@@ -1,0 +1,37 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  top: 50%; 
+}
+
+.row{
+  background: rgb(170, 222, 240);
+  border-radius: 10px;
+  box-shadow: 12px 12px 22px;
+  
+}
+
+.form-group {
+  position: relative;
+  left: 36%;
+}
+
+.form-control{
+  height: 50px;
+  width: 70%;
+  border: none;
+  outline: none;
+  
+}
+.btnl{
+  height: 50px;
+  width: 50%;
+  border: none;
+  outline: none;
+  border-radius: 60px;
+  font-weight: 600;
+  background: cadetblue;
+  color: antiquewhite;
+
+}

@@ -1,0 +1,34 @@
+<h1 style="text-align: center;">Welcome to Receptionist Login</h1>
+<h1 style="text-align: center;">{{errorMessage}}</h1>
+<div class="container">
+    <div class="row">
+    <form novalidate [formGroup]="receptionistlogin" (ngSubmit)="receptionistLogin()">
+        <table align="center" width=35%>
+        <fieldset>
+            <div class="form-group">
+                <label>UserId</label> 
+                <input type="number" class="form-control" formControlName="receptionistId">
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" formControlName="receptionistPassword">
+            </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-success">Login</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="reset" class="btn btn-primary">Reset</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-dark" (click)="back()" >Back</button>
+        <a href="receptionistforgetPassword">ForgetPassword</a>
+    </fieldset>
+        </table>
+    </form>
+</div>
+
+</div> 
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
