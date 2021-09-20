@@ -35,6 +35,8 @@ import { BookingHistoryComponent } from './components/booking-history/booking-hi
 import { ViewDetailsComponent } from './components/view-details/view-details.component';
 import { FeedbackDetailsComponent } from './components/feedback-details/feedback-details.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
+import { AboutComponent } from './components/about/about.component';
+import { FacilitiesComponent } from './components/facilities/facilities.component';
 
 
 
@@ -52,7 +54,9 @@ import { FeedbackFormComponent } from './components/feedback-form/feedback-form.
     OffersComponent,SearchofferComponent,ViewoffersComponent,UpdateOfferComponent,ReceptionistComponent,UpdatereceptionistComponent,ViewallreceptionistComponent,ViewrecbyIdComponent,
     BookingHistoryComponent,ViewDetailsComponent,
     FeedbackDetailsComponent,
-    FeedbackFormComponent
+    FeedbackFormComponent,
+    AboutComponent,
+    FacilitiesComponent
   ],
   imports: [
     BrowserModule,

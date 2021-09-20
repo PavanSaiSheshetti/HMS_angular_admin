@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 import { AddoffersComponent } from './components/addoffers/addoffers.component';
 import { AddreceptionistComponent } from './components/addreceptionist/addreceptionist.component';
 import { AddroomComponent } from './components/addroom/addroom.component';
@@ -8,6 +9,7 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { AdminfunctionsComponent } from './components/adminfunctions/adminfunctions.component';
 import { BookingHistoryComponent } from './components/booking-history/booking-history.component';
 import { EditRoomComponent } from './components/edit-room/edit-room.component';
+import { FacilitiesComponent } from './components/facilities/facilities.component';
 import { FeedbackDetailsComponent } from './components/feedback-details/feedback-details.component';
 import { FeedbackFormComponent } from './components/feedback-form/feedback-form.component';
 import { OfferoperationsComponent } from './components/offeroperations/offeroperations.component';
@@ -51,7 +53,10 @@ const routes: Routes = [
   {path:'bookingDetails', component:BookingHistoryComponent},
   {path:'viewDetails/:bookingId', component:ViewDetailsComponent},
   { path: 'view', component: FeedbackDetailsComponent},
-  { path: 'form', component: FeedbackFormComponent}
+  { path: 'form', component: FeedbackFormComponent},
+  {path : 'about',component:AboutComponent},
+  {path : 'facilities',component:FacilitiesComponent},
+
 ];
 
 @NgModule({
