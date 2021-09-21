@@ -65,6 +65,28 @@ export class ReceptionService {
     )
   }
 
+  updateCheckInStatus(customerUserName:string):Observable<Bookings>{
+    return this.httpClient.put<Bookings>(receptionUrl + "/status/" + `${customerUserName}` + "/IN", this.httpOptions).pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
+  }
+
+  updateCheckOutStatus(customerUserName:string):Observable<Bookings>{
+    return this.httpClient.put<Bookings>(receptionUrl + "/status/" + `${customerUserName}` + "/OUT", this.httpOptions).pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
+  }
+
+  updateBookedStatus(customerUserName:string):Observable<Bookings>{
+    return this.httpClient.put<Bookings>(receptionUrl + "/status/" + `${customerUserName}` + "/booked", this.httpOptions).pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
+  }
+
+
   //Pranahitha's work
   getRecordByUserName(userName ?: string) : Observable<Bookings>
   {

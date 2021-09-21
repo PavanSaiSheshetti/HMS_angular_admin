@@ -99,9 +99,10 @@ const routes: Routes = [
   {path:'unBooked',component:UnBookedListComponent},
   {path:'receptionistprofile/:receptionistId', component: ReceptionistProfileComponent},
   {path:'receptionistlogin', component: ReceptionistLoginComponent},
+  {path:'receptionDashboard', component:ReceptionDashboardComponent},
   {path: 'receptionistprofileupdate/:receptionistId', component: ReceptionistProfileUpdateComponent},
   {path:'receptionDashboard/:receptionistId', component: ReceptionDashboardComponent},
-  {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent},
+  {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent}
 
 
   // {path:'wallet',component:WalletComponent},

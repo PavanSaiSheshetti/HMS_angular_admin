@@ -3,6 +3,7 @@ import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AboutComponent } from './components/AdminComponents/about/about.component';
@@ -80,6 +81,7 @@ import { ReceptionistFooterComponent } from './components/ReceptionistComponents
 import { ReceptionistAboutComponent } from './components/ReceptionistComponents/about/about.component';
 import { NavbarComponentReceptionist } from './components/ReceptionistComponents/navbar/navbar.component';
 import { FooterComponent } from './components/AdminComponents/footer/footer.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -155,9 +157,10 @@ import { FooterComponent } from './components/AdminComponents/footer/footer.comp
     HttpClientModule,
     ReactiveFormsModule,
     // BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

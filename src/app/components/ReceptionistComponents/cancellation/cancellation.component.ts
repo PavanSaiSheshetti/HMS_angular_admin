@@ -39,8 +39,7 @@ checkInDate?:string;
     this.receptionService.getCancelBookings().subscribe((data)=>{
       this.bookingsList = data
     },error => {
-      this.errorMessage = "Some error occured Please try again later"
-    })
+      this.errorMessage = "No cancellation Requests "    })
   }
 
   

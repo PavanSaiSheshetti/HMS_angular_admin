@@ -8,9 +8,9 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="receptionDashboard">Dashboard</a></li>
-                                    <li><a href="cancellationPage">Cancellations</a></li>
-                                    <li><a href="bookingsHistory">History</a></li>
-                                    <li><a href="allocateRooms">Allocate</a></li>
+                                    <li><a href="cancellationPage">Cancel</a></li>
+                                    <li><a href="allocateRooms">Payment</a></li>
+                                    <li><a href="unBooked">Allocate</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -112,17 +112,18 @@
 </div>
 <body>
 <div style="margin:0 30px;">
-  <table>
-      <tr>
-          <th>User name</th>
-          <th>No of Members</th>
-          <th>Room Type</th>
-          <th>Room Size</th>
-          <th>Amount Paid</th>
-          <th>Booking Status</th>
-          <th>Check In Date</th>
-          <th>Check Out Date</th>
-      </tr>
+  <table class = "table">
+    <thead style = "background-color: whitesmoke;">
+          <td>USER NAME</td>
+          <td>MEMBERS</td>
+          <td>ROOM TYPE</td>
+          <td>ROOM SIZE</td>
+          <td>PRICE</td>
+          <td>STATUS</td>
+          <td>CHECK-IN DATE</td>
+          <td>CHECK-OUT DATE</td>
+          <td>ALLOCATE</td>
+    </thead>
       <tr *ngFor ="let record of bookedList" >
           <td>
               {{record.customerUserName}}
@@ -133,6 +134,9 @@
           </td>
           <td>
               {{record.roomType}}
+          </td>
+          <td>
+              {{record.roomSize}}
           </td>
           <td>
               {{record.roomPrice}}
@@ -149,17 +153,17 @@
           </td>
           <td>
 
-            <select [(ngModel)]="item" (change)="selecteditem(item)">
+            <select class = "roomField" [(ngModel)]="item" (change)="selecteditem(item)">
             <option *ngFor="let r of rooms " >
               <ng-container >{{r.roomId}}
 
               </ng-container>
               </option>
          </select>
-         &nbsp;&nbsp;<button (click)="bookRoomPage(record.customerUserName)">Book</button>
+         &nbsp;&nbsp;<button class = "tableButtons" (click)="bookRoomPage(record.customerUserName)">Book</button>
          </td>
          <td>
-             <button type="button" class="btn btn-danger">Cancel</button>
+             <button type="button" class = "tableButtons" class="btn btn-danger">Cancel</button>
          </td>
 
       </tr>

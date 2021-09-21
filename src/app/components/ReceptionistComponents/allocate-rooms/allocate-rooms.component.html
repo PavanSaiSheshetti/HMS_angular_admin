@@ -8,9 +8,9 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a href="receptionDashboard">Dashboard</a></li>
-                                    <li><a href="cancellationPage">Cancellations</a></li>
-                                    <li><a href="bookingsHistory">History</a></li>
-                                    <li><a href="allocateRooms">Allocate</a></li>
+                                    <li><a href="cancellationPage">Cancel</a></li>
+                                    <li><a href="allocateRooms">Payment</a></li>
+                                    <li><a href="unBooked">Allocate</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -66,7 +66,7 @@
                     <div class="col-xl-12">
                         <div class="slider_text text-center">
                             <h3>Montana Resort</h3>
-                            <p>Bookings</p>
+                            <p>Booked Room and Payments</p>
                         </div>
                     </div>
                 </div>
@@ -110,31 +110,25 @@
         </div>
     </div>
 </div>
-<header>
-  <div >
-      <nav class="nav">
-          <a class="nav-link active" href="">Home</a>
-          <a class="nav-link" href="allocateRoom">Allocated Rooms</a>
-          <a class="nav-link" href="unBooked">Un Allocated Rooms</a>
-          <a class="nav-link" href="">Cancelled Rooms</a>
-        </nav>
-  </div>
-</header>
-<hr>
+<br>
+<br>
 <body>
-<div style="margin:0 30px;">
-  <table>
-      <tr>
-          <th>User name</th>
-          <th>No of Members</th>
-          <th>Room Type</th>
-          <th>Room Size</th>
-          <th>Amount Paid</th>
-          <th>Room Number</th>
-          <th>Booking Status</th>
-          <th>Check In Date</th>
-          <th>Check Out Date</th>
-      </tr>
+<div class = "container">
+<h3 align = "center">BOOKED ROOMS</h3>
+<hr>
+<br>
+<table class = "table">
+<thead style = "background-color: whitesmoke;">
+      <td>USERNAME</td>
+      <td>MEMBERS</td>
+      <td>PRICE</td>
+      <td>ROOM NUMBER</td>
+      <td>STATUS</td>
+      <td>CHECK-IN DATE</td>
+      <td>CHECK-OUT DATE</td>
+      <td>ACTIONS</td>
+      <td>ACTIONS</td>
+  </thead>
       <tr *ngFor ="let record of bookedList" >
           <td>
               {{record.customerUserName}}
@@ -144,10 +138,7 @@
               {{record.numberOfMembers}}
           </td>
           <td>
-              {{record.roomType}}
-          </td>
-          <td>
-              {{record.roomPrice}}
+            {{record.roomPrice}}.00
           </td>
           <td>
               {{record.roomNumber}}
@@ -161,9 +152,22 @@
           <td>
             {{record.checkOutDate | date}}
           </td>
-
+          <td>
+             
+            <button class = "tableButtons" (click) = "updateCheckIn(record.customerUserName)">CHECK-IN</button>
+            </td>
+            <td>
+               <button class = "tableButtons" (click) = "updateCheckOut(record.customerUserName)">CHECK-OUT</button>
+           </td>
       </tr>
 
   </table>
+  <br>
+  <a class = "buttons" href = "receptionDashboard">DASHBOARD</a>
+  <br>
+  <br>
+  
 </div>
 </body>
+
+<app-footer></app-footer>

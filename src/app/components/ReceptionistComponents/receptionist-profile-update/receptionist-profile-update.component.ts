@@ -46,12 +46,12 @@ export class ReceptionistProfileUpdateComponent implements OnInit {
          },
          error => {
            window.alert("Your Details are updated successfully!")
-           this.router.navigate(['receptionistoperations', this.receptionistId])
+           this.router.navigate(['receptionDashboard', this.receptionistId])
            console.log("ERROR in save : " + error);
          });
  }
  
  return(){
-   this.router.navigate(['receptionistoperations', this.receptionistId])
+   this.router.navigate(['receptionDashboard', this.receptionistId])
  }
 }

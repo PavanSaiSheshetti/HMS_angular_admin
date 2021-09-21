@@ -7,10 +7,10 @@
                         <div class="main-menu  d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li><a routerLink="bookingsPage">Bookings</a></li>
+                                    <li><a href="">Home</a></li>
                                     <li><a href="cancellationPage">Cancellations</a></li>
-                                    <li><a href="bookingsHistory">Payment</a></li>
-                                    <li><a href="allocateRooms">Allocate</a></li>
+                                    <li><a href="allocateRooms">Payment</a></li>
+                                    <li><a href="unBooked">Allocate</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -43,9 +43,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <a class = "buttons" (onclick) = "myProfile()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                            <button class = "buttons" (click) = "myProfile()"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                 <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                              </svg> Profile</a>
+                              </svg> Profile</button>
                         </div>
                     </div>
                     <div class="col-12">
@@ -144,8 +144,8 @@
         <div class="row">
             <div class="col-xl-12">
                 <div class="section_title text-center mb-100">
-                    <span>Our Offers</span>
-                    <h3>Ongoing Offers</h3>
+                   
+                    <h3>Receptionist Dashboard</h3>
                 </div>
             </div>
         </div>
@@ -155,9 +155,9 @@
                     <h3>Click the link below to <br>
                         view the bookings</h3>
                     <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
-                        <li>Sea view side</li>
+                        <ul>
+                            <li>view all the bookings</li>
+                        </ul>
                     </ul>
                     <a href="bookingsPage" class="book_now">Click Here</a>
                 </div>
@@ -168,9 +168,9 @@
                     <h3>Click the link below to <br>
                         view the booking histories</h3>
                     <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
-                        <li>Sea view side</li>
+                        <ul>
+                            <li>View all the booking history</li>
+                        </ul>
                     </ul>
                     <a href="bookingsHistory" class="book_now">Click Here</a>
                 </div>
@@ -180,15 +180,14 @@
                    
                     <h3>Click the link below to <br>
                         view alloted rooms</h3>
-                    <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
-                        <li>Sea view side</li>
-                    </ul>
+                        <ul>
+                            <li>To view the alloted rooms</li>
+                        </ul>
                     <a href="allocateRoom" class="book_now">Click Here</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<app-footer></app-footer>
 
