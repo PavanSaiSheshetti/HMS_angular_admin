@@ -71,6 +71,10 @@ export class AllocateRoomsComponent implements OnInit {
       this.router.navigate(['allocateRooms'])
     })
   }
+
+  logout(){
+    this.router.navigate(['receptionistlogin'])
+  }
   
 
 }

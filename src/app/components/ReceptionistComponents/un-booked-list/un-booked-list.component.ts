@@ -16,6 +16,7 @@ export class UnBookedListComponent implements OnInit {
   bookedList : Bookings[] = [];
   roomNumber ?:number;
   roomStatus?:boolean;
+  errorMessage?:string;
   userName?:string;
   rooms:Room[] = [];
   item?:any;
@@ -39,7 +40,7 @@ export class UnBookedListComponent implements OnInit {
       this.updated(this.userName,this.roomNumber)
      /*  this.viewAllBookingService.sendEmail(this.userName)
       console.log("updating mail room") */
-      })
+      },error => this.errorMessage = "This room is already alloted")
 
 
       //this.viewAllBookingService.
@@ -87,5 +88,9 @@ export class UnBookedListComponent implements OnInit {
     this.roomNumber=this.item;
     console.log(this.roomNumber)
 
+  }
+
+  logout(){
+    this.router.navigate(['receptionistlogin'])
   }
 }

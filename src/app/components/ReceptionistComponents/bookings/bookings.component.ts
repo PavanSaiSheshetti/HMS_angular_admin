@@ -48,4 +48,8 @@ checkInDate?:string;
     this.router.navigate(['bookingsPage'])
   }
 
+  logout(){
+    this.router.navigate(['receptionistlogin'])
+  }
+
 }

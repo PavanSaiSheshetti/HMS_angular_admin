@@ -104,7 +104,7 @@ const routes: Routes = [
   {path:'receptionDashboard', component:ReceptionDashboardComponent},
   {path: 'receptionistprofileupdate/:receptionistId', component: ReceptionistProfileUpdateComponent},
   {path:'receptionDashboard/:receptionistId', component: ReceptionDashboardComponent},
-  {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent}
+  {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent},
 
 //Customer Routing
   { path:"customerDashboard/:userName", component:CustomerDashboardComponent},

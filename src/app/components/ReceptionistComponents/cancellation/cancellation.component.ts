@@ -42,6 +42,10 @@ checkInDate?:string;
       this.errorMessage = "No cancellation Requests "    })
   }
 
+  logout(){
+    this.router.navigate(['receptionistlogin'])
+  }
+
   
 
 }
