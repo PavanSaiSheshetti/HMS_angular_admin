@@ -20,7 +20,7 @@ export class FeedbackFormComponent implements OnInit {
     this.feedbackForm=this.formBuilder.group({
      
       username :['',Validators.required],
-      phoneNumber :['',[Validators.required,Validators.minLength(10)]],
+      phoneNumber :['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
       rating :['',[Validators.required,Validators.max(5),Validators.min(1)]],
       customerName :['',[Validators.required]],
       suggestion :['',[Validators.required]],
