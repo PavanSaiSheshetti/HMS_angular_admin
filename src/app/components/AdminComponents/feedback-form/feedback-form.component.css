@@ -39,6 +39,7 @@ body{
     margin-top: 10px;
   }
   label{
+    color: white;
     font-size: 1.3em;
     line-height: 1em;
     font-weight: normal;
