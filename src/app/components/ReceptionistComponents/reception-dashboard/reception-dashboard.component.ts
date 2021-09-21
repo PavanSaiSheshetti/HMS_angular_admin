@@ -14,9 +14,12 @@ export class ReceptionDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.receptionistId = this.activatedRoute.snapshot.params['receptionistId'];
+    this.receptionistId=+localStorage.getItem("userIdSession");
+    
   }
 
   myProfile(){
+    console.log(this.receptionistId)
     this.router.navigate(['receptionistprofile', this.receptionistId])
   }
 
@@ -29,6 +32,7 @@ export class ReceptionDashboardComponent implements OnInit {
   }
   logout(){
     console.log("Returning to Receptionist Login Page")
+    localStorage.removeItem("userIdSession");
     this.router.navigate(['receptionistlogin'])
   }
 

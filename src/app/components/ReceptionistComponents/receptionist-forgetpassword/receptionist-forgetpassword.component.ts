@@ -13,6 +13,7 @@ export class ReceptionistForgetpasswordComponent implements OnInit {
   errorMessage: any;
   receptionistForgetPassword: FormGroup
   receptionistEmail?: string;
+  errorCode?:number;
   constructor(private formBuilder: FormBuilder, public router: Router, public receptionService: ReceptionService) { }
 
   ngOnInit(): void {
@@ -24,20 +25,19 @@ forgetPassword(){
     this.receptionService.getReceptionistByEmailId(this.receptionistForgetPassword.get('receptionistEmail')?.value)
       .subscribe(
         response => {
-          if(response!=null){
+              },
+        error => {
+          if(error==200){
             this.successMessage ="Your password is sent to the entered mailId successfully"
             console.log(this.receptionistForgetPassword.get('receptionistEmail')?.value);
             console.log(this.successMessage)
-            window.alert("Password has been sent to your Email")
-          this.router.navigate(['receptionistlogin',this.receptionistForgetPassword.get('receptionistEmail')?.value])
-                }
-           else{
-            console.log(this.receptionistForgetPassword.get('receptionistEmail')?.value +" check your details");
-            window.alert("Sorry entered mailId cant be found!")
-           }},
-        error => {
-          this.errorMessage="Sorry entered mailId cant be found!"
-          console.log(error)
+          this.router.navigate(['receptionistlogin'])
+          }
+          else{
+            this.errorMessage="Sorry entered mailId cant be found!"
+            console.log(error)
+          }
+
         });
   }
   

@@ -27,21 +27,21 @@ export class ReceptionistLoginComponent implements OnInit {
   this.receptionService.receptionistLogin(this.receptionistlogin.get('receptionistId')?.value,this.receptionistlogin.get('receptionistPassword')?.value)
     .subscribe(
       response => {
-        if(response!=null){
+       
           this.successMessage ="Your login is successful"
+          localStorage.setItem("userIdSession",""+this.receptionistlogin.get('receptionistId')?.value);
+          console.log("BDKSNKKDLSKDMSL"+localStorage.getItem("userIdSession"))
           console.log(this.receptionistlogin.get('receptionistId')?.value+ ", you have logged successfully");
         console.log("#######logged successfully ");
         console.log(this.successMessage)
-        window.alert("your log in is successful")
+        // window.alert("your log in is successful")
         this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
-              }
-         else{
-          console.log(this.receptionistlogin.get('receptionistId')?.value +" check your details");
-          this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
+          // this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
 
-              }},
+              },
       error => {
         this.errorMessage="Your Login details are not matched!"
+        console.log(this.receptionistlogin.get('receptionistId')?.value +" check your details");
         console.log(error)
       });
 }

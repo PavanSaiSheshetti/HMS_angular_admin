@@ -30,7 +30,7 @@ editProfile(){
   this.router.navigate(['receptionistprofileupdate', this.receptionistId])
 }
 back(){
-  this.router.navigate(['receptionistoperations',this.receptionistId])
+  this.router.navigate(['receptionDashboard'])
 }
 
 }

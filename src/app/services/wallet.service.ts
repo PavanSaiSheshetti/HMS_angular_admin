@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry ,catchError } from 'rxjs/operators';
 
 
-const walletUrl= "http://localhost:9090/wallet";
+const walletUrl= "http://localhost:9090/Reception";
 
 @Injectable({
   providedIn: 'root'
@@ -34,16 +34,13 @@ export class WalletService {
   }
   
   addWallet(customerUserName:String,walletAmount:number):Observable<Wallet>{   
-    return this.http.post<Wallet>(`${walletUrl}/add/${customerUserName}/${walletAmount}`,this.httpOptions)
+    return this.http.post<Wallet>(`${walletUrl}/save/${customerUserName}/${walletAmount}`,this.httpOptions)
     .pipe(
       retry(0),
       catchError(this.errorHandler)
     )
 }
   
-  
-  
-
   updateMoneyToWallet(customerUserName:String,walletAmount:number):Observable<Wallet>{   
       return this.http.put<Wallet>(`${walletUrl}/updateWallet/${customerUserName}/${walletAmount}`,this.httpOptions)
       .pipe(

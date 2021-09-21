@@ -63,7 +63,7 @@
 <h2 align="center">Enter Login details</h2>
 <hr>
 <br><br>
-
+<span ><h6  align="center"><b>{{this.errorMessage}}</b></h6></span>
 <div class="container">
     <form novalidate style="margin-left: 350px; width: 420px;" [formGroup]="receptionistlogin" (ngSubmit)="receptionistLogin()">
         <table align="center" width=35%>
@@ -81,7 +81,7 @@
             </td>
           <td> 
               <button type="reset" class="btn btn-primary">Reset</button>
-          </td> 
+          </td>
           <td> 
               <button type="submit" class="btn btn-dark" (click)="back()" >Back</button>
           </td>
