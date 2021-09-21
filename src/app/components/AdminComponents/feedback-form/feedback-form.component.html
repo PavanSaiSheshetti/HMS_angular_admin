@@ -25,11 +25,11 @@
                             formControlName="customerName">
                     </div>
                     <div class="form-group">
-                        <label for="telephone">Mobile No.</label>
+                        <label for="telephone">Mobile Number</label>
                         <input type="tel" class="form-control" placeholder=" Enter 10-digit mobile no."
                             formControlName="phoneNumber">
                         <div class="alert alert-danger"
-                            *ngIf="feedbackForm.get('phoneNumber').hasError('minlength') && feedbackForm.get('phoneNumber').dirty">
+                            *ngIf="feedbackForm.get('phoneNumber').hasError('minlength') || feedbackForm.get('phoneNumber').hasError('maxlength') && feedbackForm.get('phoneNumber').dirty">
                             Mobile number must be of 10 digits
                         </div>
 

@@ -50,38 +50,39 @@ import { ReceptionistOperationsComponent } from './components/ReceptionistCompon
 import { ReceptionistProfileUpdateComponent } from './components/ReceptionistComponents/receptionist-profile-update/receptionist-profile-update.component';
 import { ReceptionistForgetpasswordComponent } from './components/ReceptionistComponents/receptionist-forgetpassword/receptionist-forgetpassword.component';
 import { ReceptionDashboardComponent } from './components/ReceptionistComponents/reception-dashboard/reception-dashboard.component';
-// import { WalletComponent } from './components/CustomerComponents/wallet/wallet.component';
-// import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
-// import { EditCustomerComponent } from './components/CustomerComponents/edit-customer/edit-customer.component';
-// import { UpdatePasswordComponent } from './components/CustomerComponents/update-password/update-password.component';
-// import { EditBookingComponent } from './components/CustomerComponents/edit-booking/edit-booking.component';
-// import { PickAndDropComponent } from './components/CustomerComponents/pick-and-drop/pick-and-drop.component';
-// import { CustomerloginComponent } from './components/CustomerComponents/customerlogin/customerlogin.component';
-// import { ViewBookingHistoryComponent } from './components/CustomerComponents/view-booking-history/view-booking-history.component';
-// import { CustomerSignupComponent } from './components/CustomerComponents/customer-signup/customer-signup.component';
-// import { CustomerBookingFormComponent } from './components/CustomerComponents/customer-booking-form/customer-booking-form.component';
-// import { CancelBookingComponent } from './components/CustomerComponents/cancel-booking/cancel-booking.component';
-// import { CancelPickupanddropComponent } from './components/CustomerComponents/cancel-pickupanddrop/cancel-pickupanddrop.component';
-// import { UpdatePickupanddropComponent } from './components/CustomerComponents/update-pickupanddrop/update-pickupanddrop.component';
-// import { BillingComponent } from './components/CustomerComponents/billing/billing.component';
-// import { ContactUsComponent } from './components/CustomerComponents/contact-us/contact-us.component';
-// import { TermAndConditionComponent } from './components/CustomerComponents/term-and-condition/term-and-condition.component';
-// import { ConfirmBookingComponent } from './components/CustomerComponents/confirm-booking/confirm-booking.component';
 
 
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// import { CustomerFooterComponent } from './components/CustomerComponents/footer/footer.component';
-// import { CustomerAboutComponent } from './components/CustomerComponents/about/about.component';
-// import { CustomerDashboard } from './components/CustomerComponents/home/home.component';
-// import { FooterComponent } from './components/AdminComponents/footer/footer.component';
-// import { CustomerNavbarComponent } from './components/CustomerComponents/navbar/navbar.component';
-// import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/rooms.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReceptionistFooterComponent } from './components/ReceptionistComponents/footer/footer.component';
 import { ReceptionistAboutComponent } from './components/ReceptionistComponents/about/about.component';
 import { NavbarComponentReceptionist } from './components/ReceptionistComponents/navbar/navbar.component';
 import { FooterComponent } from './components/AdminComponents/footer/footer.component';
 import { HomenavbarComponent } from './components/HomeComponent/homenavbar/homenavbar.component';
 import { MainComponent } from './components/HomeComponent/main/main.component';
+import { CustomerDashboardComponent } from './components/CustomerComponents/customer-dashboard/customer-dashboard.component';
+import { CustomerFooterComponent } from './components/CustomerComponents/customer-footer/customer-footer.component';
+import { CustomerNavbarComponent } from './components/CustomerComponents/customer-navbar/customer-navbar.component';
+import { CustomerBlogsComponent } from './components/CustomerComponents/customer-blogs/customer-blogs.component';
+import { CustomerAboutComponent } from './components/CustomerComponents/customer-about/customer-about.component';
+import { EditCustomerComponent } from './components/CustomerComponents/edit-customer/edit-customer.component';
+import { UpdatePasswordComponent } from './components/CustomerComponents/update-password/update-password.component';
+import { EditBookingComponent } from './components/CustomerComponents/edit-booking/edit-booking.component';
+import { PickAndDropComponent } from './components/CustomerComponents/pick-and-drop/pick-and-drop.component';
+import { CustomerloginComponent } from './components/CustomerComponents/customerlogin/customerlogin.component';
+import { ViewBookingHistoryComponent } from './components/CustomerComponents/view-booking-history/view-booking-history.component';
+import { CustomerSignupComponent } from './components/CustomerComponents/customer-signup/customer-signup.component';
+import { CustomerBookingFormComponent } from './components/CustomerComponents/customer-booking-form/customer-booking-form.component';
+import { CancelBookingComponent } from './components/CustomerComponents/cancel-booking/cancel-booking.component';
+import { CancelPickupanddropComponent } from './components/CustomerComponents/cancel-pickupanddrop/cancel-pickupanddrop.component';
+import { UpdatePickupanddropComponent } from './components/CustomerComponents/update-pickupanddrop/update-pickupanddrop.component';
+import { CustomerBillingComponent } from './components/CustomerComponents/customer-billing/customer-billing.component';
+import { ContactUsComponent } from './components/CustomerComponents/contact-us/contact-us.component';
+import { TermAndConditionComponent } from './components/CustomerComponents/term-and-condition/term-and-condition.component';
+import { ConfirmBookingComponent } from './components/CustomerComponents/confirm-booking/confirm-booking.component';
+import { WalletComponent } from './components/CustomerComponents/wallet/wallet.component';
+import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
+import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/rooms.component';
 
 
 @NgModule({
@@ -102,8 +103,7 @@ import { MainComponent } from './components/HomeComponent/main/main.component';
     FeedbackFormComponent,
     AboutComponent,
     FacilitiesComponent,
-    ReceptionistNavbarComponent
-    ,
+    ReceptionistNavbarComponent,
 
     HomeComponent,
     ReceptionistFooterComponent,
@@ -126,40 +126,40 @@ import { MainComponent } from './components/HomeComponent/main/main.component';
     ReceptionDashboardComponent,
     HomenavbarComponent,
 
-    // WalletComponent,
-    // AddMoneyToWalletComponent,
 
-    // CustomerDashboard,
-    // CustomerFooterComponent,
-    // CustomerNavbarComponent,
-    // CustomerRoomsComponent,
-    // // BlogsComponent,
-    // // ElementsComponent,
-  
-    // CustomerAboutComponent,
+    CustomerDashboardComponent,
+    CustomerFooterComponent,
+    CustomerNavbarComponent,
+    CustomerRoomsComponent,
+    CustomerBlogsComponent,
+    // ElementsComponent,
+    CustomerAboutComponent,
+    EditCustomerComponent,
+    UpdatePasswordComponent,
+    EditBookingComponent,
+    PickAndDropComponent,
+    CustomerloginComponent,
+    ViewBookingHistoryComponent,
+    CustomerSignupComponent,
+    CustomerBookingFormComponent,
+    CancelBookingComponent,
+    CancelPickupanddropComponent,
+    UpdatePickupanddropComponent,
+    CustomerBillingComponent,
+    ContactUsComponent,
+    TermAndConditionComponent,
+    ConfirmBookingComponent,
+    WalletComponent,
+    AddMoneyToWalletComponent
 
-    // EditCustomerComponent,
-    // UpdatePasswordComponent,
-    // EditBookingComponent,
-    // PickAndDropComponent,
-    // CustomerloginComponent,
-    // ViewBookingHistoryComponent,
-    // CustomerSignupComponent,
-    // CustomerBookingFormComponent,
-    // CancelBookingComponent,
-    // CancelPickupanddropComponent,
-    // UpdatePickupanddropComponent,
-    // BillingComponent,
-    // ContactUsComponent,
-    // TermAndConditionComponent,
-    // ConfirmBookingComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    // BrowserAnimationsModule,
+    BrowserAnimationsModule,
     FormsModule
   ],
   providers: [],
