@@ -80,10 +80,14 @@ import { ReceptionistFooterComponent } from './components/ReceptionistComponents
 import { ReceptionistAboutComponent } from './components/ReceptionistComponents/about/about.component';
 import { NavbarComponentReceptionist } from './components/ReceptionistComponents/navbar/navbar.component';
 import { FooterComponent } from './components/AdminComponents/footer/footer.component';
+import { HomenavbarComponent } from './components/HomeComponent/homenavbar/homenavbar.component';
+import { MainComponent } from './components/HomeComponent/main/main.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainComponent,
     FooterComponent,
     NavbarComponent,
     AddreceptionistComponent,
@@ -120,6 +124,7 @@ import { FooterComponent } from './components/AdminComponents/footer/footer.comp
     ReceptionistProfileUpdateComponent,
     ReceptionistForgetpasswordComponent,
     ReceptionDashboardComponent,
+    HomenavbarComponent,
 
     // WalletComponent,
     // AddMoneyToWalletComponent,

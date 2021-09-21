@@ -24,6 +24,7 @@ import { ViewallreceptionistComponent } from './components/AdminComponents/viewa
 import { ViewoffersComponent } from './components/AdminComponents/viewoffers/viewoffers.component';
 import { ViewrecbyIdComponent } from './components/AdminComponents/viewrecby-id/viewrecby-id.component';
 import { ViewroomsComponent } from './components/AdminComponents/viewrooms/viewrooms.component';
+import { MainComponent } from './components/HomeComponent/main/main.component';
 // import { CustomerAboutComponent } from './components/CustomerComponents/about/about.component';
 // import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
 // import { BillingComponent } from './components/CustomerComponents/billing/billing.component';
@@ -59,7 +60,8 @@ import { ReceptionistProfileComponent } from './components/ReceptionistComponent
 import { UnBookedListComponent } from './components/ReceptionistComponents/un-booked-list/un-booked-list.component';
 
 const routes: Routes = [
-  {path:'',component:AdminLoginComponent},
+  {path:'',component:MainComponent},
+  {path:'AdminLogin',component:AdminLoginComponent},
   {path:'admindashboard',component:AdmindashboardComponent},
   { path: 'adminFunc', component:AdminfunctionsComponent },
   { path: 'addRoom', component:AddroomComponent },
