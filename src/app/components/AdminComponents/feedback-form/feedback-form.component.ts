@@ -21,9 +21,9 @@ export class FeedbackFormComponent implements OnInit {
      
       username :['',Validators.required],
       phoneNumber :['',[Validators.required,Validators.minLength(10)]],
-      rating :['',[Validators.required,Validators.minLength(1)]],
-      customerName :['',[Validators.required,Validators.minLength(1)]],
-      suggestion :['',[Validators.required,Validators.minLength(1)]],
+      rating :['',[Validators.required,Validators.max(5),Validators.min(1)]],
+      customerName :['',[Validators.required]],
+      suggestion :['',[Validators.required]],
       
     })
 

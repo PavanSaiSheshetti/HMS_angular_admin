@@ -24,26 +24,28 @@ import { ViewallreceptionistComponent } from './components/AdminComponents/viewa
 import { ViewoffersComponent } from './components/AdminComponents/viewoffers/viewoffers.component';
 import { ViewrecbyIdComponent } from './components/AdminComponents/viewrecby-id/viewrecby-id.component';
 import { ViewroomsComponent } from './components/AdminComponents/viewrooms/viewrooms.component';
-import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
-import { BillingComponent } from './components/CustomerComponents/billing/billing.component';
-import { BlogsComponent } from './components/CustomerComponents/blogs/blogs.component';
-import { CancelBookingComponent } from './components/CustomerComponents/cancel-booking/cancel-booking.component';
-import { CancelPickupanddropComponent } from './components/CustomerComponents/cancel-pickupanddrop/cancel-pickupanddrop.component';
-import { ConfirmBookingComponent } from './components/CustomerComponents/confirm-booking/confirm-booking.component';
-import { ContactUsComponent } from './components/CustomerComponents/contact-us/contact-us.component';
-import { CustomerBookingFormComponent } from './components/CustomerComponents/customer-booking-form/customer-booking-form.component';
-import { CustomerSignupComponent } from './components/CustomerComponents/customer-signup/customer-signup.component';
-import { CustomerloginComponent } from './components/CustomerComponents/customerlogin/customerlogin.component';
-import { EditBookingComponent } from './components/CustomerComponents/edit-booking/edit-booking.component';
-import { EditCustomerComponent } from './components/CustomerComponents/edit-customer/edit-customer.component';
-import { NavbarComponent } from './components/CustomerComponents/navbar/navbar.component';
-import { PickAndDropComponent } from './components/CustomerComponents/pick-and-drop/pick-and-drop.component';
-import { RoomsComponent } from './components/CustomerComponents/rooms/rooms.component';
-import { TermAndConditionComponent } from './components/CustomerComponents/term-and-condition/term-and-condition.component';
-import { UpdatePasswordComponent } from './components/CustomerComponents/update-password/update-password.component';
-import { UpdatePickupanddropComponent } from './components/CustomerComponents/update-pickupanddrop/update-pickupanddrop.component';
-import { ViewBookingHistoryComponent } from './components/CustomerComponents/view-booking-history/view-booking-history.component';
-import { WalletComponent } from './components/CustomerComponents/wallet/wallet.component';
+// import { CustomerAboutComponent } from './components/CustomerComponents/about/about.component';
+// import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
+// import { BillingComponent } from './components/CustomerComponents/billing/billing.component';
+// import { BlogsComponent } from './components/CustomerComponents/blogs/blogs.component';
+// import { CancelBookingComponent } from './components/CustomerComponents/cancel-booking/cancel-booking.component';
+// import { CancelPickupanddropComponent } from './components/CustomerComponents/cancel-pickupanddrop/cancel-pickupanddrop.component';
+// import { ConfirmBookingComponent } from './components/CustomerComponents/confirm-booking/confirm-booking.component';
+// import { ContactUsComponent } from './components/CustomerComponents/contact-us/contact-us.component';
+// import { CustomerBookingFormComponent } from './components/CustomerComponents/customer-booking-form/customer-booking-form.component';
+// import { CustomerSignupComponent } from './components/CustomerComponents/customer-signup/customer-signup.component';
+// import { CustomerloginComponent } from './components/CustomerComponents/customerlogin/customerlogin.component';
+// import { EditBookingComponent } from './components/CustomerComponents/edit-booking/edit-booking.component';
+// import { EditCustomerComponent } from './components/CustomerComponents/edit-customer/edit-customer.component';
+// import { CustomerDashboard } from './components/CustomerComponents/home/home.component';
+// import { CustomerNavbarComponent } from './components/CustomerComponents/navbar/navbar.component';
+// import { PickAndDropComponent } from './components/CustomerComponents/pick-and-drop/pick-and-drop.component';
+// import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/rooms.component';
+// import { TermAndConditionComponent } from './components/CustomerComponents/term-and-condition/term-and-condition.component';
+// import { UpdatePasswordComponent } from './components/CustomerComponents/update-password/update-password.component';
+// import { UpdatePickupanddropComponent } from './components/CustomerComponents/update-pickupanddrop/update-pickupanddrop.component';
+// import { ViewBookingHistoryComponent } from './components/CustomerComponents/view-booking-history/view-booking-history.component';
+// import { WalletComponent } from './components/CustomerComponents/wallet/wallet.component';
 import { AllocateRoomsComponent } from './components/ReceptionistComponents/allocate-rooms/allocate-rooms.component';
 import { BookingsHistoryComponent } from './components/ReceptionistComponents/bookings-history/bookings-history.component';
 import { BookingsComponent } from './components/ReceptionistComponents/bookings/bookings.component';
@@ -57,7 +59,7 @@ import { ReceptionistProfileComponent } from './components/ReceptionistComponent
 import { UnBookedListComponent } from './components/ReceptionistComponents/un-booked-list/un-booked-list.component';
 
 const routes: Routes = [
-  // {path:'',component:AdminLoginComponent},
+  {path:'',component:AdminLoginComponent},
   {path:'admindashboard',component:AdmindashboardComponent},
   { path: 'adminFunc', component:AdminfunctionsComponent },
   { path: 'addRoom', component:AddroomComponent },
@@ -89,7 +91,7 @@ const routes: Routes = [
 
 
   {path:"aboutus" , component:AboutComponent},
-  {path:"", component:HomeComponent},
+  // {path:"", component:HomeComponent},
   {path:"bookingsPage", component:BookingsComponent},
   {path:"cancellationPage", component:CancellationComponent},
   {path:"bookingsHistory", component:BookingsHistoryComponent},
@@ -102,45 +104,36 @@ const routes: Routes = [
   {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent},
 
 
-  {path:'wallet',component:WalletComponent},
-  // {  path:'',component:HomeComponent  },
-  {path:'addMoneyToWallet',component:AddMoneyToWalletComponent},
+  // {path:'wallet',component:WalletComponent},
+  // {path:'addMoneyToWallet',component:AddMoneyToWalletComponent},
 
 
 
-   // { path:"",component: HomeComponent },
-  // { path:"customerDashboard", component:HomeComponent},
 
-  // { path:"customerDashboard/:userName", component:HomeComponent},
-  // { path:"about/:userName",component: AboutComponent },
+  // { path:"customerDashboard/:userName", component:CustomerDashboard},
+  // { path:"about/:userName",component: CustomerAboutComponent },
 
-  { path:"contactUs",component: ContactUsComponent },
-  { path:"blogs",component: BlogsComponent },
-  { path:"termAndCondition",component: TermAndConditionComponent },
-  { path:"cancelBooking/:userName",component: CancelBookingComponent },
-  { path:"editBooking/:userName",component: EditBookingComponent },
-  { path:"billing",component: BillingComponent },
-  { path:"customerBooking/:userName",component: CustomerBookingFormComponent },
-  // { path:"customerSignUp",component: CustomerSignupComponent },
-  { path:"customerSignUp/:userName",component: CustomerSignupComponent },
-  { path:"customerLogin/:userName",component: CustomerloginComponent },
+  // { path:"contactUs",component: ContactUsComponent },
+  // { path:"blogs",component: BlogsComponent },
+  // { path:"termAndCondition",component: TermAndConditionComponent },
+  // { path:"cancelBooking/:userName",component: CancelBookingComponent },
+  // { path:"editBooking/:userName",component: EditBookingComponent },
+  // { path:"billing",component: BillingComponent },
+  // { path:"customerBooking/:userName",component: CustomerBookingFormComponent },
+  // { path:"customerSignUp/:userName",component: CustomerSignupComponent },
+  // { path:"customerLogin/:userName",component: CustomerloginComponent },
+  // { path:"editCustomer/:userName",component: EditCustomerComponent },
+  // { path:"updatePickAndDrop/:userName",component: UpdatePickupanddropComponent },
+  // { path:"addPickAndDrop/:userName/:Id",component: PickAndDropComponent },
+  // { path:"cancelPickAndDrop/:userName",component: CancelPickupanddropComponent },
 
-  // { path:"",component: CustomerloginComponent },
+  // { path:"contactUs/:userName",component: ContactUsComponent },
 
-  // { path:"editCustomer",component: EditCustomerComponent },
-  { path:"editCustomer/:userName",component: EditCustomerComponent },
-  { path:"updatePickAndDrop/:userName",component: UpdatePickupanddropComponent },
-  { path:"addPickAndDrop/:userName/:Id",component: PickAndDropComponent },
-  { path:"cancelPickAndDrop/:userName",component: CancelPickupanddropComponent },
-
-  { path:"contactUs/:userName",component: ContactUsComponent },
-
-  { path:"rooms/:userName",component: RoomsComponent },
-  { path:"navbar/:userName",component: NavbarComponent },
-  // { path:"updatePassword",component: UpdatePasswordComponent },
-  { path:"updatePassword/:userName",component: UpdatePasswordComponent },
-  { path:"viewBookingHistory/:userName",component: ViewBookingHistoryComponent },
-  { path:"confirmBooking/:userName/:Id",component: ConfirmBookingComponent },
+  // { path:"rooms/:userName",component: CustomerRoomsComponent },
+  // { path:"navbar/:userName",component: CustomerNavbarComponent },
+  // { path:"updatePassword/:userName",component: UpdatePasswordComponent },
+  // { path:"viewBookingHistory/:userName",component: ViewBookingHistoryComponent },
+  // { path:"confirmBooking/:userName/:Id",component: ConfirmBookingComponent },
 
 ];
 

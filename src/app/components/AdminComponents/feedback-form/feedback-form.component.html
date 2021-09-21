@@ -14,10 +14,10 @@
                         <label for="exampleInputEmail">Username</label>
                         <input type="text" class="form-control" placeholder=" Enter Username"
                             formControlName="username">
-                        <!-- <div class="alert alert-danger"
+                        <div class="alert alert-danger"
                             *ngIf="feedbackForm.get('username').hasError('required') && feedbackForm.get('username').dirty">
                             Username is required
-                        </div> -->
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputUsername">Your name</label>
@@ -28,10 +28,10 @@
                         <label for="telephone">Mobile No.</label>
                         <input type="tel" class="form-control" placeholder=" Enter 10-digit mobile no."
                             formControlName="phoneNumber">
-                        <!-- <div class="alert alert-danger"
+                        <div class="alert alert-danger"
                             *ngIf="feedbackForm.get('phoneNumber').hasError('minlength') && feedbackForm.get('phoneNumber').dirty">
                             Mobile number must be of 10 digits
-                        </div> -->
+                        </div>
 
 
                     </div>
@@ -42,7 +42,11 @@
                         <label for="rating">Rating</label>
                         <input type="tel" class="form-control" placeholder=" Enter rating out of 5"
                             formControlName="rating" required>
-                            
+                        <div class="alert alert-danger"
+                            *ngIf="feedbackForm.get('rating').hasError('max') || feedbackForm.get('rating').hasError('min') && feedbackForm.get('rating').dirty">
+                            rating must be between 1 to 5
+                        </div>
+
                     </div>
                     <div class="form-group">
                         <label for="description"> Message</label>
