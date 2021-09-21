@@ -38,7 +38,7 @@ export class CustomerNavbarComponent implements OnInit {
   home(){
 
     if(this.userName == "-1"){
-      this.router.navigate(["customerLogin", "-1"]);
+      this.router.navigate([""]);
     }
     else{
       console.log(this.userName)

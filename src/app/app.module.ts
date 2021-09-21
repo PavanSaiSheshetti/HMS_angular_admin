@@ -35,7 +35,6 @@ import { AdminnavbarComponent } from './components/AdminComponents/adminnavbar/a
 import { RoomNavbarComponent } from './components/AdminComponents/roomnavbar/roomnavbar.component';
 import { OfferNavbarComponent } from './components/AdminComponents/offernavbar/offernavbar.component';
 import { HomeComponent } from './components/ReceptionistComponents/home/home.component';
-import { RoomsComponent } from './components/ReceptionistComponents/rooms/rooms.component';
 import { BlogsComponent } from './components/ReceptionistComponents/blogs/blogs.component';
 import { ElementsComponent } from './components/ReceptionistComponents/elements/elements.component';
 import { ConactComponent } from './components/ReceptionistComponents/conact/conact.component';
@@ -108,7 +107,6 @@ import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/ro
     HomeComponent,
     ReceptionistFooterComponent,
     NavbarComponentReceptionist,
-    RoomsComponent,
     BlogsComponent,
     ElementsComponent,
     ConactComponent,
@@ -132,7 +130,6 @@ import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/ro
     CustomerNavbarComponent,
     CustomerRoomsComponent,
     CustomerBlogsComponent,
-    // ElementsComponent,
     CustomerAboutComponent,
     EditCustomerComponent,
     UpdatePasswordComponent,
@@ -160,7 +157,7 @@ import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/ro
     HttpClientModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

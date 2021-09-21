@@ -90,10 +90,10 @@ const routes: Routes = [
   {path : 'about',component:AboutComponent},
   {path : 'facilities',component:FacilitiesComponent},
 
-
+//Receptionist Routing
 
   {path:"aboutus" , component:AboutComponent},
-  // {path:"", component:HomeComponent},
+  {path:"receptionist-home", component:HomeComponent},
   {path:"bookingsPage", component:BookingsComponent},
   {path:"cancellationPage", component:CancellationComponent},
   {path:"bookingsHistory", component:BookingsHistoryComponent},
@@ -105,11 +105,9 @@ const routes: Routes = [
   {path:'receptionDashboard/:receptionistId', component: ReceptionDashboardComponent},
   {path: 'receptionistforgetPassword', component:ReceptionistForgetpasswordComponent},
 
-  
- // { path:"",component: HomeComponent },
+//Customer Routing
   { path:"customerDashboard/:userName", component:CustomerDashboardComponent},
   { path:"about/:userName",component: CustomerAboutComponent},
-  { path:"contactUs",component: ContactUsComponent },
   { path:"blogs",component: CustomerBlogsComponent },
   { path:"termAndCondition",component: TermAndConditionComponent },
   { path:"cancelBooking/:userName",component: CancelBookingComponent },
@@ -124,8 +122,9 @@ const routes: Routes = [
   { path:"updatePickAndDrop/:userName",component: UpdatePickupanddropComponent },
   { path:"addPickAndDrop/:userName/:Id",component: PickAndDropComponent },
   { path:"cancelPickAndDrop/:userName",component: CancelPickupanddropComponent },
-  // { path:"contactUs/:userName",component: ContactUsComponent },
-  // { path:"rooms/:userName",component: RoomsComponent },
+
+  { path:"contactUs/:userName",component: ContactUsComponent },
+  { path:"rooms/:userName",component: CustomerRoomsComponent },
 
   { path:"navbar/:userName",component: CustomerNavbarComponent },
   { path:"updatePassword/:userName",component: UpdatePasswordComponent },
