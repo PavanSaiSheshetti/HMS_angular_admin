@@ -40,8 +40,11 @@ forgetPassword(){
 
         });
   }
-  
+
   return(){
     this.router.navigate(['receptionistlogin'])
+  }
+  back(){
+    this.router.navigate([''])
   }
 }

@@ -14,7 +14,7 @@ label{
   border:none;
   margin-left: 45%;
   color:white;
-  
+
 }
 
 .navbarbuttons{
@@ -71,4 +71,15 @@ label{
   color:black;
   border: 2px solid black;
   background-color:white;
+}
+
+h1{
+  top: 50px;
+
+}
+input{
+  border: none;
+  outline: none;
+  background: none;
+  border-radius: 25px;
 }

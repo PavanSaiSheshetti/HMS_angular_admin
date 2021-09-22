@@ -22,12 +22,12 @@ export class ReceptionistLoginComponent implements OnInit {
       receptionistPassword:['',[Validators.required]]
     })
   }
-  
+
   receptionistLogin(){
   this.receptionService.receptionistLogin(this.receptionistlogin.get('receptionistId')?.value,this.receptionistlogin.get('receptionistPassword')?.value)
     .subscribe(
       response => {
-       
+
           this.successMessage ="Your login is successful"
           localStorage.setItem("userIdSession",""+this.receptionistlogin.get('receptionistId')?.value);
           console.log("BDKSNKKDLSKDMSL"+localStorage.getItem("userIdSession"))
@@ -49,8 +49,8 @@ export class ReceptionistLoginComponent implements OnInit {
 return(){
   this.router.navigate(['receptionistoperations', this.receptionistId])
 }
-back(){
-  this.router.navigate([''])
+forgetPassword(){
+  this.router.navigate(['receptionistforgetPassword'])
 }
 
 }

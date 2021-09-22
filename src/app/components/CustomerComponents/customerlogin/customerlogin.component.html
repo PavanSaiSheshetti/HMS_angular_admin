@@ -1,4 +1,4 @@
-<app-customer-navbar></app-customer-navbar>
+<app-navbar></app-navbar>
 <div class="bradcam_area breadcam_bg_1">
     <h3 style="color: rgb(240, 236, 11);"><b>Customer Login</b></h3>
 
@@ -42,18 +42,18 @@
                         <div class="btn-text-center">
                             <button type="submit" class="btn btn-primary" [disabled]="!customerLoginForm.valid"
                                 (click)="login()">Log-in</button> &nbsp;
-                            <button class="btn btn-warning btn-lg" (click)="sign_up()">Sign-Up</button> &nbsp;
-                            <button class="btn btn-danger btn-lg" (click)="forgetPassword()">Forget Password</button>&nbsp;
+                            <button class="btn btn-warning" (click)="sign_up()">Sign-Up</button> &nbsp;
+                            <button class="btn btn-danger " (click)="forgetPassword()">Forget Password</button>&nbsp;
                             <br><br>
 
                         </div>
                     </fieldset>
                     <br>
                 </form>
-                <button class="btn btn-dark btn-lg" (click)="back()">Back</button>&nbsp;
+                <!-- <button class="btn btn-dark btn-lg" (click)="back()">Back</button>&nbsp; -->
             </div>
         </div>
     </div>
 </div>
 
-<app-customer-footer></app-customer-footer>
+<app-footer></app-footer>
