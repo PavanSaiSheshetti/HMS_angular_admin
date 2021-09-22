@@ -1,3 +1,4 @@
+<body>
 <header>
     <div class="header-area ">
         <div id="sticky-header" class="main-header-area">
@@ -44,6 +45,8 @@
                             <button class = "navbarbuttons" (click) = "back()">Back 
                               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                               </svg></button>
+                              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                              
                         </div>
                     </div>
                     <div class="col-12">
@@ -59,9 +62,10 @@
     <h3 align="center">Receptionist</h3>
 </div>
 <div class= "body">
+   
 <title>Receptionist Login</title>
+
 <h2 align="center">Enter Login details</h2>
-<hr>
 <br><br>
 <span ><h6  align="center"><b>{{this.errorMessage}}</b></h6></span>
 <div class="container">
@@ -69,10 +73,14 @@
         <table align="center" width=35%>
         <fieldset>
             <div class="form-group">
+                <i class="fa fa-id-card" aria-hidden="true" style="color:brown"></i>
+                &nbsp;&nbsp;
                 <label>UserId</label> 
                 <input type="number" class="form-control" formControlName="receptionistId">
             </div>
             <div class="form-group">
+                <i class="fa fa-key" aria-hidden="true" style="color:brown"></i>
+                &nbsp;&nbsp;
                 <label>Password</label>
                 <input type="password" class="form-control" formControlName="receptionistPassword">
             </div>
@@ -99,4 +107,5 @@
 <br/>
 <br/>
 <br/>
+</body>
 <app-footer></app-footer>

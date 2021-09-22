@@ -18,7 +18,7 @@
     </style>
     <br><br><br>
 <div class="reglist">
-    <form novalidate [formGroup]="addOfferForm" style="margin-left: 650px;width: 420px;" (ngSubmit)="updateOffer()">
+    <form novalidate [formGroup]="addOfferForm" style="margin-left: 550px;width: 420px;" (ngSubmit)="updateOffer()">
   <fieldset>
     <div class="form-group">
         <label>*Offer Id:</label>
@@ -123,8 +123,8 @@
 
     <div class="form-group">
         
-        <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp; This offer will be shown to all customers while   <br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp; adding a room and check this to make sure  <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;your details are correct about offer</label><br>
-            <div class="alert alert-danger"
+        <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp; This offer will be shown to all customers <br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp;while adding a room and check this to make   <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sure your details are correct about offer</label><br>
+        <div class="alert alert-danger"
             *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
               Terms And Conditions is required
             </div>

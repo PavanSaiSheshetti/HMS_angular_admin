@@ -88,8 +88,8 @@
 
           <div class="form-group">
             <label><h4><b style="color:white">Number Of Room :</b></h4></label>
-              <input type="number" class="form-control" formControlName="numberOfRoom" placeholder="Enter number of Room you Need">
-                <div *ngIf="bookingForm.get('numberOfRoom')?.hasError('required') && bookingForm.get('numberOfRoom')?.dirty">
+              <input type="number" class="form-control" formControlName="numberOfRooms" placeholder="Enter number of Room you Need">
+                <div *ngIf="bookingForm.get('numberOfRooms')?.hasError('required') && bookingForm.get('numberOfRooms')?.dirty">
                   <b><font color = "red">Number Of Room is Required</font></b> 
                 </div>
           </div><br>

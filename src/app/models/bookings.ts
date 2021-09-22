@@ -11,8 +11,8 @@ export class Bookings {
     roomNumber?:number;
     breakfast?:number;
     drinks?:number;
-    checkInDate?:Date;
-    checkOutDate?:Date;
+    checkInDate?:string;
+    checkOutDate?:string;
     pickupAndDrop?:string;
     cancellation?:string;
     bookingStatus?:string;

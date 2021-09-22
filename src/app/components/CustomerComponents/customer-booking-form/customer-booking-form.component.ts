@@ -17,6 +17,7 @@ export class CustomerBookingFormComponent implements OnInit {
 
   Id?:any;
   booking:Bookings[]=[];
+  bookings?:Bookings;
   roomType=["Semi Delux","Delux","Luxary","Presedential suite"] 
   userName?:String;
   // public activatedRoute:ActivatedRoute
@@ -33,7 +34,7 @@ export class CustomerBookingFormComponent implements OnInit {
       idProof : ['',Validators.required],
       email : ['',[Validators.required,Validators.email]],
       roomType : ['',Validators.required],
-      numberOfRoom : ['',Validators.required],
+      numberOfRooms : ['',Validators.required],
       numberOfMembers: ['',Validators.required],
       customerMobileno : ['',Validators.required],
       roomSize : ['',Validators.required],
@@ -48,8 +49,8 @@ export class CustomerBookingFormComponent implements OnInit {
 
   sendbookingForm(){
     console.log(this.bookingForm?.value);
-
-
+    this.bookings=this.bookingForm?.value;
+    console.log("Bookings: "+this.bookings);
     this.customerService.bookingForm(this.bookingForm.value).subscribe(
       data => {
         this.Id = data;

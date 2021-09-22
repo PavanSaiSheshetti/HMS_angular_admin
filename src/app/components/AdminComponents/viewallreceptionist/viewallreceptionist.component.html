@@ -5,17 +5,7 @@
 </div>
 <body>
 <style>
-      body{
-       
-        background:url("../../assets/img/receptionist/download.jpg ") ;
-          background-size: cover;
-          background-repeat: no-repeat;
-          display: flex;
-  overflow: visible;
-  width: auto;
-  height: auto;
-  white-space :normal;
-    }
+      
     
     label{
     color:brown;
@@ -25,12 +15,12 @@
 </style>
 
 <div *ngIf="show">
-    <h2 align="center"> Receptionist Details</h2>
-    <button style="margin-left: 1400px" class="btn btn-primary" (click)="searchReceptionistId=true">Search Receptionist</button>
+ <br><br>
+    <button style="margin-left: 550px;width: 320px;" class="btn btn-primary" (click)="searchReceptionistId=true ">Search Receptionist</button>
     
     <div *ngIf="searchReceptionistId==true">
         <form novalidate [formGroup]="receptionistForm">
-            <input type="number" style="margin-left: 1400px" placeholder="Enter Receptionist Id" formControlName="receptionistId" [(ngModel)]="txtValue" (keyup)="searchReceptionist()">
+            <input type="number" style="margin-left: 550px;width: 20px;" placeholder="Enter Receptionist Id" formControlName="receptionistId" [(ngModel)]="txtValue" (keyup)="searchReceptionist()">
             <input [(ngModel)]="receptionistId"  [ngModelOptions]="{standalone: true} " [hidden]="true">
     
         </form>

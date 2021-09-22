@@ -23,8 +23,9 @@ checkInDate?:string;
     this.getCancelBookings();
   }
 
-  cancelBooking(userName:string,customerCheckIn:Date){
-    this.checkInDate = new DatePipe('en-US').transform(customerCheckIn,'yyyy-MM-dd');
+  cancelBooking(userName:string,customerCheckIn:string){
+    let firstDate=new Date(customerCheckIn);
+    this.checkInDate = new DatePipe('en-US').transform(firstDate,'yyyy-MM-dd');
     console.log(this.checkInDate)
    this.receptionService.cancelBooking(userName,this.checkInDate).subscribe(() => {
      this.successMessage = "Booking cancelled successfully";

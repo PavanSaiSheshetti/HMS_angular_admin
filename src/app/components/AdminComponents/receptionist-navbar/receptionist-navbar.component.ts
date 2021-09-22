@@ -24,4 +24,8 @@ export class ReceptionistNavbarComponent implements OnInit {
   add(){
     this.router.navigate(['addrec'])
   }
+  logout(){
+    
+    this.router.navigate(["AdminLogin"])
+  }
 }
