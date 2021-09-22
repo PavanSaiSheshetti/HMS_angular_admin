@@ -60,7 +60,7 @@ export class CustomerNavbarComponent implements OnInit {
     this.router.navigate(["customerLogin", "-1"]);
   }
   edit(){
-    this.router.navigate(["edcustomer-itCustomer", this.userName]);
+    this.router.navigate(["editCustomer", this.userName]);
   }
   about(){
     this.router.navigate(["about", this.userName]);

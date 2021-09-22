@@ -28,7 +28,7 @@
         <fieldset>
             <div class="form-group">
                 <label>*Room Id:</label>
-                <input type="text" class="form-control" formControlName="roomId">
+                <input type="number" class="form-control" formControlName="roomId">
                 <div class="alert alert-danger"
                     *ngIf="addRoomForm.get('roomId').hasError('required') && addRoomForm.get('roomId').dirty">
                     Room Id is required
@@ -41,14 +41,14 @@
             <br>
             <div class="form-group">
                 <label>*Floor Number:</label>
-                <input type="text" class="form-control" formControlName="floorNumber">
+                <input type="number" class="form-control" formControlName="floorNumber">
                 <div class="alert alert-danger"
                     *ngIf="addRoomForm.get('floorNumber').hasError('required') && addRoomForm.get('floorNumber').dirty">
                     Floor Number is required
                 </div>
                 <div class="alert alert-danger"
-                    *ngIf="addRoomForm.get('floorNumber').hasError('min') && addRoomForm.get('floorNumber').dirty">
-                    Floor Number cannot be a negative value.
+                    *ngIf="addRoomForm.get('floorNumber').hasError('min') || addRoomForm.get('floorNumber').hasError('max') && addRoomForm.get('floorNumber').dirty">
+                    Floor Number does not exist(1-20)
                 </div>
             </div>
 
@@ -86,7 +86,6 @@
 
                     <label for="roomType">*Room Type</label><br>
                     <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
-                        <option selected="selected">--Select</option>
                         <option>AC</option>
                         <option>Normal</option>
                         <option>Deluxe</option>
@@ -116,11 +115,11 @@
 
                 <label for="roomView">*Room View</label><br>
                 <select class="form-control form-control-lg"   name="roomView" formControlName="roomView" ngModel required>
-                    <option selected="selected">--Select</option>
+                    <option selected="selected" value="No View">No View</option>
                     <option>Balcony View</option>
                     <option>Garden View</option>
                     <option>Sea shore View</option>
-                    <option>No View</option>
+                   
                    
                 </select>
                 <div class="alert alert-danger"
@@ -139,6 +138,7 @@
     
            <br><br>
            <button  class="btn btn-danger" (click)="return()">Back</button> 
+          &nbsp; &nbsp; &nbsp;<span> <font color=red size = 5px>{{ errorMessage }}</font></span>
        </form>   
 </div>
 

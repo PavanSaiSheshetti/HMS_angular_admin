@@ -11,12 +11,13 @@ import Swal from 'sweetalert2';
 })
 export class AddroomComponent implements OnInit {
   addRoomForm?: FormGroup;
+  errorMessage?:string;
   constructor(public addroomService: AddroomService, public formBuilder: FormBuilder, public router: Router) { }
 
   ngOnInit(): void {
     this.addRoomForm = this.formBuilder.group({
       roomId: ['',[ Validators.required,Validators.min(1)]],
-      floorNumber:['',[Validators.required,Validators.min(1)]],
+      floorNumber:['',[Validators.required,Validators.min(1),Validators.max(18)]],
       roomSize:['',Validators.required],
       roomType:['',Validators.required],
       roomPrice:['', [Validators.required,Validators.min(1000)]],
@@ -33,6 +34,8 @@ export class AddroomComponent implements OnInit {
         console.log(response);
         this.successNotification();
         this.router.navigate(['adminFunc'])
+      },error=>{
+        this.errorMessage="Room Number already exist";
       }
      );
       console.log(this.addRoomForm?.value)

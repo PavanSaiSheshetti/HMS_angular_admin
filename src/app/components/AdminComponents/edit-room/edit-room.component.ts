@@ -14,6 +14,7 @@ export class EditRoomComponent implements OnInit {
   editRoomForm:FormGroup;
   room:Room;
   roomId?:number;
+  editable: boolean = true; 
   constructor(public router:Router,public addRoomService:AddroomService,public activatedRoute:ActivatedRoute,
     public formBuilder:FormBuilder) { }
 

@@ -123,7 +123,7 @@
         <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp; This offer will be shown to all customers <br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp;while adding a room and check this to make   <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sure your details are correct about offer</label><br>
             <div class="alert alert-danger"
             *ngIf="addOfferForm.get('termsAndConditions').hasError('required') && addOfferForm.get('termsAndConditions').dirty">
-              Terms And Conditions is required
+              Please read and select the checkbox above
             </div>
       </div><br><br>
       <div>

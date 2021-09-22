@@ -32,7 +32,7 @@
 
             <div class="form-group">
                 <label>*Floor Number:</label>
-                <input type="text" class="form-control" formControlName="floorNumber">
+                <input type="text" class="form-control" formControlName="floorNumber" [readonly]="true">
                 <div class="alert alert-danger"
                     *ngIf="editRoomForm.get('floorNumber').hasError('required') && editRoomForm.get('floorNumber').dirty">
                     Floor Number is required
@@ -51,18 +51,18 @@
                 <tr>
                     <label>*Room Size :</label>&nbsp;&nbsp;&nbsp;&nbsp;
                     <td>
-                      <input type="radio" formControlName="roomSize" name="roomSize" value="Single">
+                      <input type="radio" formControlName="roomSize" name="roomSize" value="Single" [readonly]="true">
                       <label>Single</label>
                     </td>
                 
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <td>
-                      <input type="radio" formControlName="roomSize" name="roomSize"  value="Double">
+                      <input type="radio" formControlName="roomSize" name="roomSize"  value="Double" [readonly]="true">
                       <label>Double</label>
                     </td>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <td>
-                        <input type="radio" formControlName="roomSize" name="roomSize"  value="Triple">
+                        <input type="radio" formControlName="roomSize" name="roomSize"  value="Triple" [readonly]="true">
                         <label>Triple</label>
                       </td>
                   </tr>
@@ -76,7 +76,7 @@
                 <div class="col-md-13">
 
                     <label for="roomType">*Room Type</label><br><br>
-                    <select class="form-control form-control-lg"   name="roomType" formControlName="roomType" ngModel required>
+                    <select class="form-control form-control-lg"  name="roomType" formControlName="roomType" >
                         <option selected="selected">--Select</option>
                         <option>AC</option>
                         <option>Normal</option>
@@ -105,12 +105,12 @@
             <div class="col-md-13">
 
                 <label for="roomView">*Room View</label><br><br>
-                <select class="form-control form-control-lg"   name="roomView" formControlName="roomView" ngModel required>
-                    <option selected="selected">--Select</option>
+                <select class="form-control form-control-lg" [attr.disabled]="!editable ? '' : null" name="roomView" formControlName="roomView" aria-readonly="true">
+                    <option selected="selected">No View</option>
                     <option>Balcony View</option>
                     <option>Garden View</option>
                     <option>Sea shore View</option>
-                    <option>No View</option>
+                    
                    
                 </select>
                 <div class="alert alert-danger"
