@@ -15,7 +15,7 @@
             &nbsp;&nbsp;
             <label>Admin ID </label>
             <input type="text" class="form-control" formControlName="adminId" id="adminId" required>
-            <div class="alert alert-danger" 
+            <div class="alert alert-danger"
                 *ngIf="adminForm.get('adminId').hasError('required') && adminForm.get('adminId').dirty">
                 Admin Id is Required
             </div>
@@ -26,7 +26,7 @@
             &nbsp;&nbsp;
             <label>Password </label>
             <input type="password" class="form-control" formControlName="adminpassword" required>
-            <div class="alert alert-danger" 
+            <div class="alert alert-danger"
                 *ngIf="adminForm.get('adminpassword').hasError('required') && adminForm.get('adminpassword').dirty">
                 Password is Required
             </div>
