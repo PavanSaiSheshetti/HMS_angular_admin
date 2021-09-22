@@ -57,6 +57,23 @@ httpOptions = {
 );
   }
 
+  getRoomByRoomTypeAndRoomSize(roomSize:any,roomType: any): Observable<Room> {
+    return this.http.get<Room>(`${URL}/getRoom/${roomType}/${roomSize}`)
+    .pipe(
+     retry(0),
+     catchError(this.errorHandler)
+    )
+  }
+
+  insertRoom(roomSize:any,roomType: any): Observable<Room> {
+    return this.http.post<Room>(`${URL}/insertRoom/${roomType}/${roomSize}`,this.httpOptions)
+    .pipe(
+     retry(0),
+     catchError(this.errorHandler)
+    )
+  }
+  //http://localhost:9090/room//getRoom/${roomType}/${roomSize}
+
 //Error Handler
 errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
   let errorMessage = '';

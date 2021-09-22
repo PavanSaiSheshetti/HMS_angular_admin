@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
+import { ReceptionService } from 'src/app/services/reception.service';
 
 @Component({
   selector: 'app-confirm-booking',
@@ -11,14 +13,25 @@ export class ConfirmBookingComponent implements OnInit {
   Id?:any;
   message?:String;
   userName?:String;
+  customerUserName?:string;
+  price?:number;
+  confirmForm?:FormGroup;
   // public activatedRoute:ActivatedRoute
   // this.Id = this.activatedRoute.snapshot.params['id'];
-  constructor(public router : Router, public activatedRoute:ActivatedRoute, public customerService:CustomerService) { }
+  constructor(public router : Router, public activatedRoute:ActivatedRoute, public formBuilder:FormBuilder, public customerService:CustomerService, public receptionService:ReceptionService) { }
   display = false;
   display1 = false;
   ngOnInit(): void {
     this.Id = this.activatedRoute.snapshot.params['Id'];
     this.userName = this.activatedRoute.snapshot.params['userName'];
+    this.customerUserName = this.activatedRoute.snapshot.params['userName'];
+    this.price =+ localStorage.getItem("roomPrice")
+    console.log(this.price);
+    this.confirmForm=this.formBuilder.group({
+     
+      termsAndConditions: ['', [Validators.required]],
+      
+    })
   }
   paymentDone(){
     this.display = true
@@ -57,7 +70,14 @@ export class ConfirmBookingComponent implements OnInit {
   final(){
     this.display1 = true;
     this.message = "your data will save and your Booking Id is:- "+this.Id;
-
+    this.receptionService.updateRoomPrice(this.customerUserName,this.price).subscribe(()=>{
+      this.receptionService.updateBookedStatus(this.customerUserName).subscribe(
+        ()=>{
+          console.log("status updated");
+        }
+      )
+    })
+   
   }
   home(){
     this.router.navigate(["customerDashboard", this.userName]);

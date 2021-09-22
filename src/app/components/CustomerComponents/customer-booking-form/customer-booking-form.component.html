@@ -15,7 +15,7 @@
           <div class="form-group">
           <br>
             <label><h4><b style="color:white">Customer User Name : </b></h4></label>
-              <input type="text" class="form-control" formControlName="customerUserName" readonly placeholder="Enter Customer User Name">
+              <input type="text" class="form-control" formControlName="customerUserName" readonly placeholder="Enter User Name">
                 <div  *ngIf="bookingForm?.get('customerUserName')?.hasError('required') && bookingForm.get('customerUserName')?.dirty">
                   <b><font color = "red">Customer User Name is Required</font></b> 
                 </div>
@@ -24,7 +24,7 @@
           <div class="form-group">
             <br>
               <label><h4><b style="color:white">Customer Name : </b></h4></label>
-               <input type="text" class="form-control" formControlName="customerName" placeholder="Enter Customer User Name">
+               <input type="text" class="form-control" formControlName="customerName" readonly placeholder="Enter Name">
                  <div *ngIf="bookingForm?.get('customerName')?.hasError('required') && bookingForm.get('customerName')?.dirty">
                   <b><font color = "red">Customer Name is Required</font></b> 
                  </div>
@@ -72,17 +72,16 @@
 
             <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Room Type : </b></h4></label>&nbsp;&nbsp;
              
-            <input type="radio" name="roomSize" id="Semi_Delux" value="Semi_Delux" formControlName="roomType"required />
-              <span style="color:white" > &nbsp;Semi Delux</span> &nbsp;&nbsp;
+            <input type="radio" name="roomType" id="Semi_Delux" value="Normal" formControlName="roomType"  (change) = "getOffers(bookingForm.get('roomType').value)" required/>
+              <span style="color:white" > &nbsp;Normal</span> &nbsp;&nbsp;
             
-              <input type="radio" name="roomSize" id="Delux" value="Delux" formControlName="roomType" required />
-              <span style="color:white" >&nbsp;Delux</span>&nbsp;&nbsp;
+              <input type="radio" name="roomType" id="Delux" value="AC" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" >&nbsp;AC</span>&nbsp;&nbsp;
 
-              <input type="radio" name="roomSize" id="Luxary" value="Luxary" formControlName="roomType" required />
-              <span style="color:white" > &nbsp;Luxary</span>&nbsp;&nbsp;
+              <input type="radio" name="roomType" id="Luxury" value="Luxury" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" > &nbsp;Luxury</span>&nbsp;&nbsp;
               
-              <input type="radio" name="roomSize" id="Presedential_suite" value="Presedential_suite" formControlName="roomType" required />
-              <span style="color:white" >&nbsp;Presedential suite</span>&nbsp;&nbsp;
+  
               
           </div><br>
 
@@ -106,16 +105,28 @@
 
             <label for="roomSize" class="mr-sm-2"><h4><b style="color:white">Room Size : </b></h4></label>&nbsp;&nbsp;
              
-            <input type="radio" name="roomSize" id="Single_Bed" value="Single_Bed" formControlName="roomSize"required />
+            <input type="radio" name="roomSize" id="Single_Bed" value="Single" formControlName="roomSize" (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required />
               <span style="color:white" >&nbsp;Single Bed</span> &nbsp;&nbsp;
             
-              <input type="radio" name="roomSize" id="Double_Bed" value="Double_Bed" formControlName="roomSize" required />
+              <input type="radio" name="roomSize" id="Double_Bed" value="Double" formControlName="roomSize" (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required />
               <span style="color:white" >&nbsp;Double Bed</span>&nbsp;&nbsp;
 
-              <input type="radio" name="roomSize" id="Triple_Bed" value="Triple_Bed" formControlName="roomSize" required  />
-              <span style="color:white" >&nbsp;Triple Bed</span>&nbsp;&nbsp;
+              <input type="radio" name="roomSize" id="Triple_Bed" value="Triple" formControlName="roomSize"  (change) = "getOffersForRoomSize(bookingForm.get('roomSize').value)" required  />
+              <span style="color:white" >&nbsp;Triple Bed</span>&nbsp;&nbsp;  
 
           </div><br>
+
+          <div *ngIf = "showOffer">
+            <table style = "color: white;" class = "table">
+              <tr *ngFor = "let offer of offers">
+                <td>{{offer.discountPercentage}}%</td>
+                <td>{{offer.termsAndConditions}}</td>
+                <td>{{offer.offerId}}</td>
+                <td>{{offer.offerName}}</td>
+                <td>{{offer.offerDetails}}</td>
+              </tr>
+            </table>
+          </div>
 
           <div class="form-group">
             <label for="breakfast" class="mr-sm-2"><h4><b style="color:white">Breakfast : </b> </h4></label>&nbsp;&nbsp;

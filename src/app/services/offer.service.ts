@@ -73,6 +73,14 @@ export class OfferService {
     )
   }
  
+  //getOfferByRoomTypeAndRoomSize/{roomType}/{roomSize}
+  getOfferByRoomTypeAndRoomSize(roomSize:any,roomType: any): Observable<Offer[]> {
+    return this.http.get<Offer[]>(`${offerUrl}/getOfferByRoomTypeAndRoomSize/${roomType}/${roomSize}`)
+    .pipe(
+     retry(1),
+     catchError(this.errorHandler)
+    )
+  }
     errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
       let errorMessage = '';
       if (error.error instanceof ErrorEvent) {

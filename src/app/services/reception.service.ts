@@ -72,6 +72,13 @@ export class ReceptionService {
     )
   }
 
+  updateRoomPrice(customerUserName:string,roomPrice:number):Observable<Bookings>{
+    return this.httpClient.put<Bookings>(`${receptionUrl}/updatePrice/${customerUserName}/${roomPrice}`, this.httpOptions).pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
+    }
+
   updateCheckOutStatus(customerUserName:string):Observable<Bookings>{
     return this.httpClient.put<Bookings>(receptionUrl + "/status/" + `${customerUserName}` + "/OUT", this.httpOptions).pipe(
       retry(0),
