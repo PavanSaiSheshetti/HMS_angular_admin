@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { ReceptionService } from 'src/app/services/reception.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-confirm-booking',
@@ -29,9 +30,9 @@ export class ConfirmBookingComponent implements OnInit {
     this.price =+ localStorage.getItem("roomPrice")
     console.log(this.price);
     this.confirmForm=this.formBuilder.group({
-     
+
       termsAndConditions: ['', [Validators.required]],
-      
+
     })
   }
   paymentDone(){
@@ -40,10 +41,11 @@ export class ConfirmBookingComponent implements OnInit {
 
   cancel(){
     if(this.Id = "-1"){
-      
+
       this.customerService.cancelBooking(this.Id).subscribe(
         data=>{
           console.log("delete successfully!!!", data);
+
           this.router.navigate(["customerDashboard", this.userName]);
         },
         error=>console.log("error got")
@@ -53,7 +55,7 @@ export class ConfirmBookingComponent implements OnInit {
       this.customerService.cancelBooking(this.Id).subscribe(
         data=>{
           console.log("delete successfully!!!", data);
-         
+
         },
         error=>console.log("error got")
       )
@@ -66,20 +68,22 @@ export class ConfirmBookingComponent implements OnInit {
         )
         this.router.navigate(["customerDashboard", this.userName]);
     }
-    
+
   }
   final(){
     this.display1 = true;
     this.message = "your data will save and your Booking Id is:- "+this.Id;
+
     localStorage.setItem("bookingId",""+this.Id)
     this.receptionService.updateRoomPrice(this.customerUserName,this.price).subscribe(()=>{
       this.receptionService.updateBookedStatus(this.customerUserName).subscribe(
         ()=>{
           console.log("status updated");
+          Swal.fire('Success', 'Your Room is booked Successfully!', 'success')
         }
       )
     })
-   
+
   }
   home(){
     this.router.navigate(["customerDashboard", this.userName]);

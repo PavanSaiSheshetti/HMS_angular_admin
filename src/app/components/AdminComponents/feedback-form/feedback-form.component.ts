@@ -21,15 +21,15 @@ export class FeedbackFormComponent implements OnInit {
     // this.feedback=new Feedback();
     this.userName = localStorage.getItem("userName")
     this.feedbackForm=this.formBuilder.group({
-  
-     
-     
+
+
+
       username :[this.userName,Validators.required],
       phoneNumber :['',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]],
       rating :['',[Validators.required,Validators.max(5),Validators.min(1)]],
       customerName :['',[Validators.required]],
       suggestion :['',[Validators.required]],
-      
+
     })
 
   }
@@ -48,11 +48,15 @@ export class FeedbackFormComponent implements OnInit {
       error => {
         this.successNotification();
         console.log(error);
-        
+
       });
   }
   successNotification(){
     Swal.fire('Success', 'Thank You For Your Feedback', 'success')
+    this.router.navigate(['customerDashboard',this.userName])
+  }
+  Back()
+  {
     this.router.navigate(['customerDashboard',this.userName])
   }
 }

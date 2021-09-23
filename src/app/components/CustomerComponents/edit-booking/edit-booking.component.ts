@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bookings } from 'src/app/models/bookings';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-booking',
@@ -11,13 +12,13 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class EditBookingComponent implements OnInit {
 
-  
+
   errMessage : string = "";
   message?:String;
   bookongEditForm !: FormGroup;
   adminId?:number;
-  
-  
+
+
 
   details = false;
   lable = "Edit";
@@ -29,7 +30,7 @@ export class EditBookingComponent implements OnInit {
 // this.Id = this.activatedRoute.snapshot.params['Id'];
   booking?:Bookings;
 
-  constructor(public customerServices: CustomerService ,public activatedRoute: ActivatedRoute,public formBuilder:FormBuilder,public router:Router) { 
+  constructor(public customerServices: CustomerService ,public activatedRoute: ActivatedRoute,public formBuilder:FormBuilder,public router:Router) {
   }
 
   ngOnInit(): void {
@@ -57,7 +58,7 @@ export class EditBookingComponent implements OnInit {
   }
 
   passwordMatch(password:String, confirm_password:String){
-    
+
     if(password===confirm_password){
       return false;
     }
@@ -69,7 +70,7 @@ export class EditBookingComponent implements OnInit {
     this.customerServices.viewBookingById(this.bookongEditForm.value.bookingId).subscribe(
       data=>{
       console.log(data);
-      this.details = true;  
+      this.details = true;
       this.readonly = false;
         this.booking = data;
         //  var dateTime1 = new Date(st).toISOString().replace(/T.+/, ' 00:00:00')
@@ -96,12 +97,12 @@ export class EditBookingComponent implements OnInit {
     document.getElementById("display8").style.display = "block";
     document.getElementById("display9").style.display = "block";
     document.getElementById("display10").style.display = "block";
-        
+
       },
       error => console.log(error)
-    
+
     )
-    
+
   }
   readOnly(){
     this.readonly = true;
@@ -116,10 +117,10 @@ export class EditBookingComponent implements OnInit {
     document.getElementById("display9").style.display = "none";
     document.getElementById("display10").style.display = "none";
   }
-  
+
 
   getProfile(){
-    
+
     this.bookongEditForm= this.formBuilder.group({
       customerUserName : [this.userName,Validators.required],
       bookingId : ['',Validators.required],
@@ -134,7 +135,7 @@ export class EditBookingComponent implements OnInit {
       checkOutDate : ['',Validators.required],
       pickUpAndDrop : ['',Validators.required]
     })
-    
+
   }
 
   updateBooking(){
@@ -145,6 +146,7 @@ export class EditBookingComponent implements OnInit {
             console.log(response);
             console.log("#######Updated successfully and navigating");
             this.SuccessMsg = "Details Update Successfully.....";
+            Swal.fire('Success', '"Details Updated Successfully!', 'success')
             // this.router.navigate(['patientDashBoard'])
           },
           error => {
