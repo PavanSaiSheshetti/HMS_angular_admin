@@ -40,8 +40,8 @@
                         <br>
                         <br>
                         <div class="btn-text-center">
-                            <button type="submit" class="btn btn-primary" [disabled]="!customerLoginForm.valid"
-                                (click)="login()">Log-in</button> &nbsp;
+                            <button type="submit" class="btn btn-primary"
+                                (click)="login()" [disabled] ="customerLoginForm.invalid" >Log-in</button> &nbsp;
                             <button class="btn btn-warning" (click)="sign_up()">Sign-Up</button> &nbsp;
                             <button class="btn btn-danger " (click)="forgetPassword()">Forget Password</button>&nbsp;
                             <br><br>

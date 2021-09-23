@@ -30,8 +30,6 @@ export class UpdateOfferComponent implements OnInit {
       .subscribe(data=>{
         console.log(data)
         this.offer=data
-        
-
       this.addOfferForm=this.formBuilder.group({
       offerId: [this.offer.offerId, [Validators.required]],
       roomType: [this.offer.roomType, [Validators.required]],

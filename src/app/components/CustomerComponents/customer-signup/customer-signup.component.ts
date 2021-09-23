@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
 import { WalletService } from 'src/app/services/wallet.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customer-signup',
@@ -54,6 +55,8 @@ export class CustomerSignupComponent implements OnInit {
           console.log(response);
           console.log(this.customerSignUpForm.value);
           console.log("SignUp Successfull");
+          this.successNotification();
+          this.login();
           this.customerSignUpForm.reset
         },
         error => {
@@ -71,7 +74,9 @@ export class CustomerSignupComponent implements OnInit {
 
         this.customerSignUpForm.reset
   }
-
+  successNotification(){
+    Swal.fire('Success', ' Signup Success!', 'success')
+  }
   passwordMatch(password:String, confirm_password:String) {
     if(password===confirm_password){
       return false;

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-password',
@@ -62,8 +63,9 @@ userName?:String;
           response => {
             console.log(response);
             this.message = "Your passowrd saved sucessfully"
+            this.successNotification();
             console.log("#######Updated successfully and navigating");
-            // this.router.navigate(['patientDashBoard'])
+            this.router.navigate(["customerLogin", this.userName]);
           },
           error => {
             console.log(error);
@@ -79,4 +81,9 @@ userName?:String;
     this.router.navigate(["editCustomer", this.userName])
   }
  }
+
+ successNotification(){
+  Swal.fire('Success', ' Password updated Successfully!', 'success')
 }
+}
+

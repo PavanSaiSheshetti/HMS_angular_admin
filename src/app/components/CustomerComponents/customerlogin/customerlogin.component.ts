@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-customerlogin',
@@ -31,6 +32,7 @@ customerLoginForm! : FormGroup;
       console.log("Login Successfully!!")
       this.router.navigate(["customerDashboard", this.customerLoginForm.get('customerUserName').value]);
     },error=>{
+      this.wrongLogin();
       this.errorMessage = "You Entered Incorrect Credentials"
       console.log(error, "!!!!!!!!!!!!!!!")
     },
@@ -53,5 +55,7 @@ customerLoginForm! : FormGroup;
   forgetPassword(){
     this.router.navigate(["updatePassword", "-1"]);
   }
-
-}
+  wrongLogin(){
+    Swal.fire('Wrong!', 'Your Login details are not matched!', 'error')
+  }
+ }

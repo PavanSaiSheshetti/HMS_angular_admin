@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ReceptionService } from 'src/app/services/reception.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-receptionist-login',
@@ -40,12 +41,15 @@ export class ReceptionistLoginComponent implements OnInit {
 
               },
       error => {
-        this.errorMessage="Your Login details are not matched!"
+       // this.errorMessage="Your Login details are not matched!"
+        this.wrongLogin();
         console.log(this.receptionistlogin.get('receptionistId')?.value +" check your details");
         console.log(error)
       });
 }
-
+wrongLogin(){
+  Swal.fire('Wrong!', 'Your Login details are not matched!', 'error')
+}
 return(){
   this.router.navigate(['receptionistoperations', this.receptionistId])
 }
