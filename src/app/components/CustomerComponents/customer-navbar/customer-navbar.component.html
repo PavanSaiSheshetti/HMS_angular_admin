@@ -7,27 +7,18 @@
                         <div class="main-menu  d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                            <li><a (click) = "home()" >Home</a></li>
-                                    <li> <a  (click) = "rooms()" >rooms</a></li>
-                                    <li><a>About <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li  (click) = "about()"><a >About Us </a></li>
-                                            <li><a (click) = "contact()">Contact Us</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a >blog <i class="ti-angle-down"></i></a>
-                                        <ul class="submenu">
-                                            <li><a >blog</a></li>
-                                            <li><a >single-blog</a></li>
-                                        </ul>
-                                    </li>
+                                <li><a (click) = "home()" >Home</a></li>
+                                <li><a  (click) = "rooms()" >Rooms</a></li>
+                                <li><a (click) = "contact()">Contact Us</a></li>
+                                <li (click) = "about()"><a >About Us </a></li>
+                                   <!--  <li><a>About <i class="ti-angle-down"></i></a>
+
                                     <!-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="elements.html">elements</a></li>
                                         </ul>
                                     </li> -->
-                                    <li><a *ngIf = "display" (click) = "edit()">Profile</a></li>
-                                    <li><a *ngIf = "display" (click) = "logout()">Log Out</a></li>
+
                                 </ul>
                             </nav>
                         </div>
@@ -42,43 +33,29 @@
                     </div>
                     <div class="col-xl-5 col-lg-4 d-none d-lg-block">
                         <div class="book_room">
-                            <div class="socail_links">
+
+                            <div class="main-menu  d-none d-lg-block">
                                 <ul>
-                                    <li>
-                                        <a >
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a >
-                                            <i class="fa fa-twitter"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a >
-                                            <i class="fa fa-instagram"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a >
-                                            <i class="fa-solid fa-wallet"></i>
-                                        </a>
-                                    </li>
+                                  <li><a *ngIf = "display" (click) = "edit()">Profile</a></li>
+                                    <li><a *ngIf = "display" (click) = "logout()">Log Out</a></li>
+
+                                    
+
                                 </ul>
                             </div>
-                            <div class="book_btn d-none d-lg-block">
+                           <!--  <div class="book_btn d-none d-lg-block">
                                 <a class="popup-with-form" href="#test-form" style="border-radius: 15%;">Check
                                     Availability</a>
-                            </div>
+                            </div> -->
                             <div class="book_btn d-none d-lg-block" *ngIf = "display">
                                 <button style="background-color: rgba(0, 0, 0, 0); border: none;" (click)="billing()">
                                     <i class="fa fa-google-wallet fa-3x" style="color: white;"></i>
                                 </button>
-                                
+
                             </div>
 
-                            
-                           
+
+
                         </div>
                     </div>
                     <div class="col-12">
@@ -90,4 +67,3 @@
         </div>
         </div>
     </header>
-   

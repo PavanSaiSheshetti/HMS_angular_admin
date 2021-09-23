@@ -65,7 +65,7 @@ const routes: Routes = [
   {path:'admindashboard',component:AdmindashboardComponent},
   { path: 'adminFunc', component:AdminfunctionsComponent },
   { path: 'addRoom', component:AddroomComponent },
-  
+
   { path: 'editRoom/:roomId', component:EditRoomComponent },
   { path: 'viewrooms', component:ViewroomsComponent },
   { path: 'searchroom', component:SearchroomComponent },
@@ -118,7 +118,7 @@ const routes: Routes = [
   { path:"customerSignUp/:userName",component: CustomerSignupComponent },
   { path:"customerLogin/:userName",component: CustomerloginComponent },
 
-
+  { path:"customerLogin",component: CustomerloginComponent },
   { path:"editCustomer/:userName",component: EditCustomerComponent },
   { path:"updatePickAndDrop/:userName",component: UpdatePickupanddropComponent },
   { path:"addPickAndDrop/:userName/:Id",component: PickAndDropComponent },
@@ -134,7 +134,7 @@ const routes: Routes = [
   { path:"addMoneyToWallet/:userName",component: AddMoneyToWalletComponent },
   { path:"wallet/:userName",component: WalletComponent },
 
-  
+
 ];
 
 @NgModule({

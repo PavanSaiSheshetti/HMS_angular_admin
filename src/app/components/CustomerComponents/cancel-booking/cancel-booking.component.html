@@ -1,11 +1,11 @@
 <app-customer-navbar></app-customer-navbar>
 <div class="bradcam_area breadcam_bg_1">
-    <h3 style="color: rgb(240, 236, 11);"><b>Cancel Booking</b></h3>
+    <h3 ><b style="color: rgb(240, 236, 11);">Cancel Booking</b></h3>
 
     <div class="main" align="center">
         <br>
         <div class="container">
-            <form novalidate [formGroup]="cancelBooking" #user="ngForm" (ngSubmit)="sendCancelBooking(user.value)">
+            <form novalidate [formGroup]="cancelBooking" #user="ngForm"  style="margin-left: 50px;width: 420px;" (ngSubmit)="sendCancelBooking(user.value)">
                 <fieldset>
                     <div class="form-group"><br>
                         <label>

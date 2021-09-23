@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PickupAndDrop } from 'src/app/models/pickup-and-drop';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-update-pickupanddrop',
@@ -34,11 +35,11 @@ export class UpdatePickupanddropComponent implements OnInit {
       typeOfTransport:['',Validators.required] ,
       time:['',Validators.required] ,
       numberOfPassenger:['',Validators.required],
-      location: ['', Validators.required],   
+      location: ['', Validators.required],
 
        });
 
-       
+
   }
 
   onSubmit(){
@@ -51,13 +52,14 @@ export class UpdatePickupanddropComponent implements OnInit {
             console.log(response);
             // this.router.navigate([''])
             this.successMessage = "Pickup And Drop added successfully"
+            Swal.fire('Success', ' Pickup And Drop added Successfully!', 'success')
             console.log("#######Pickup And Drop Uploaded successfully ");
           },
           error => {
             this.errorMessage = "Admit Form Cancel"
             console.log("ERROR in save : " + error);
           });
-  
+
     }
   get f(){
     return this.PickDropForm.controls;
@@ -82,10 +84,10 @@ export class UpdatePickupanddropComponent implements OnInit {
         typeOfTransport:[this.pickupAndDrop.typeOfTransport,Validators.required],
         time:[this.pickupAndDrop.time,Validators.required] ,
         numberOfPassenger:[this.pickupAndDrop.numberOfPassenger,Validators.required],
-        location: [this.pickupAndDrop.location, Validators.required],   
+        location: [this.pickupAndDrop.location, Validators.required],
        });
        this.PickDropForm.reset
-    
+
   },
   error => console.log(error)
     )

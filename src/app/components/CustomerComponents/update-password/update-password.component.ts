@@ -26,9 +26,9 @@ userName?:String;
 
 
     this.userName = this.activatedRoute.snapshot.params['userName'];
-   
+
     if(this.userName =="-1")
-    {    
+    {
       this.customerForgetPasswordForm = this.formBuilder.group({
       customerUserName : ['',Validators.required],
       phoneNumber : ['',Validators.required],
@@ -46,11 +46,11 @@ userName?:String;
 
     }
 
- 
+
   }
 
   passwordMatch(password:String, confirm_password:String){
-    
+
     if(password===confirm_password){
       return false;
     }
@@ -63,6 +63,7 @@ userName?:String;
           response => {
             console.log(response);
             this.message = "Your passowrd saved sucessfully"
+            Swal.fire('Success', ' Your passowrd updated Successfully!', 'success')
             this.successNotification();
             console.log("#######Updated successfully and navigating");
             this.router.navigate(["customerLogin", this.userName]);

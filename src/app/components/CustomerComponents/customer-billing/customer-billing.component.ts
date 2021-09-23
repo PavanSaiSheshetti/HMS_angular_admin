@@ -12,21 +12,13 @@ import html2canvas from 'html2canvas';
 })
 export class CustomerBillingComponent implements OnInit {
 
-  paymentForm : FormGroup; 
+  paymentForm : FormGroup;
   errorMessage?: string;
   successMessage?: string;
   Id?:number;
   userName?:String;
- 
-  // bills : Bill[]
-  // <p>Bill No </p>
-  // <p>User Name</p>
-  // <p>Room Bill</p>
-  // <p>BreakfastBill</p>
-  // <p>Drinks Bill</p>
-  // <p>Food Bill </p>
-  // <p>Pickup And Drop Bill </p>
-  // <p>Total Bill</p>
+
+  
   @ViewChild('htmlData') htmlData:ElementRef;
   USERS = [
     {
@@ -41,7 +33,7 @@ export class CustomerBillingComponent implements OnInit {
 
 
     }
-    
+
   ];
   constructor(public customerService: CustomerService, public router: Router,public activatedRoute:ActivatedRoute) { }
 
@@ -51,11 +43,7 @@ export class CustomerBillingComponent implements OnInit {
   }
 
   viewBillHistory(){
-    // this.customerService.viewBill(this.Id).subscribe((data: any[])=>{
-    //   console.log("###Biils recieved from spring :")
-    //   console.log(data);
-    //   // this.bills = data;
-  //   },err => this.errorMessage = err) 
+
   }
   Back(){
 
@@ -63,25 +51,25 @@ export class CustomerBillingComponent implements OnInit {
 
   }
   PaymentDone(){
-    
+
   }
 
 
 
 public openPDF():void {
   let DATA = document.getElementById('htmlData');
-    
+
   html2canvas(DATA).then(canvas => {
-      
+
       let fileWidth = 208;
       let fileHeight = canvas.height * fileWidth / canvas.width;
-      
+
       const FILEURI = canvas.toDataURL('image/png')
       var PDF = new jsPDF('p','mm','a4');
       let position = 0;
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
 
       PDF.save('Invoice.pdf');
-  });     
+  });
 }
 }

@@ -17,7 +17,7 @@
                                 <label style="font-weight: bold; font-size: 20px; color: black;">Username </label>
                                 <input type="text" name="customerUserName" id="customerUserName" placeholder="Enter Customer Username" formControlName="customerUserName" style="color:black;"
                                     class="form-control border border-primary" />
-                                <div *ngIf="customerLoginForm.get('customerUserName')?.hasError('required') && customerLoginForm.get('customerUserName')?.dirty">
+                                <div *ngIf="customerLoginForm.get('customerUserName').hasError('required') && customerLoginForm.get('customerUserName').dirty">
                                     <b> <font color = "red">Customer Username is Required</font></b>
                                </div>
                             </div>
@@ -30,7 +30,7 @@
                                 <input type="password" name="password" id="password" formControlName="password"
 
                                     style="color:black;"  placeholder="Enter Password" class="form-control border border-primary" />
-                                <div *ngIf="customerLoginForm.get('password')?.hasError('required') && customerLoginForm.get('password')?.dirty">
+                                <div *ngIf="customerLoginForm.get('password').hasError('required') && customerLoginForm.get('password').dirty">
                                     <b> <font color = "red">Password is Required</font></b>
                                 </div>
 
@@ -40,10 +40,10 @@
                         <br>
                         <br>
                         <div class="btn-text-center">
-                            <button type="submit" class="btn btn-primary"
+                            <button type="submit" class="btn btn-primary btn-lg"
                                 (click)="login()" [disabled] ="customerLoginForm.invalid" >Log-in</button> &nbsp;
-                            <button class="btn btn-warning" (click)="sign_up()">Sign-Up</button> &nbsp;
-                            <button class="btn btn-danger " (click)="forgetPassword()">Forget Password</button>&nbsp;
+                            <button class="btn btn-warning btn-lg" (click)="sign_up()">Sign-Up</button> &nbsp;
+                            <button class="btn btn-danger btn-lg " (click)="forgetPassword()">Forget Password</button>&nbsp;
                             <br><br>
 
                         </div>

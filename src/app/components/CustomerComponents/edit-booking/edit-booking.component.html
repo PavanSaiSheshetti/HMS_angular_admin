@@ -3,9 +3,9 @@
   <h3>Edit Booking</h3>
 
   <div class="container">
-    <form novalidate [formGroup]="bookongEditForm" (ngSubmit)="updateBooking()">
+    <form novalidate [formGroup]="bookongEditForm"  style="margin-left: 350px;width: 420px;" (ngSubmit)="updateBooking()">
       <fieldset>
-        <div class="form-group"><br>
+        <div class="form-group">
           <label>
             <h4><b style="color:white">Customer User Name</b></h4>
           </label>
@@ -13,11 +13,11 @@
             placeholder="Enter Customer Name">
           <div class="alert alert-danger" *ngIf="bookongEditForm?.get('customerUserName')?.hasError('required') &&
                            bookongEditForm.get('customerUserName')?.dirty">
-            customer name is Required
+            Customer name is Required
           </div>
         </div>
-        <div class="form-group"><br>
-          <br>
+        <div class="form-group">
+
           <label>
             <h4><b style="color:white">Room Id</b></h4>
           </label>
@@ -25,33 +25,31 @@
             placeholder="Enter Room Id">
           <div class="alert alert-danger" *ngIf="bookongEditForm?.get('bookingId')?.hasError('required') &&
                            bookongEditForm.get('bookingId')?.dirty">
-            customer name is Required
+            Customer name is Required
           </div>
         </div>
         <div class="form-group display" id = "display1">
-          <br>
+
           <label for="roomType" class="mr-sm-2">
             <h4><b style="color:white">Id Proof : </b></h4>
           </label>
-          <p style="color:white">Select Id</p>
+
           <div id="hotelroom">
-            <select class="form-control" formControlName="idProof" id="Roombooking" style="padding-left: 100px;">
+            <select class="form-control" formControlName="idProof" id="Roombooking" style=" width: fit-content; height: 35px">
               <option value="">--select--</option>
               <option>Aadhar Card</option>
               <option>Pan Card</option>
               <option>Voter Id</option>
               <option>Passport</option>
-            </select>
+            </select><br>
           </div>
-          <br>
-          <br>
-          <br>
+
           <input type="text" class="form-control" [readonly]="readonly" formControlName="idProof"
             placeholder="Enter your Id Number">
           <div class="alert alert-danger" *ngIf="bookongEditForm?.get('idProof')?.hasError('required') &&
                            bookongEditForm.get('idProof')?.dirty">
             Id Proof is Required
-            <br>
+
           </div>
         </div>
 
@@ -64,26 +62,25 @@
           <div class="alert alert-danger"
             *ngIf="bookongEditForm.get('email')?.hasError('required') && bookongEditForm.get('email')?.dirty">
             Email is Required
-          </div><br>
+          </div>
           </div>
 
         <div class="form-group display" id = "display9">
           <label for="roomType" class="mr-sm-2">
             <h4><b style="color:white">Room Type : </b></h4>
           </label>
-          <p style="color:white">Select which Room type you want</p>
+
           <div id="hotelroom">
-            <select class="form-control" formControlName="roomType" id="Roombooking" style="padding-left: 100px;">
+            <select class="form-control" formControlName="roomType" id="roomType" style=" width: fit-content; height: fit-content;">
               <option value="">--select--</option>
-              <option value="Semi Delux">Semi Delux</option>
-              <option value="Delux">Delux</option>
-              <option value="Luxary">Luxary</option>
+              <option value="AC">AC</option>
+              <option value="Deluxe">Deluxe</option>
+              <option value="Luxury">Luxury</option>
               <option value="Presedential suite">Presedential suite</option>
             </select>
           </div>
-          <br>
-          <br>
-        </div><br>
+
+        </div>
 
         <div class="form-group display" id = "display8">
           <label>
@@ -94,16 +91,16 @@
           <div class="alert alert-danger"
             *ngIf="bookongEditForm.get('numberOfRoom')?.hasError('required') && bookongEditForm.get('numberOfRoom')?.dirty">
             This section is required
-          </div><br>
+          </div>
           </div>
 
         <div class="form-group display" id = "display7">
           <label>
             <h4><b style="color:white">Room Size :</b></h4>
           </label>
-          <p style="color:white">Select Room Size you want</p>
+          <!-- <p style="color:white">Select Room Size you want</p> -->
           <div id="hotelroom">
-            <select formControlName="roomSize" id="Roombooking">
+            <select class="form-control" formControlName="roomSize" id="roomSize" style=" width: fit-content; height: fit-content;">
               <option value="">--select--</option>
               <option value="Single Bed">Single Bed</option>
               <option value="Double Bed">Double Bed</option>
@@ -114,9 +111,8 @@
             *ngIf="bookongEditForm.get('roomSize')?.hasError('required') && bookongEditForm.get('roomSize')?.dirty">
             roomSize is Required
           </div>
-        </div><br>
-        <br>
-        <br>
+        </div>
+
 
         <div class="form-group display" id = "display6">
 
@@ -148,19 +144,19 @@
 
         <div class="form-group display" id = "display4">
           <label>
-            <h4><b style="color:white">checkInDate Date & Time :</b></h4>
+            <h4><b style="color:white">CheckInDate Date & Time :</b></h4>
           </label>
           <input type="datetime-local" class="form-control" [readonly]="readonly"
             formControlName="checkInDate" required>
-        </div><br>
+        </div>
 
         <div class="form-group display" id = "display3">
           <label>
-            <h4><b style="color:white">checkOutDate Date & Time :</b></h4>
+            <h4><b style="color:white">CheckOutDate Date & Time :</b></h4>
           </label>
           <input type="datetime-local" class="form-control" [readonly]="readonly"
             formControlName="checkOutDate" required>
-          <br>
+
 
           <div class="form-group display" id = "display2">
 
@@ -178,19 +174,19 @@
 
         </div>
 
-        <br>
+
 
       </fieldset>
-      <button type="submit" class="btn btn-success" *ngIf="details" (click)="readOnly()">Save</button>
+      <button type="submit" class="btn btn-success btn-lg" *ngIf="details" (click)="readOnly()">Save</button><br>
     </form>
-    <br>
+<br>
     <div>
-      <button class="btn btn-primary" (click)="show()">Edit</button> &nbsp; &nbsp;
-      <button class="btn btn-danger" (click)="cancleBooking()">Cancel Booking</button> &nbsp; &nbsp;
-      <button class="btn btn-dark" (click)="Back()">Back</button><br>
+      <button class="btn btn-info btn-lg" (click)="show()">Edit</button> &nbsp; &nbsp;
+      <button class="btn btn-danger btn-lg" (click)="cancleBooking()">Cancel</button> &nbsp; &nbsp;
+      <button class="btn btn-dark btn-lg" (click)="Back()">Back</button>
 
     </div>
-    <br>
+
     <font color=red size=5px>{{ errMessage }}</font>
     <font color=green size=5px>{{ SuccessMsg }}</font>
   </div>
