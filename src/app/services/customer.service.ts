@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 
 import { catchError, retry } from 'rxjs/operators';
+import { Bill } from '../models/bill';
 import { Bookings } from '../models/bookings';
 import { Customer } from '../models/customer';
 import { ForgetPassword } from '../models/forget-password';
@@ -129,8 +130,8 @@ export class CustomerService {
       )
   }
   //http://localhost:9090/customer/viewBill/Ketan123
-  viewBill(customerUserName: String): Observable<Customer[]> {
-    return this.httpClient.get<Customer[]>(`${customerURL}/viewBill/${customerUserName}`).pipe(
+  viewBill(customerUserName: String): Observable<Bill[]> {
+    return this.httpClient.get<Bill[]>(`${customerURL}/viewBill/${customerUserName}`).pipe(
       retry(0),
       catchError(this.errorHandler)
     )

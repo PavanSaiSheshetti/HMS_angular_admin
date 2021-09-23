@@ -15,15 +15,15 @@
             <div class="table-responsive" id="htmlData">
               <table border="5" BORDERCOLOR=white align="center" cellpadding="10" cellspacing="10"
                 class="table text-white">
+                {{errorMessage}}
                 <thead class="thead text-dark" style="background-color: lightsteelblue;opacity: .6;right: 12px;">
                   <tr>
                     <th style="text-align: center;">Description</th>
-                    <th style="text-align: center;">Quantity</th>
-                    <th style="text-align: center;">Cost</th>
+                    <th style="text-align: center;">Amount</th>
                   </tr>
                 </thead>
-                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
-                  <td style="font-weight: bolder;">
+                <tr>
+                  <td>
                     <p>Bill No </p>
                     <p>User Name</p>
                     <p>Room Bill</p>
@@ -34,32 +34,18 @@
                     <p>Total Bill</p>
                   </td>
                   <td>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>-100-</p>
-                    <p>-100-</p>
-                    <p>--100</p>
-                    <p>--100</p>
+                    <p>{{billNo}}</p>
+                    <p>{{customerUserName}}</p>
+                    <p>{{roomBill}}</p>
+                    <p>{{breakFastBill}}</p>
+                    <p>{{drinksBill}}</p>
+                    <p>{{foodBill}}</p>
+                    <p>{{pickUpDropBill}}</p>
+                    <p>{{totalBill}}</p>
                   </td>
-                  <td>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                    <p>100</p>
-                  </td>
+                  
                 </tr>
-                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
-                  <td style="opacity: 1; font-weight: 1000;color: gray;">Total Amount</td>
-                  <td></td>
-                  <td style="opacity: 1; font-weight: 1000;color: grey;">100-</td>
-                </tr>
-
+               
                 
               </table> 
               

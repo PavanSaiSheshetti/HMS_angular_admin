@@ -58,6 +58,7 @@ import { ReceptionistLoginComponent } from './components/ReceptionistComponents/
 import { ReceptionistProfileUpdateComponent } from './components/ReceptionistComponents/receptionist-profile-update/receptionist-profile-update.component';
 import { ReceptionistProfileComponent } from './components/ReceptionistComponents/receptionist-profile/receptionist-profile.component';
 import { UnBookedListComponent } from './components/ReceptionistComponents/un-booked-list/un-booked-list.component';
+import { AddBillComponent } from './ReceptionistComponents/add-bill/add-bill.component';
 
 const routes: Routes = [
   {path:'',component:MainComponent},
@@ -93,6 +94,7 @@ const routes: Routes = [
 //Receptionist Routing
 
   {path:"aboutus" , component:AboutComponent},
+  {path:"addBillPage" , component:AddBillComponent},
   {path:"receptionist-home", component:HomeComponent},
   {path:"bookingsPage", component:BookingsComponent},
   {path:"cancellationPage", component:CancellationComponent},
