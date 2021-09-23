@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/models/customer';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-edit-customer',
@@ -11,14 +12,14 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class EditCustomerComponent implements OnInit {
 
-  
+
   errMessage : string = "";
   message?:String;
   name:String = "ketan123";
   customerEditForm: FormGroup;
   adminId?:number;
-  
-  
+
+
 
   details = false;
   lable = "Edit";
@@ -30,7 +31,7 @@ export class EditCustomerComponent implements OnInit {
 // this.Id = this.activatedRoute.snapshot.params['Id'];
 
   customer?:Customer;
-  constructor(public activatedRoute: ActivatedRoute,public formBuilder:FormBuilder,public router:Router, public customerServices: CustomerService) { 
+  constructor(public activatedRoute: ActivatedRoute,public formBuilder:FormBuilder,public router:Router, public customerServices: CustomerService) {
   }
 
   ngOnInit(): void {
@@ -46,11 +47,11 @@ export class EditCustomerComponent implements OnInit {
   saveEmployee(){
     console.log(this.customerEditForm.value)
 
-    
+
   }
 
   passwordMatch(password:String, confirm_password:String){
-    
+
     if(password===confirm_password){
       return false;
     }
@@ -59,13 +60,13 @@ export class EditCustomerComponent implements OnInit {
   }
 
   show(){
-    this.details = true;  
+    this.details = true;
     this.readonly = false;
   }
   readOnly(){
     this.readonly = true;
   }
-  
+
 
   getProfile(){
     // this.adminId = this.activatedRoute.snapshot.params['adminId'];
@@ -75,7 +76,7 @@ export class EditCustomerComponent implements OnInit {
       console.log(this.customer.customerUserName, this.userName)
       this.customerEditForm = this.formBuilder.group({
         customerUserName : [this.customer.customerUserName, Validators.required],
-        customerName : [this.customer.customerName,[Validators.required, Validators.minLength(5)]],     
+        customerName : [this.customer.customerName,[Validators.required, Validators.minLength(5)]],
         email : [this.customer.email,[Validators.required,Validators.email]],
         gender : [this.customer.gender, Validators.required],
         mobileNumber : [this.customer.mobileNumber, Validators.required],
@@ -89,7 +90,7 @@ export class EditCustomerComponent implements OnInit {
       error => console.log(error)
     )
     }
-    
+
   editCustomer(){
     console.log(this.customerEditForm.value)
     this.customerServices.editProfile(this.customerEditForm.value, this.userName)
@@ -97,6 +98,7 @@ export class EditCustomerComponent implements OnInit {
       response => {
         console.log(response);
         this.SuccessMsg = "Details Update Successfully.....";
+        Swal.fire('Success', ' Updated Successfully!', 'success')
         console.log("#######Updated successfully");
             // this.router.navigate(['patientDashBoard'])
             this.customerEditForm.reset

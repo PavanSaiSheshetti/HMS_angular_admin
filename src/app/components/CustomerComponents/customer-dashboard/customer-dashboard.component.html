@@ -1,5 +1,5 @@
 <app-customer-navbar></app-customer-navbar>
-
+<div class="main">
 <div class="slider_area">
     <div class="slider_active owl-carousel">
         <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
@@ -53,43 +53,40 @@
     </div>
 </div>
 <br>
-<br>
-<br>
 <div class="row">
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Book Room</b></h4>
+                <h4 class="card-title" align="center"><b style="color: black">Book Room</b></h4>
                 <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
-                <button type="submit" class="btn btn-info btn-lg mb-2" (click) = "book()">
+                <p class="card-text">If you have never booked a hotel room before, you can do so easily and quickly by clicking on this button
+                </p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "book()">
                     Book Room
                 </button>
             </div>
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Cancel Booking</b></h4>
+                <h4 class="card-title" align="center" ><b style="color: black">Cancel Booking</b></h4>
                 <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
+                <p class="card-text">You can also cancel booking  through cancel button.Cancellation can be done only with valid booking Id</p>
                 <button type="button" class="btn btn-danger btn-lg" (click) = "cancleBooking()">
                     Cancel Booking
                     <!-- <a (click)="admitForm()">Admit</a> -->
                 </button>
+
             </div>
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Update Booking</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">Update Booking</b></h4>
                 <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
+                <p class="card-text">You can update your booking details anytime through update button. Updation  can be done only with valid booking Id</p>
                 <button type="submit" class="btn btn-warning btn-lg" (click) = "updateBooking()">
                     Update Booking
                     <!-- <a (click)="editForm()">Profile</a> -->
@@ -102,13 +99,12 @@
 <br>
 <div class="row">
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white " style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Add Pickup And Drop</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">Add Pickup And Drop</b></h4>
                 <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
-                <button type="submit" class="btn btn-info btn-lg mb-2" (click) = "addPickDrop()">
+                <p class="card-text">Pick up and drop facilities are available at anytime. Chooose your pickup location and enjoy our FREE service</p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "addPickDrop()">
                     Add
                     <!-- <a (click)="appointmentForm()">Book Appointment</a> -->
                 </button>
@@ -116,12 +112,11 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b> Cancel Pickup And Drop</b></h4>
+                <h4 class="card-title" align="center"><b style="color: black"> Cancel Pickup And Drop</b></h4>
                 <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
+                <p class="card-text">You can also cancel Pickup And Drop  through below button. Cancellation can be done only with valid Pickup And Drop Id</p>
                 <button type="button" class="btn btn-danger btn-lg" (click) = "canclePickDrop()">
                     Cancel
                     <!-- <a (click)="admitForm()">Admit</a> -->
@@ -130,12 +125,11 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Update Pickup And Drop</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">Update Pickup And Drop</b></h4>
                 <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
+                <p class="card-text">You can also update Pickup And Drop  through below button. Updation can be done only with valid Pickup And Drop Id</p>
                 <button type="submit" class="btn btn-warning btn-lg" (click) = "updatePickDrop()">
                     Update
                     <!-- <a (click)="editForm()">Profile</a> -->
@@ -147,13 +141,12 @@
 <br><br>
 <div class="row">
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>View Booking History</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">View Booking History</b></h4>
                 <p align="center"><i class="fa fa-calendar-plus-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
-                <button type="submit" class="btn btn-info btn-lg mb-2" (click) = "viewHistory()">
+                <p class="card-text">You can view all booking history with your username. You can view using below button</p>
+                <button type="submit" class="btn btn-primary btn-lg mb-2" (click) = "viewHistory()">
                     History
                     <!-- <a (click)="appointmentForm()">Book Appointment</a> -->
                 </button>
@@ -161,12 +154,11 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>View Bill</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">View Bill</b></h4>
                 <p align="center"><i class="fa fa-plus-square fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">With supporting text below as a natural
-                    lead-in to additional content.</p>
+                <p class="card-text">You can view your Hotel booking bill. You can download and pay your Bill</p>
                 <button type="button" class="btn btn-danger btn-lg" (click) = "billing()">
                     View Bill
                     <!-- <a (click)="admitForm()">Admit</a> -->
@@ -175,11 +167,11 @@
         </div>
     </div>
     <div class="col-sm-4">
-        <div class="card text-white bg-white">
+        <div class="card text-white" style="background-image: url(/assets/background.jpeg);">
             <div class="card-body" align="center">
-                <h4 class="card-title" align="center"><b>Give Feedback</b></h4>
+                <h4 class="card-title" align="center"><b  style="color: black">Give Feedback</b></h4>
                 <p align="center"><i class="fa fa-user-circle-o fa-5x" aria-hidden="true"></i></p>
-                <p class="card-text">Please Help us to make better of ourselves.</p>
+                <p class="card-text">Please Help us to make better of ourselves.We are glad to know FeedBack from you!</p>
                 <a type="submit" class="btn btn-warning btn-lg" href = "form">
                    Give Feedback
                     <!-- <a (click)="editForm()">Profile</a> -->
@@ -190,35 +182,6 @@
 </div>
 <br>
 <br>
-<div class="about_area">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-5 col-lg-5">
-                <div class="about_info">
-                    <div class="section_title mb-20px">
-                        <span>About Us</span>
-                        <h3>A Luxuries Hotel <br>
-                            with Nature</h3>
-                    </div>
-                    <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                        dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                        sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
-                    <a href="#" class="line-button">Learn More</a>
-                </div>
-            </div>
-            <div class="col-xl-7 col-lg-7">
-                <div class="about_thumb d-flex">
-                    <div class="img_1">
-                        <img src="../../assets/img/about/about_1.png" alt="">
-                    </div>
-                    <div class="img_2">
-                        <img src="../../assets/img/about/about_2.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
 <div class="offers_area">
     <div class="container">
@@ -239,11 +202,11 @@
                     <h3>Up to 35% savings on Club <br>
                         rooms and Suites</h3>
                     <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
+                        <li>Luxury Rooms</li>
+                        <!-- <li>3 Adults & 2 Children size</li> -->
                         <li>Sea view side</li>
                     </ul>
-                    <a href="#" class="book_now">book now</a>
+                    <a (click) = "book()" class="book_now">Book Now</a>
                 </div>
             </div>
             <div class="col-xl-4 col-md-4">
@@ -254,11 +217,11 @@
                     <h3>Up to 35% savings on Club <br>
                         rooms and Suites</h3>
                     <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
-                        <li>Sea view side</li>
+                      <li>Balcony Rooms</li>
+                      <!-- <li>3 Adults & 2 Children size</li> -->
+                      <li>Sun set view </li>
                     </ul>
-                    <a href="#" class="book_now">book now</a>
+                    <a (click) = "book()" class="book_now">book now</a>
                 </div>
             </div>
             <div class="col-xl-4 col-md-4">
@@ -269,11 +232,11 @@
                     <h3>Up to 35% savings on Club <br>
                         rooms and Suites</h3>
                     <ul>
-                        <li>Luxaries condition</li>
-                        <li>3 Adults & 2 Children size</li>
-                        <li>Sea view side</li>
+                      <li>Deluxe Rooms</li>
+                      <!-- <li>3 Adults & 2 Children size</li> -->
+                      <li>Hill View</li>
                     </ul>
-                    <a href="#" class="book_now">book now</a>
+                    <a (click) = "book()" class="book_now">book now</a>
                 </div>
             </div>
         </div>
@@ -314,9 +277,7 @@
                         <h3>We Serve Fresh and <br>
                             Delicious Food</h3>
                     </div>
-                    <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                        dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                        sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
+                    <p>Get a taste of locally sourced, farm-to-fabulous cuisine rendered by our endlessly creative chefs. It’s all paired with curated wines and craft cocktails for an experience that’s to dine for.</p>
                     <a href="#" class="line-button">Learn More</a>
                 </div>
             </div>
@@ -324,96 +285,73 @@
     </div>
 </div>
 <!-- about_area_end -->
-
 <!-- features_room_startt -->
 <div class="features_room">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-100">
-                    <span>Featured Rooms</span>
-                    <h3>Choose a Better Room</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="rooms_here">
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="../../assets/img/rooms/1.png" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>From $250/night</span>
-                        <h3>Superior Room</h3>
-                    </div>
-                    <a href="#" class="line-button">book now</a>
-                </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="../../assets/img/rooms/2.png" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>From $250/night</span>
-                        <h3>Deluxe Room</h3>
-                    </div>
-                    <a href="#" class="line-button">book now</a>
-                </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="../../assets/img/rooms/3.png" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>From $250/night</span>
-                        <h3>Signature Room</h3>
-                    </div>
-                    <a href="#" class="line-button">book now</a>
-                </div>
-            </div>
-        </div>
-        <div class="single_rooms">
-            <div class="room_thumb">
-                <img src="../../assets/img/rooms/4.png" alt="">
-                <div class="room_heading d-flex justify-content-between align-items-center">
-                    <div class="room_heading_inner">
-                        <span>From $250/night</span>
-                        <h3>Couple Room</h3>
-                    </div>
-                    <a href="#" class="line-button">book now</a>
-                </div>
-            </div>
-        </div>
-    </div>
+  <div class="container">
+      <div class="row">
+          <div class="col-xl-12">
+              <div class="section_title text-center mb-100">
+                  <span>Featured Rooms</span>
+                  <h3>Choose a Better Room</h3>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="rooms_here">
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/1.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                    <!--   <span>From $250/night</span> -->
+                      <h3>Superior Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/2.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Deluxe Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="../../assets/img/rooms/3.png" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Signature Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+      <div class="single_rooms">
+          <div class="room_thumb">
+              <img src="/assets/room.jpg" alt="">
+              <div class="room_heading d-flex justify-content-between align-items-center">
+                  <div class="room_heading_inner">
+                      <!-- <span>From $250/night</span> -->
+                      <h3>Balcony Room</h3>
+                  </div>
+                  <a href="#" class="line-button">book now</a>
+              </div>
+          </div>
+      </div>
+  </div>
 </div>
 <!-- features_room_end -->
-
+<br/>
 <!-- forQuery_start -->
-<div class="forQuery">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-10 offset-xl-1 col-md-12">
-                <div class="Query_border">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-xl-6 col-md-6">
-                            <div class="Query_text">
-                                <p>For Reservation 0r Query?</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-md-6">
-                            <div class="phone_num">
-                                <a href="#" class="mobile_no">+10 576 377 4789</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- forQuery_end-->
+
 
 <!-- instragram_area_start -->
 <div class="instragram_area">
@@ -459,5 +397,5 @@
     </div>
 </div>
 <!-- instragram_area_end -->
-
+</div>
 <app-customer-footer></app-customer-footer>

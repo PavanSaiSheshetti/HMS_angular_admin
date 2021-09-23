@@ -20,7 +20,7 @@ export class CustomerSignupComponent implements OnInit {
   states = ["haryana", "delhi"];
   cities:String[]= ["a", "b"];
   st:String;
-  
+
   userName?:String;
   // public activatedRoute:ActivatedRoute
   // this.userName = this.activatedRoute.snapshot.params['userName'];
@@ -32,7 +32,7 @@ export class CustomerSignupComponent implements OnInit {
     //Model Driven FormBuilder
     this.customerSignUpForm = this.formBuilder.group({
       customerUserName : ['', [Validators.required]],
-      customerName : ['',[Validators.required]],     
+      customerName : ['',[Validators.required]],
       password : ['',[Validators.required ]],
       confirm_password : ['',[Validators.required]],
       email : ['',[Validators.required,Validators.email]],
@@ -54,7 +54,7 @@ export class CustomerSignupComponent implements OnInit {
         response => {
           console.log(response);
           console.log(this.customerSignUpForm.value);
-          console.log("SignUp Successfull");
+          console.log("SignUp Successful");
           this.successNotification();
           this.login();
           this.customerSignUpForm.reset
@@ -65,7 +65,7 @@ export class CustomerSignupComponent implements OnInit {
         this.walletService.addWallet(this.customerSignUpForm.value.customerUserName, 5000).subscribe(
           response => {
             console.log(response);
-            console.log("wallet genrated Successfull");
+            console.log("Wallet generated Successfully");
           },
           error => {
             console.log(error);
@@ -92,8 +92,8 @@ export class CustomerSignupComponent implements OnInit {
   }
 
   Back() {
-       
-    this.router.navigate(["Home", this.userName]);
+
+    this.router.navigate(["customerLogin", this.userName]);
 
   }
   showCity(st:String)

@@ -28,7 +28,7 @@ export class CustomerBookingFormComponent implements OnInit {
   booking:Bookings[]=[];
   offers?:Offer[] ;
   bookings?:Bookings;
-  roomType=["Semi Delux","Delux","Luxary","Presedential suite"] 
+  roomType=["Semi Delux","Delux","Luxary","Presedential suite"]
   userName?:String;
   customer?:Customer;
   room?:Room;
@@ -40,7 +40,7 @@ export class CustomerBookingFormComponent implements OnInit {
   ngOnInit(): void {
     this.userName = this.activatedRoute.snapshot.params['userName'];
     console.log(this.userName)
-    
+
     this.customerService.getCustomer(this.userName).subscribe((data)=>
     {
       this.customer = data;
@@ -64,7 +64,7 @@ export class CustomerBookingFormComponent implements OnInit {
       })
     })
 
-   
+
     // this.sendbookingForm();
   }
 
@@ -77,12 +77,14 @@ export class CustomerBookingFormComponent implements OnInit {
         this.Id = data;
         console.log(this.Id);
         if(this.bookingForm.value.pickUpAndDrop == "yes"){
+          
           this.router.navigate(["addPickAndDrop", this.userName, this.Id]);
+
         }
         else{
           this.router.navigate(["confirmBooking", this.userName, this.Id]);
         }
-      }, 
+      },
       error => {
         this.errorMessage = "Admit Form Cancel"
         console.log("ERROR in save : " + error);
@@ -106,7 +108,7 @@ export class CustomerBookingFormComponent implements OnInit {
     this.callingOffers(this.size,this.type);
   }
 
-  
+
 
   callingOffers(size:any,type:any){
     if(type != undefined && size != undefined) {
@@ -128,7 +130,7 @@ export class CustomerBookingFormComponent implements OnInit {
               })
             })
           }
-  
+
         )
         console.log(data)
         this.offers = data;
@@ -136,7 +138,7 @@ export class CustomerBookingFormComponent implements OnInit {
       },error=>{
         this.errorMessage = "some error occured"
         console.log(error);
-        
+
         console.log(this.errorMessage);
       }
 
@@ -149,7 +151,7 @@ export class CustomerBookingFormComponent implements OnInit {
     this.router.navigate(["customerDashboard", this.userName]);
   }
   next(){
-    
+
   }
 
 

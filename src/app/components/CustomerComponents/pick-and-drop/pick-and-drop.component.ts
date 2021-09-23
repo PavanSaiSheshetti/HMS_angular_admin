@@ -79,9 +79,11 @@ export class PickAndDropComponent {
                 Swal.fire('Success', 'PickupDrop Added Successfully!', 'success')
                 this.router.navigate(["customerDashboard", this.userName]);
               }
-              else{
-                this.router.navigate(["confirmBooking", this.userName, this.Id]);
-              }
+              
+              
+            },error =>{
+              this.router.navigate(["confirmBooking", this.userName, this.Id]);
+
             } );
             
           },

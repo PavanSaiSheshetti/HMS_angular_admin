@@ -17,22 +17,22 @@
       <form novalidate [formGroup]="confirmForm" style="margin-left: 550px;width: 420px;" (ngSubmit)="final()">
 
       <div class="form-group">
-        
+
         <label for="termsAndConditions"> &nbsp;&nbsp;&nbsp;&nbsp;<br> <span style="color: white;">This action will deduct money from your wallet</span> <br><br><input type="checkbox" formControlName="termsAndConditions" ngModel required> &nbsp;<span style="color: white;">Please select the check box</span></label><br>
             <div class="alert alert-danger"
             *ngIf="confirmForm.get('termsAndConditions').hasError('required') && confirmForm.get('termsAndConditions').dirty">
               Please read and select the checkbox above
             </div>
       </div>
-    <button class="btn btn-primary" type="submit" [disabled] ="confirmForm.invalid">Submit</button><br><br>
+    <button class="btn btn-primary btn-lg" type="submit" [disabled] ="confirmForm.invalid">Submit</button><br><br>
     </form>
 
-    
-    <button class="btn btn-success" *ngIf = "display1"  (click)="home()">Back To the DashBoard</button>
-    
+
+    <button class="btn btn-success btn-lg" *ngIf = "display1"  (click)="home()">Back To the DashBoard</button>
+
 </div>
 <font color = "white">{{message}}</font>
- 
+
 </div>
 <br>
 <br>
