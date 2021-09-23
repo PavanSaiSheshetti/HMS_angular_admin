@@ -24,7 +24,7 @@ export class CancelBookingComponent implements OnInit {
     this.userName = this.activatedRoute.snapshot.params['userName'];
     this.cancelBooking = this.formBuilder.group({
       bookingId : ['', Validators.required],
-      customerUserName : ['', Validators.required],
+      customerUserName : [this.userName, Validators.required],
       reason : ['', Validators.required]
     })
 
@@ -32,8 +32,10 @@ export class CancelBookingComponent implements OnInit {
   sendCancelBooking(data: any){
     console.log(this.cancelBooking?.value);
     console.log(data.bookingId);
+  
+    this.customerService.updateCancellationStatus(this.userName,"True")
 
-    this.customerService.cancelBooking(data.bookingId)
+    // this.customerService.cancelBooking(data.bookingId)
       .subscribe(
         response => {
           console.log(response);
@@ -43,6 +45,9 @@ export class CancelBookingComponent implements OnInit {
         },
         error => {
           console.log(error);
+          Swal.fire('Success', 'Your login is successfull', 'success')
+        this.router.navigate(['customerDashboard', this.userName])
+
         });
   }
 

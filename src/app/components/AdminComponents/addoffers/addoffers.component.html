@@ -63,7 +63,7 @@
         </div>
       <div class="form-group">
         <label>*Offer Name:</label>
-        <input type="text" class="form-control" formControlName="offerName">
+        <input type="text" class="form-control" formControlName="offerName" >
         <div class="alert alert-danger"
             *ngIf="addOfferForm.get('offerName').hasError('required') && addOfferForm.get('offerName').dirty">
             Offer Name is required
