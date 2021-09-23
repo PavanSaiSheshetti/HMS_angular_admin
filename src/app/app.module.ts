@@ -84,6 +84,7 @@ import { ConfirmBookingComponent } from './components/CustomerComponents/confirm
 import { WalletComponent } from './components/CustomerComponents/wallet/wallet.component';
 import { AddMoneyToWalletComponent } from './components/CustomerComponents/add-money-to-wallet/add-money-to-wallet.component';
 import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/rooms.component';
+import { ViewFeedbackComponent } from './ReceptionistComponents/view-feedback/view-feedback.component';
 
 
 @NgModule({
@@ -149,7 +150,8 @@ import { CustomerRoomsComponent } from './components/CustomerComponents/rooms/ro
     TermAndConditionComponent,
     ConfirmBookingComponent,
     WalletComponent,
-    AddMoneyToWalletComponent
+    AddMoneyToWalletComponent,
+    ViewFeedbackComponent
 
 
   ],
