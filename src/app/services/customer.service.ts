@@ -179,5 +179,13 @@ export class CustomerService {
       )
   }
 
+  updatePickupDropStatus(userName: String,status:String): Observable<Bookings> {
+    return this.httpClient.put<Bookings>(`${customerURL}/updatePickupDropStatus/${userName}/${status}`, this.httpOptions)
+      .pipe(
+        retry(0),
+        catchError(this.errorHandler)
+      )
+  }
+
 
 }

@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router , ActivatedRoute} from '@angular/router';
+import { PickupAndDrop } from 'src/app/models/pickup-and-drop';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 //import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
@@ -21,6 +23,7 @@ export class PickAndDropComponent {
   button2 = false
   Id?:any;
   userName?:String;
+  PickupDrop?:String = "Yes";
   // public activatedRoute:ActivatedRoute
   // this.Id = this.activatedRoute.snapshot.params['id'];
   
@@ -68,9 +71,19 @@ export class PickAndDropComponent {
           response => {
             console.log(response);
             // this.router.navigate([''])
-            this.successMessage = "Pickup And Drop added successfully"
-            console.log("#######Pickup And Drop Uploaded successfully ");
-            this.router.navigate(["confirmBooking", this.userName, this.Id]);
+            console.log(this.PickupDrop)
+            this.customerService.updatePickupDropStatus(this.userName,this.PickupDrop).subscribe(()=>{
+              this.successMessage = "Pickup And Drop added successfully"
+              console.log("#######Pickup And Drop Uploaded successfully ");
+              if(this.Id == "-2"){
+                Swal.fire('Success', 'PickupDrop Added Successfully!', 'success')
+                this.router.navigate(["customerDashboard", this.userName]);
+              }
+              else{
+                this.router.navigate(["confirmBooking", this.userName, this.Id]);
+              }
+            } );
+            
           },
           error => {
             this.errorMessage = "Pick Up Form Cancel"

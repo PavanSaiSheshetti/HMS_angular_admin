@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cancel-pickupanddrop',
@@ -31,13 +32,17 @@ export class CancelPickupanddropComponent implements OnInit {
   sendCancelPickupAndDrop(data: any){
     console.log(this.cancelPickupAndDrop?.value);
     console.log(data.pickupAndDropId);
-  
+    
     this.customerService.cancelPickAndDrop(data.pickupAndDropId)
       .subscribe(
         response => {
-          console.log(response);
+          this.customerService.updatePickupDropStatus(this.userName,"No").subscribe(() => {
+            console.log(response);
           // this.successMessage = doctorId +" :   successfully deleted";
-          console.log("#######Deleted successfully ");
+            console.log("#######Deleted successfully ");
+            Swal.fire('Success', 'Cancel Successfully!', 'success')
+          })
+          
         },
         error => {
           console.log(error);

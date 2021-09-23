@@ -16,6 +16,7 @@ export class ConfirmBookingComponent implements OnInit {
   customerUserName?:string;
   price?:number;
   confirmForm?:FormGroup;
+  PickupDrop?:String = "No";
   // public activatedRoute:ActivatedRoute
   // this.Id = this.activatedRoute.snapshot.params['id'];
   constructor(public router : Router, public activatedRoute:ActivatedRoute, public formBuilder:FormBuilder, public customerService:CustomerService, public receptionService:ReceptionService) { }
@@ -70,6 +71,7 @@ export class ConfirmBookingComponent implements OnInit {
   final(){
     this.display1 = true;
     this.message = "your data will save and your Booking Id is:- "+this.Id;
+    localStorage.setItem("bookingId",""+this.Id)
     this.receptionService.updateRoomPrice(this.customerUserName,this.price).subscribe(()=>{
       this.receptionService.updateBookedStatus(this.customerUserName).subscribe(
         ()=>{

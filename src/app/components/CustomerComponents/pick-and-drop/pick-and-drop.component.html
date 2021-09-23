@@ -8,9 +8,9 @@
   <form [formGroup]="PickDropForm" (ngSubmit)="onSubmit()">
     <div class="form-row">
       <div class="form-group col-md-4"></div>
-      <div class="form-group col-md-4" *ngIf = "display">
+      <div class="form-group col-md-4" *ngIf="display">
         <label style="font-weight: bold; font-size: 20px; color: black;">Booking Id</label>
-        <input type="number" style="color:black;" formControlName="pickupDropId"  
+        <input type="number" style="color:black;" formControlName="pickupDropId"
           class="form-control border border-primary" [ngClass]="{ 'is-invalid': submitted && f.pickupDropId.errors }">
         <div *ngIf="submitted && f.pickupDropId.errors" class="invalid-feedback">
           <div *ngIf="f.pickupDropId.errors.required">Pick and Drop Id is required</div>
@@ -18,23 +18,25 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="roomType" class="mr-sm-2"><h4><b style="color:white">Transport : </b></h4></label>&nbsp;&nbsp;
-      <input type="radio" name="roomSize" id="Cab" value="Cab" formControlName="typeOfTransport"required />
-        <span style="color:white" > &nbsp;Cab </span> &nbsp;&nbsp;
-      
-        <input type="radio" name="roomSize" id="Bus" value="Bus" formControlName="typeOfTransport" required />
-        <span style="color:white" >&nbsp;Bus</span>&nbsp;&nbsp;
+      <label for="roomType" class="mr-sm-2">
+        <h4><b style="color:white">Transport : </b></h4>
+      </label>&nbsp;&nbsp;
+      <input type="radio" name="roomSize" id="Cab" value="Cab" formControlName="typeOfTransport" required />
+      <span style="color:white"> &nbsp;Cab </span> &nbsp;&nbsp;
 
-        <input type="radio" name="roomSize" id="Ship" value="Ship" formControlName="typeOfTransport" required />
-        <span style="color:white" > &nbsp;Ship</span>&nbsp;&nbsp;
-        
-        <input type="radio" name="roomSize" id="AirPlane" value="AirPlane" formControlName="typeOfTransport" required />
-        <span style="color:white" >&nbsp;Air-Plane</span>&nbsp;&nbsp;
+      <input type="radio" name="roomSize" id="Bus" value="Bus" formControlName="typeOfTransport" required />
+      <span style="color:white">&nbsp;Bus</span>&nbsp;&nbsp;
 
-        <input type="radio" name="roomSize" id="Other" value="Other" formControlName="typeOfTransport" required />
-        <span style="color:white" >&nbsp;Other</span>&nbsp;&nbsp;
-        
-    </div><br>
+      <input type="radio" name="roomSize" id="Ship" value="Ship" formControlName="typeOfTransport" required />
+      <span style="color:white"> &nbsp;Ship</span>&nbsp;&nbsp;
+
+      <input type="radio" name="roomSize" id="AirPlane" value="AirPlane" formControlName="typeOfTransport" required />
+      <span style="color:white">&nbsp;Air-Plane</span>&nbsp;&nbsp;
+
+      <input type="radio" name="roomSize" id="Other" value="Other" formControlName="typeOfTransport" required />
+      <span style="color:white">&nbsp;Other</span>&nbsp;&nbsp;
+
+    </div>
 
     <div class="form-row">
       <div class="form-group col-md-4"></div>
@@ -77,12 +79,13 @@
       </div>
     </div>
 
-    
+
     <div style="font-family: sans-serif; color: rgb(255, 255, 255);">
-      <button type = "submit" class="btn btn-primary btn-lg ">Next</button>&nbsp;&nbsp;
-      <button class="btn btn-danger btn-lg "  id = "button1" type="reset" (click)="onReset()">Cancel Form</button>&nbsp;&nbsp;
-      <button class="btn btn-dark btn-lg "  id = "button2" type="reset" (click)="Back()">Back</button> 
-  </div>
+      <button type="submit" class="btn btn-primary btn-lg ">Next</button>&nbsp;&nbsp;
+      <button class="btn btn-danger btn-lg " id="button1" type="reset" (click)="onReset()">Cancel
+        Form</button>&nbsp;&nbsp;
+      <button class="btn btn-dark btn-lg " id="button2" type="reset" (click)="Back()">Back</button>
+    </div>
 
     <br>
     <br>
