@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cancel-booking',
@@ -23,7 +24,7 @@ export class CancelBookingComponent implements OnInit {
     this.userName = this.activatedRoute.snapshot.params['userName'];
     this.cancelBooking = this.formBuilder.group({
       bookingId : ['', Validators.required],
-      customerUserName : ['', Validators.required],
+      customerUserName : [this.userName, Validators.required],
       reason : ['', Validators.required]
     })
 
@@ -32,7 +33,7 @@ export class CancelBookingComponent implements OnInit {
     console.log(this.cancelBooking?.value);
     console.log(data.bookingId);
   
-    this.customerService.cancelBooking(data.bookingId)
+    this.customerService.updateCancellationStatus(this.userName,"True")
       .subscribe(
         response => {
           console.log(response);
@@ -41,6 +42,9 @@ export class CancelBookingComponent implements OnInit {
         },
         error => {
           console.log(error);
+          Swal.fire('Success', 'Your login is successfull', 'success')
+        this.router.navigate(['customerDashboard', this.userName])
+
         });
   }
 
