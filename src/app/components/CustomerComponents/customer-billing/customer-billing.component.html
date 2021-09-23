@@ -15,37 +15,35 @@
             <div class="table-responsive" id="htmlData">
               <table border="5" BORDERCOLOR=white align="center" cellpadding="10" cellspacing="10"
                 class="table text-white">
+                {{errorMessage}}
                 <thead class="thead text-dark" style="background-color: lightsteelblue;opacity: .6;right: 12px;">
                   <tr>
                     <th style="text-align: center;">Description</th>
-                    <th style="text-align: center;">Cost</th>
+                    <th style="text-align: center;">Amount</th>
                   </tr>
                 </thead>
-                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
-                  <td style="font-weight: bolder;">
-                    <p style="font-size: 18px;">Bill No </p>
-                    <p style="font-size: 18px;">User Name</p>
-                    <p style="font-size: 18px;">Room Bill</p>
-                    <p style="font-size: 18px;">Breakfast Bill</p>
-                    <p style="font-size: 18px;">Drinks Bill</p>
-                    <p style="font-size: 18px;">Food Bill </p>
-                    <p style="font-size: 18px;">Pickup And Drop Bill </p>
+                <tr>
+                  <td>
+                    <p>Bill No </p>
+                    <p>User Name</p>
+                    <p>Room Bill</p>
+                    <p>Breakfast Bill</p>
+                    <p>Drinks Bill</p>
+                    <p>Food Bill </p>
+                    <p>Pickup And Drop Bill </p>
+                    <p>Total Bill</p>
+                  </td>
+                  <td>
+                    <p>{{billNo}}</p>
+                    <p>{{customerUserName}}</p>
+                    <p>{{roomBill}}</p>
+                    <p>{{breakFastBill}}</p>
+                    <p>{{drinksBill}}</p>
+                    <p>{{foodBill}}</p>
+                    <p>{{pickUpDropBill}}</p>
+                    <p>{{totalBill}}</p>
                   </td>
 
-                  <td>
-                    <p style="font-size: 18px;">ABC1</p>
-                    <p style="font-size: 18px;">{{userName}}</p>
-                    <p style="font-size: 18px;">48000 /-</p>
-                    <p style="font-size: 18px;">65000 /-</p>
-                    <p style="font-size: 18px;">7800 /-</p>
-                    <p style="font-size: 18px;">6400 /-</p>
-                    <p style="font-size: 18px;">9000 /-</p>
-                    <p style="font-size: 18px;">0 /-</p>
-                  </td>
-                </tr>
-                <tr style="color: rgba(255, 255, 255, 0);opacity: .9;">
-                  <td style="opacity: 1; font-weight: 1000;color: violet; font-size: 20px;">Total Amount</td>
-                  <td style="opacity: 1; font-weight: 1000;color: violet; font-size: 20px;">136200 /-</td>
                 </tr>
 
 

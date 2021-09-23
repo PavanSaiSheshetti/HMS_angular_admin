@@ -25,6 +25,7 @@ export class AllocateRoomsComponent implements OnInit {
    }
 
 
+
   ngOnInit(): void {
    
     this.roomNumber = 1;
@@ -50,7 +51,6 @@ export class AllocateRoomsComponent implements OnInit {
   updateCheckIn(customerUserName:string){
     this.receptionService.updateCheckInStatus(customerUserName).subscribe(() => {
       this.successMessage = "Check-In status and Payment updated successfully"
-      this.refreshPage();
       this.router.navigate(['allocateRooms'])
 
     },error => {
@@ -61,14 +61,14 @@ export class AllocateRoomsComponent implements OnInit {
   }
 
   updateCheckOut(customerUserName:string){
+    localStorage.setItem("userNameForBill",customerUserName);
     this.receptionService.updateCheckOutStatus(customerUserName).subscribe(() => {
-      this.successMessage = "Check-In status and Payment updated successfully"
-      this.refreshPage();
-      this.router.navigate(['allocateRooms'])
+      this.successMessage = "Check-Out status and Payment updated successfully"
+      this.router.navigate(['addBillPage'])
     },error => {
       this.errorMessage = "Some error occured, Please try again later"
       this.refreshPage();
-      this.router.navigate(['allocateRooms'])
+      this.router.navigate(['addBillPage'])
     })
   }
 

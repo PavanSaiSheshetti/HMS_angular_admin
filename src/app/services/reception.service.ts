@@ -5,6 +5,7 @@ import { catchError, retry } from 'rxjs/operators';
 import { Bookings } from '../models/bookings';
 import { Receptionist } from '../models/receptionist';
 import { Room } from '../models/room';
+import { Bill } from '../models/bill';
 
 
 const bookingsUrl  = "http://localhost:9090/bookRoom"
@@ -117,6 +118,15 @@ getBookingRooms(roomNumber:number):Observable<Bookings[]>{
     console.log("method calling - update")
     return this.httpClient.put<Bookings>(`${bookingsUrl}/updateBookingByRoomNumber/${roomNumber}/${userName}`,this.httpOptions)
     .pipe(
+      retry(0),
+      catchError(this.errorHandler)
+    )
+  }
+
+   userName:string = localStorage.getItem("userNameForBill");
+  addBill(bill:Bill): Observable<Bill>{
+   
+    return this.httpClient.post<Bill>(`${receptionUrl}/addBill/${this.userName}`,bill,this.httpOptions).pipe(
       retry(0),
       catchError(this.errorHandler)
     )
