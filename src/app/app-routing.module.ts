@@ -127,6 +127,7 @@ const routes: Routes = [
   { path:"cancelPickAndDrop/:userName",component: CancelPickupanddropComponent },
 
   { path:"contactUs/:userName",component: ContactUsComponent },
+  { path:"contactUs",component: ContactUsComponent },
   { path:"rooms/:userName",component: CustomerRoomsComponent },
 
   { path:"navbar/:userName",component: CustomerNavbarComponent },

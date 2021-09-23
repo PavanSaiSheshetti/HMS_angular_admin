@@ -10,13 +10,17 @@ export class HomenavbarComponent implements OnInit {
 
   userName?:String;
   // public activatedRoute:ActivatedRoute
-  // this.Id = this.activatedRoute.snapshot.params['id'];
+  // 
   constructor(public router:Router,public activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.userName = this.activatedRoute.snapshot.params['userName'];
   }
   gotoCustomer(){
     this.router.navigate(['customerLogin',"-1"]);
+  }
+  contactUs(){
+    this.router.navigate(['contactUs',"-1"]);
   }
 
 }
