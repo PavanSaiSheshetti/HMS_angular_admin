@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router';
 import { Bookings } from 'src/app/models/bookings';
 import { ReceptionService } from 'src/app/services/reception.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -51,10 +52,12 @@ export class AllocateRoomsComponent implements OnInit {
     this.receptionService.updateCheckInStatus(customerUserName).subscribe(() => {
       this.successMessage = "Check-In status and Payment updated successfully"
       this.refreshPage();
+      this.successAlertNotification();
       this.router.navigate(['allocateRooms'])
 
     },error => {
       this.errorMessage = "Some error occured, Please try again later"
+     
       this.refreshPage();
       this.router.navigate(['allocateRooms'])
     })
@@ -64,6 +67,7 @@ export class AllocateRoomsComponent implements OnInit {
     this.receptionService.updateCheckOutStatus(customerUserName).subscribe(() => {
       this.successMessage = "Check-In status and Payment updated successfully"
       this.refreshPage();
+      this.checkoutAlert();
       this.router.navigate(['allocateRooms'])
     },error => {
       this.errorMessage = "Some error occured, Please try again later"
@@ -75,6 +79,13 @@ export class AllocateRoomsComponent implements OnInit {
   logout(){
     this.router.navigate(['receptionistlogin'])
   }
-  
+  successAlertNotification(){
+    // this.router.navigate(['receptionist'])
+    Swal.fire('Success', 'Your Check-in is Successful', 'success')
+   this.router.navigate(['receptionDashboard',this.bookingForm.get('receptionistId')?.value])
+ }
 
+ checkoutAlert(){
+  Swal.fire('Success', 'Checked-out Successfully', 'success')
+ }
 }

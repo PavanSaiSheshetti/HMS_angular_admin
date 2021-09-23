@@ -99,7 +99,7 @@
                             <div class="form-group col-md-4">
                                 <i class="fa fa-key fa-lg"></i> &nbsp;
                                 <label style="font-weight: bold; font-size: 20px; color: black;">Password </label>
-                                <input type="receptionistPassword" name="receptionistPassword" id="receptionistPassword" formControlName="receptionistPassword"
+                                <input type="password" name="receptionistPassword" id="receptionistPassword" formControlName="receptionistPassword"
 
                                     style="color:black;"  placeholder="Enter Password" class="form-control border border-primary" />
                                 <div *ngIf="receptionistlogin.get('receptionistPassword')?.hasError('required') && receptionistlogin.get('receptionistPassword')?.dirty">

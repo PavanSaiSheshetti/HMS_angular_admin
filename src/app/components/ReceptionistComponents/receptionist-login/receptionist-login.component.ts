@@ -33,12 +33,10 @@ export class ReceptionistLoginComponent implements OnInit {
           localStorage.setItem("userIdSession",""+this.receptionistlogin.get('receptionistId')?.value);
           console.log("BDKSNKKDLSKDMSL"+localStorage.getItem("userIdSession"))
           console.log(this.receptionistlogin.get('receptionistId')?.value+ ", you have logged successfully");
-        console.log("#######logged successfully ");
+          this.successAlertNotification();
+         
+          console.log("#######logged successfully ");
         console.log(this.successMessage)
-        // window.alert("your log in is successful")
-        this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
-          // this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
-
               },
       error => {
        // this.errorMessage="Your Login details are not matched!"
@@ -55,6 +53,12 @@ return(){
 }
 forgetPassword(){
   this.router.navigate(['receptionistforgetPassword'])
+}
+successAlertNotification(){
+   // this.router.navigate(['receptionist'])
+   Swal.fire('Success', 'Your login is successfull', 'success')
+  this.router.navigate(['receptionDashboard',this.receptionistlogin.get('receptionistId')?.value])
+
 }
 
 }

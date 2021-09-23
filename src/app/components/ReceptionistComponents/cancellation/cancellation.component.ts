@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Bookings } from 'src/app/models/bookings';
 import { ReceptionService } from 'src/app/services/reception.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cancellation',
@@ -30,6 +31,7 @@ checkInDate?:string;
    this.receptionService.cancelBooking(userName,this.checkInDate).subscribe(() => {
      this.successMessage = "Booking cancelled successfully";
     this.getCancelBookings();
+    this.cancelAlert();
     this.router.navigate(['cancellationPage'])
    },error=>this.errorMessage = "Some error occured,Please try again later")
 
@@ -47,6 +49,8 @@ checkInDate?:string;
     this.router.navigate(['receptionistlogin'])
   }
 
-  
+  cancelAlert(){
+    Swal.fire('Cancelled', 'Cancellation done Successfully', 'success')
+   }
 
 }
