@@ -16,6 +16,7 @@ export class CustomerDashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.userName = this.activatedRoute.snapshot.params['userName'];
+    localStorage.setItem("userName",""+this.userName);
   }
   billing(){
     this.router.navigate(['billing', this.userName]);
