@@ -10,10 +10,13 @@ import { ForgetPassword } from '../models/forget-password';
 import { PickupAndDrop } from '../models/pickup-and-drop';
 
 
-const customerURL = "http://localhost:9090/customer";
+const customerURL = "http://18.220.211.178:9090/customer";
 
-const bookingsUrl  = "http://localhost:9090/bookRoom"
+const bookingsUrl  = "http://18.220.211.178:9090/bookRoom"
 
+
+//const URL = "http://localhost:9090/room"
+const URL = "http://18.220.211.178:9090/room"//
 @Injectable({
   providedIn: 'root'
 })

@@ -8,11 +8,11 @@ import { Room } from '../models/room';
 import { Bill } from '../models/bill';
 
 
-const bookingsUrl  = "http://localhost:9090/bookRoom"
+const bookingsUrl  = "http://18.220.211.178:9090/bookRoom"
 
-const receptionUrl = "http://localhost:9090/Reception"
+const receptionUrl = "http://18.220.211.178:9090/Reception"
 
-const roomURL="http://localhost:9090/room";
+const roomURL="http://18.220.211.178:9090/room";
 
 
 @Injectable({

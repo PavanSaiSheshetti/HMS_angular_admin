@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import {retry, catchError} from 'rxjs/operators'
 import { BookingHistory } from '../models/booking-history';
 
-const bookingHistoryUrl = "http://localhost:9090/viewbookinghistory"
+const bookingHistoryUrl = "http://18.220.211.178:9090/viewbookinghistory"
 
 @Injectable({
   providedIn: 'root'

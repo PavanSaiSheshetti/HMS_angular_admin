@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Receptionist } from '../models/receptionist';
 
-const URL = "http://localhost:9090/adminController"
+const URL = "http://18.220.211.178:9090/adminController"
 @Injectable({
   providedIn: 'root'
 })
@@ -20,7 +20,7 @@ httpOptions = {
 
 constructor(public http:HttpClient) { }
 getAllReceptionists() : Observable<Receptionist[]>{
-  return this.http.get<Receptionist[]>(`http://localhost:9090/adminController/getAll`).pipe(retry(0),
+  return this.http.get<Receptionist[]>(`http://18.220.211.178:9090/adminController/getAll`).pipe(retry(0),
   catchError(this.errorHandler)
   );
 }

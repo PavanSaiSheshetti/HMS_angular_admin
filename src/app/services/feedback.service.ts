@@ -6,7 +6,7 @@ import { retry, catchError } from 'rxjs/operators';
 import { Feedback } from '../models/feedback';
 
 
-const feedbackURL="http://localhost:9090/feedback"
+const feedbackURL="http://18.220.211.178:9090/feedback"
 @Injectable({
   providedIn: 'root'
 })

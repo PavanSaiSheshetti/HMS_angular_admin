@@ -7,7 +7,7 @@ import { Receptionist } from '../models/receptionist';
 
 
 
-const adminUrl = "http://localhost:9090/adminController"
+const adminUrl = "http://18.220.211.178:9090/adminController"
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +48,7 @@ export class AdminService {
       )
   }
   getAllReceptionists() : Observable<Receptionist[]>{
-    return this.httpClient.get<Receptionist[]>(`http://localhost:9090/adminController/getAll`).pipe(retry(0),
+    return this.httpClient.get<Receptionist[]>(`http://18.220.211.178:9090/adminController/getAll`).pipe(retry(0),
     catchError(this.errorHandler)
     );
   }

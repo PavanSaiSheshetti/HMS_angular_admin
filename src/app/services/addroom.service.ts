@@ -5,7 +5,9 @@ import { retry, catchError } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 
 
-const URL = "http://localhost:9090/room"
+//const URL = "http://localhost:9090/room"
+const URL = "http://18.220.211.178:9090/room"
+
 @Injectable({
   providedIn: 'root'
 })
@@ -52,7 +54,7 @@ httpOptions = {
 
   //get all rooms
   getAllRooms() :Observable<Room[]>{
-    return this.http.get<Room[]>(`http://localhost:9090/room`).pipe(retry(0),
+    return this.http.get<Room[]>(`http://18.220.211.178:9090/room`).pipe(retry(0),
     catchError(this.errorHandler)
 );
   }

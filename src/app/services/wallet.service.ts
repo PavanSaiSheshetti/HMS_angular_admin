@@ -5,7 +5,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry ,catchError } from 'rxjs/operators';
 
 
-const walletUrl= "http://localhost:9090/Reception";
+const walletUrl= "http://18.220.211.178:9090/Reception";
 
 @Injectable({
   providedIn: 'root'

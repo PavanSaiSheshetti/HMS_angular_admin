@@ -4,7 +4,7 @@ import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Offer } from '../models/offer';
 
-const offerUrl="http://localhost:9090/hoteloffer"
+const offerUrl="http://18.220.211.178:9090/hoteloffer"
 @Injectable({
   providedIn: 'root'
 })
