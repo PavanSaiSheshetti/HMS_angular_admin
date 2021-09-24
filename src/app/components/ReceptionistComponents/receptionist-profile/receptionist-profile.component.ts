@@ -33,4 +33,8 @@ back(){
   this.router.navigate(['receptionDashboard'])
 }
 
+bookingNavigate(){
+  this.router.navigate(['bookingsPage'])
+ }
+
 }

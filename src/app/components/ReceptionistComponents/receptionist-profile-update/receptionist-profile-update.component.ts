@@ -51,6 +51,9 @@ export class ReceptionistProfileUpdateComponent implements OnInit {
          });
  }
  
+ bookingNavigate(){
+  this.router.navigate(['bookingsPage'])
+ }
  return(){
    this.router.navigate(['receptionDashboard', this.receptionistId])
  }
