@@ -18,6 +18,7 @@ export class ConfirmBookingComponent implements OnInit {
   price?:number;
   confirmForm?:FormGroup;
   PickupDrop?:String = "No";
+  errorMessage?:string;
   // public activatedRoute:ActivatedRoute
   // this.Id = this.activatedRoute.snapshot.params['id'];
   constructor(public router : Router, public activatedRoute:ActivatedRoute, public formBuilder:FormBuilder, public customerService:CustomerService, public receptionService:ReceptionService) { }
@@ -80,8 +81,15 @@ export class ConfirmBookingComponent implements OnInit {
         ()=>{
           console.log("status updated");
           Swal.fire('Success', 'Your Room is booked Successfully!', 'success')
+        },error => {
+          if(error != 200){
+          this.errorMessage = "Insufficient Balance in " + this.customerUserName + " wallet, Please debit money ";
         }
-      )
+        
+        else{
+          Swal.fire('Success', 'Your Room is booked Successfully!', 'success')
+        }
+        })
     })
 
   }

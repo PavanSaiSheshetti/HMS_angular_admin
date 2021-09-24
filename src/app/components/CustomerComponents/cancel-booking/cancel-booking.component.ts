@@ -21,9 +21,11 @@ export class CancelBookingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.bookingId =+ localStorage.getItem("bookingId")
+    console.log(this.bookingId)
     this.userName = this.activatedRoute.snapshot.params['userName'];
     this.cancelBooking = this.formBuilder.group({
-      bookingId : ['', Validators.required],
+      //bookingId : [this.bookingId, Validators.required],
       customerUserName : [this.userName, Validators.required],
       reason : ['', Validators.required]
     })
@@ -31,22 +33,25 @@ export class CancelBookingComponent implements OnInit {
   }
   sendCancelBooking(data: any){
     console.log(this.cancelBooking?.value);
-    console.log(data.bookingId);
+    
   
-    this.customerService.updateCancellationStatus(this.userName,"True")
+    this.customerService.updateCancellationStatus(this.userName,"yes")
 
     // this.customerService.cancelBooking(data.bookingId)
       .subscribe(
         response => {
           console.log(response);
           // this.successMessage = doctorId +" :   successfully deleted";
-          Swal.fire('Success', ' Deleted Successfully!', 'success')
+          Swal.fire('Success', ' Request send successfully!', 'success')
           console.log("#######Deleted successfully ");
         },
         error => {
+       
+          Swal.fire('Success', ' Request send successfully!', 'success')
           console.log(error);
-          Swal.fire('Success', 'Your login is successfull', 'success')
-        this.router.navigate(['customerDashboard', this.userName])
+          this.router.navigate([''])
+        //   Swal.fire('Success', 'Your login is successfull', 'success')
+        // this.router.navigate(['customerDashboard', this.userName])
 
         });
   }

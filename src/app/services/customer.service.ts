@@ -12,6 +12,8 @@ import { PickupAndDrop } from '../models/pickup-and-drop';
 
 const customerURL = "http://localhost:9090/customer";
 
+const bookingsUrl  = "http://localhost:9090/bookRoom"
+
 @Injectable({
   providedIn: 'root'
 })
@@ -189,7 +191,7 @@ export class CustomerService {
   }
   
   updateCancellationStatus(userName: String,status:String): Observable<Bookings> {
-    return this.httpClient.put<Bookings>(`${customerURL}/updateCancellationStatus/${userName}/${status}`, this.httpOptions)
+    return this.httpClient.put<Bookings>(`${bookingsUrl}/updateCancellationStatus/${userName}/${status}`, this.httpOptions)
       .pipe(
         retry(0),
         catchError(this.errorHandler)

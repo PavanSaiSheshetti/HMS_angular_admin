@@ -75,14 +75,16 @@ export class PickAndDropComponent {
             this.customerService.updatePickupDropStatus(this.userName,this.PickupDrop).subscribe(()=>{
               this.successMessage = "Pickup And Drop added successfully"
               console.log("#######Pickup And Drop Uploaded successfully ");
+              this.router.navigate(["confirmBooking", this.userName, this.Id]);
               if(this.Id == "-2"){
                 Swal.fire('Success', 'PickupDrop Added Successfully!', 'success')
+
                 this.router.navigate(["customerDashboard", this.userName]);
               }
               
               
             },error =>{
-              this.router.navigate(["confirmBooking", this.userName, this.Id]);
+              
 
             } );
             

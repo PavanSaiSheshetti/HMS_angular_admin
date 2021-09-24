@@ -7,24 +7,24 @@
         <div class="container">
             <form novalidate [formGroup]="cancelBooking" #user="ngForm"  style="margin-left: 50px;width: 420px;" (ngSubmit)="sendCancelBooking(user.value)">
                 <fieldset>
-                    <div class="form-group"><br>
+                    <!-- <div class="form-group"><br>
                         <label>
                             <h4><b style="color:white ; font-size:25px; font-weight: bold;">Booking Id</b></h4>
                         </label>
                         <input type="number" class="form-control" formControlName="bookingId"
-                            placeholder="Enter Booking ID" ngModel>
+                            placeholder="Enter Booking ID" readonly ngModel>
                         <div class="alert alert-danger" *ngIf="cancelBooking?.get('bookingId')?.hasError('required') &&
                          cancelBooking.get('bookingId')?.dirty">
                             Booking ID is Required
                         </div>
                         <br>
-                    </div>
+                    </div> -->
                     <div class="form-group"><br>
                         <label>
                             <h4><b style="color:white; font-size:25px; font-weight: bold;">Customer User Name</b></h4>
                         </label>
                         <input type="text" class="form-control" formControlName="customerUserName"
-                            placeholder="Enter Customer Name">
+                            placeholder="Enter Customer Name" readonly>
                         <div class="alert alert-danger" *ngIf="cancelBooking?.get('customerUserName')?.hasError('required') &&
                          cancelBooking.get('customerUserName')?.dirty">
                             customer name is Required

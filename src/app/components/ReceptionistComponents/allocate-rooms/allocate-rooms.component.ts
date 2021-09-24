@@ -57,10 +57,11 @@ export class AllocateRoomsComponent implements OnInit {
       this.router.navigate(['allocateRooms'])
 
     },error => {
-      this.errorMessage = "Some error occured, Please try again later"
-     
+      if(error == 409){
+        this.errorMessage = "Insufficient Balance in " + customerUserName + " wallet, Please ask " +  customerUserName + " to Credit money "     
       this.refreshPage();
       this.router.navigate(['allocateRooms'])
+      }
     })
   }
 
@@ -70,9 +71,13 @@ export class AllocateRoomsComponent implements OnInit {
       this.successMessage = "Check-Out status and Payment updated successfully"
       this.router.navigate(['addBillPage'])
     },error => {
-      this.errorMessage = "Some error occured, Please try again later"
+      if(error == 409){
+      this.errorMessage = "Insufficient Balance in " + customerUserName + " wallet, Please ask " +  customerUserName + " to Credit money "
       this.refreshPage();
+      }
+      else{
       this.router.navigate(['addBillPage'])
+      }
     })
   }
 
