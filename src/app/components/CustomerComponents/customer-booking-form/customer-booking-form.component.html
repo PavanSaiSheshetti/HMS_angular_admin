@@ -81,8 +81,10 @@
               <input type="radio" name="roomType" id="Delux" value="AC" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
               <span style="color:white" >&nbsp;AC</span>&nbsp;&nbsp;
 
-              <input type="radio" name="roomType" id="Luxury" value="Luxury" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
-              <span style="color:white" > &nbsp;Luxury</span>
+              <!-- <input type="radio" name="roomType" id="Luxury" value="Luxury" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" > &nbsp;Luxury</span> -->
+              <input type="radio" name="roomType" id="Deluxe" value="Deluxe" formControlName="roomType" (change) = "getOffers(bookingForm.get('roomType').value)" required />
+              <span style="color:white" > &nbsp;Deluxe</span>
 
 
 
@@ -120,14 +122,25 @@
           </div>
 
           <div *ngIf = "showOffer">
-            <table style = "color: white;" class = "table">
+            <table style = "padding:25px;background-image: url(/assets/img/offers/th.jfif);" >
+
               <tr *ngFor = "let offer of offers">
-                <td>{{offer.discountPercentage}}%</td>
-                <td>{{offer.termsAndConditions}}</td>
-                <td>{{offer.offerId}}</td>
-                <td>{{offer.offerName}}</td>
-                <td>{{offer.offerDetails}}</td>
+                <table align="center"border='1'>
+                  <tr></tr>
+                  <tr>
+                  <td style="background-color: aliceblue;padding:5px;text-align: center;font-weight: bolder;font-style: italic;color:gold;font-size: 16px;">{{offer.offerName}}</td></tr>
+
+                </table><br>
+              <table align="center" style=" color:black;font-family: Georgia, 'Times New Roman', Times, serif;font-weight:bold;" >
+                <tr> <td style="padding:10px;align-items: center;">{{offer.discountPercentage}}%</td></tr>
+                <!-- <td style="padding:10px;">{{offer.termsAndConditions}}</td> -->
+                <!-- <td style="padding:10px;">{{offer.offerId}}</td> -->
+                <tr>
+                <td style="padding:5px;font-weight: bold;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-style: italic;">{{offer.offerDetails}}</td>
               </tr>
+              <tr></tr>
+            </table>
+            </tr>
             </table>
           </div>
 
